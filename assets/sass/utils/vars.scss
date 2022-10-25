@@ -1,0 +1,48 @@
+//Fonts
+$primary-font: 'FilsonProMedium', sans-serif;
+$secondary-font: 'FilsonProBlack', sans-serif;
+
+// Colors
+$default-bg: #fff;
+$body-bg: #fff;
+$ternary-bg: #f9f9f9;
+$dark-bg: #a1a6af;
+$light-bg: #fff;
+$primary-text-color: #000;
+$secondary-text-color: #f4262c;
+$ternary-text-color: #55636F;
+$info-color: #e3f2fd;
+$error-color: #F26363;
+$success-color: #63F28F;
+
+// Fields
+$field-default-color: #a1a6af;
+$field-dark-color: #000;
+$field-active-color: #fff;
+$field-dark-active-color: #000;
+
+// Common
+$border-color-primary: linear-gradient(167.47deg, #FFEED8 9.09%, rgba(226, 176, 111, .4375) 65.45%, #BEA78B 89.58%);
+$border-regular: 1px solid rgba(255, 255, 255, 1);
+$border-error: 1px solid $error-color;
+$border-dark: #000;
+$border-light: #fff;
+
+// Breakpoints
+$breakpoint-xs: 600px;
+$breakpoint-sm: 960px;
+$breakpoint-md: 1264px;
+$breakpoint-lg: 1904px;
+
+:export {
+  default-bg: $default-bg;
+  ternary-bg: $ternary-bg;
+  light-bg: $light-bg;
+  primary-text-color: $primary-text-color;
+  secondary-text-color: $secondary-text-color;
+  border-color-primary: $border-color-primary;
+  breakpoint-xs: $breakpoint-xs;
+  breakpoint-sm: $breakpoint-sm;
+  breakpoint-md: $breakpoint-md;
+  breakpoint-lg: $breakpoint-lg;
+}

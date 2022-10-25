@@ -1,0 +1,24 @@
+{
+  "quotation_request": "Demande devis",
+  "pages": {
+    "homepage": {
+      "title": "Accueil",
+      "presentation": "Bâtiment de stockage GODIN le profil d'une réussite"
+    },
+    "history": {
+      "title": "Histoire"
+    },
+    "jobs": {
+      "title": "Métiers"
+    },
+    "silos": {
+      "title": "Silos carrés"
+    },
+    "benefit": {
+      "title": "Prestations"
+    },
+    "contact": {
+      "title": "Contact"
+    }
+  }
+}
