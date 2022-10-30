@@ -84,7 +84,7 @@ export default {
   text-transform: uppercase;
   font-family: 'FilsonProLight', sans-serif;
   font-weight: 100;
-  @include border-radius(16px);
+  @include border-radius(12px);
   outline: none;
   border: none;
   white-space: nowrap;

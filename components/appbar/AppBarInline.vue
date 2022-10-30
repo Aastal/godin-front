@@ -103,6 +103,14 @@ export default {
     @include text-color(linear-gradient(130.4deg, #FFEED8 30.32%, rgba(226, 176, 111, .4375) 99.67%, #BEA78B 129.38%));
   }
 
+  li {
+    a {
+      &:hover {
+        color: $secondary-text-color;
+      }
+    }
+  }
+
   &--right {
     display: grid;
     grid-gap: 12px;
@@ -177,12 +185,6 @@ export default {
       &:last-child {
         margin-bottom: 0;
         border-bottom: none;
-      }
-
-      a {
-        &:hover {
-          color: $secondary-text-color;
-        }
       }
     }
   }

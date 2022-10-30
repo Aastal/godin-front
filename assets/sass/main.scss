@@ -13,6 +13,15 @@ html {
   box-sizing: border-box;
 }
 
+div#__nuxt,
+#__layout,
+#__layout > div,
+#app {
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -28,9 +37,9 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "GothamBold", sans-serif;
-  font-weight: 700;
-  color: $primary-text-color;
+  font-family: $primary-font;
+  font-weight: 400;
+  color: $ternary-text-color;
   text-align: center;
   letter-spacing: -.01em;
   margin-bottom: 16px;
@@ -49,6 +58,7 @@ h1 {
 }
 
 h2 {
+  font-family: $light-font;
   font-size: 1.125rem;
 
   @media (min-width: $breakpoint-md) {
@@ -66,7 +76,7 @@ h3 {
 
 p {
   font-family: $secondary-font;
-  color: $primary-text-color;
+  color: $ternary-text-color;
   margin-bottom: 32px;
   font-size: .875rem;
 
@@ -88,10 +98,48 @@ a {
   font-weight: 500;
 }
 
+.link {
+  font-family: $light-font;
+  display: block;
+  text-align: right;
+  color: $secondary-text-color;
+  font-size: 1.4rem;
+  font-style: italic;
+
+  @media (max-width: $breakpoint-sm) {
+    margin-right: 16px;
+  }
+
+  &:before {
+    display: inline-block;
+    content: url("~/assets/images/RedTriangle.svg");
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+  }
+
+  &.left {
+    text-align: left;
+  }
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.layouts-enter-active {
+  transition: opacity .5s;
+}
+
+.layouts-leave-active {
+  transition: opacity 10ms;
+}
+
+.layouts-enter,
+.layouts-leave-active {
+  opacity: 0;
 }
 
 input:-webkit-autofill,
@@ -119,7 +167,7 @@ select:-webkit-autofill:focus {
   a {
     cursor: pointer;
     font-family: $primary-font;
-    font-size: 1.2rem;
+    font-size: 1rem;
     letter-spacing: .15rem;
     color: $ternary-text-color;
     text-decoration: none;
@@ -129,5 +177,23 @@ select:-webkit-autofill:focus {
 .brand {
   &--small {
     width: 170px;
+  }
+}
+
+.image-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .image-container {
+    position: relative;
+    z-index: -2;
+    min-height: 80vh;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-sm) {
+      min-height: 0;
+    }
   }
 }

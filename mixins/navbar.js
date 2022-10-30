@@ -3,10 +3,6 @@ export default {
     items: {
       type: Array,
       required: true
-    },
-    theme: {
-      type: String,
-      required: true
     }
   },
   data () {

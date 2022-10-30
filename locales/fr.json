@@ -3,7 +3,26 @@
   "pages": {
     "homepage": {
       "title": "Accueil",
-      "presentation": "Bâtiment de stockage GODIN le profil d'une réussite"
+      "presentation": "Bâtiment\nde stockage<i>GODIN</i>le profil d'une\nréussite",
+      "sub_presentation": "Fabricant de silos\nde stockage  \"Intelligents\".\nSystème Breveté.",
+      "section_history": {
+        "title": "Une histoire qui\nfabrique l'expérience",
+        "text": "Notre société de fabrication de silos de stockage a été créée en 1952 par Monsieur Marcel Godin.<br><br>D'abord spécialisée dans le stockage de céréales, la société GODIN conçoit, fabrique et installe des silos de stockage de toutes les capacités et pour tous types de pulvérulents.",
+        "link": "Page histoire"
+      },
+      "section_metier_silos": {
+        "title": "Conception\nfabrication\nMontage de silos",
+        "text": "Cellules de stockage brevetées\nde 6m³ à 300m³",
+        "link": "Page métier"
+      },
+      "section_metier_benefit": {
+        "title": "De la conception\nÀ l'installation",
+        "text": "Cellules de stockage brevetées\nde 6m³ à 300m³",
+        "link": "Page prestations"
+      },
+      "section_partners": {
+        "title": "Ils nous font confiance"
+      }
     },
     "history": {
       "title": "Histoire"

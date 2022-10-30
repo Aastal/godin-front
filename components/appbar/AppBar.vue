@@ -1,6 +1,6 @@
 <template>
   <header :class="[{ scrolled: lastScrollPosition > 100 }]">
-<!--    <AppBarResponsive :items="items" />-->
+    <AppBarResponsive :items="items" />
     <AppBarInline :items="items" />
   </header>
 </template>
