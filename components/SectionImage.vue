@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="container-fluid">
     <Information
       :title="title"
       :image="image"
@@ -58,8 +58,8 @@ export default {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 64px;
+  padding-bottom: 64px;
   background: $body-bg;
   @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   z-index: 0;

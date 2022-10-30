@@ -99,8 +99,8 @@ h2 {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 64px;
+  padding-bottom: 64px;
   background: $body-bg;
   @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   z-index: 0;
@@ -230,7 +230,6 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   min-height: 50vh;
-  padding-bottom: 128px;
 
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
