@@ -1,6 +1,7 @@
 <template>
-  <section class="container-fluid">
+  <section :class="['container-fluid', { flip }]">
     <Information
+      v-if="title"
       :title="title"
       :image="image"
       :link="link"
@@ -8,6 +9,9 @@
       :text="text"
       :iconFleet="iconFleet"
     />
+    <div class="information">
+      <slot name="text" />
+    </div>
     <div class="image-wrapper">
       <div class="image-container">
         <div class="image" :style="`background-image: url(${image})`"></div>
@@ -26,11 +30,11 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: false
     },
     text: {
       type: String,
-      required: true
+      required: false
     },
     textLink: {
       type: String,
@@ -47,13 +51,17 @@ export default {
     iconFleet: {
       type: Boolean,
       default: false
+    },
+    flip: {
+      type: Boolean,
+      default: false
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
+.container-fluid {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -63,6 +71,28 @@ export default {
   background: $body-bg;
   @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   z-index: 0;
+
+  &.flip {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+
+    .image-wrapper {
+      margin-top: 32px;
+      margin-bottom: 0;
+    }
+
+    &.flip {
+      flex-direction: column-reverse;
+
+      .image-wrapper {
+        margin-top: 0;
+        margin-bottom: 32px;
+      }
+    }
+  }
 }
 
 .image-wrapper,

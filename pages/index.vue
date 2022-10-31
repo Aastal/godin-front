@@ -18,7 +18,7 @@
       </div>
     </section>
     <section class="home-section home-section--secondary">
-
+<!--      Todo: Linkedin -->
     </section>
     <SectionImage
       class="home-section"
@@ -78,7 +78,12 @@ export default {
     RedTriangle: () => import('../components/icon/icons/RedTriangle'),
     IconFleet: () => import('../components/icon/IconFleet'),
   },
-  layout: 'main'
+  layout: 'main',
+  head () {
+    return {
+      title: this.$i18n.tc('pages.homepage.title') + ' - Godin SAS'
+    }
+  },
 }
 </script>
 

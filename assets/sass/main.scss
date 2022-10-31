@@ -60,6 +60,14 @@ h1 {
 h2 {
   font-family: $light-font;
   font-size: 1.125rem;
+  white-space: break-spaces;
+
+  &.large {
+    font-family: $primary-font;
+    text-align: left;
+    font-size: 3rem;
+    margin-top: 16px;
+  }
 
   @media (min-width: $breakpoint-md) {
     font-size: 1.5rem;
@@ -67,9 +75,21 @@ h2 {
 }
 
 h3 {
-  font-size: .875rem;
+  font-family: $light-font;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: $secondary-text-color;
+  margin: 0;
 
-  @media (min-width: $breakpoint-md) {
+  &:before {
+    display: inline-block;
+    content: url("~/assets/images/RedTriangle.svg");
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+  }
+
+  @media (max-width: $breakpoint-md) {
     font-size: 1rem;
   }
 }
@@ -129,6 +149,7 @@ a {
 }
 
 ul {
+  color: $ternary-text-color;
   list-style: none;
   padding: 0;
   margin: 0;

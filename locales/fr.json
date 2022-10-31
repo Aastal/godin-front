@@ -41,7 +41,21 @@
     },
     "benefit": {
       "title": "Prestations",
-      "text": "Grâce à notre bureau d'étude, nous concevons une unité de stockage spécifique pour\nchaque client, nous prenons ainsi en compte vos contraintes d'espace et d'intégration"
+      "text": "Grâce à notre bureau d'étude, nous concevons une unité de stockage spécifique pour\nchaque client, nous prenons ainsi en compte vos contraintes d'espace et d'intégration",
+      "section": {
+        "mastery": {
+          "title": "Maitrise de la chaine\nde fabrication",
+          "heading": "Une réalisation de qualité",
+          "text": "Nous maitrisons la totalité de la chaine de fabrication, ce qui nous permet de grantir la qualité de nos silos.",
+          "in-charge": "Nous nous chargeons également",
+          "argument_1": "- De la charpente portique support des cellules",
+          "argument_2": "- De la charpente autoportante sur le plancher",
+          "argument_3": "- De la sérrurerie de la couverture",
+          "argument_4": "- Du bardage de la couverture",
+          "argument_5": "- De l'assemblage en usine",
+          "argument_6": "<b>- Du montage et de la livraison sur site</b>"
+        }
+      }
     },
     "contact": {
       "title": "Contact"
