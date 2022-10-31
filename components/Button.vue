@@ -91,17 +91,17 @@ export default {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  width: 100%;
+  max-width: fit-content;
 
   @extend %transition;
 
   &--small {
-    padding: 12px 32px;
+    padding: 12px 32px !important;
     font-size: .75rem;
   }
 
   &--medium {
-    padding: 12px 32px;
+    padding: 12px 32px !important;
     font-size: 1rem;
   }
 
@@ -117,6 +117,7 @@ export default {
 }
 
 .light {
+  font-family: $primary-font;
   background: $body-bg;
   border: 1px solid $secondary-text-color;
   border-left-width: 4px;

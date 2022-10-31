@@ -122,7 +122,7 @@ export default {
     font-weight: 700;
     padding: 8px 0;
     font-size: 1rem;
-    color: $primary-text-color;
+    color: $ternary-text-color;
     text-decoration: none;
 
     &.nuxt-link-exact-active {

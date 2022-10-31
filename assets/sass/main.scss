@@ -74,6 +74,11 @@ h3 {
   }
 }
 
+.break {
+  border-top: 1px solid $ternary-text-color;
+  padding-top: 32px;
+}
+
 p {
   font-family: $secondary-font;
   color: $ternary-text-color;

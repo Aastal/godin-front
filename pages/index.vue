@@ -55,12 +55,16 @@
     </section>
     <section class="home-section home-section--secondary home-section--partners">
       <h2>{{ $t('pages.homepage.section_partners.title') }}</h2>
-      <div class="partners">
-        <img class="logo-name" src="~/static/logo-name.svg" alt="logo-name">
-        <img class="logo-name" src="~/static/logo-name.svg" alt="logo-name">
-        <img class="logo-name" src="~/static/logo-name.svg" alt="logo-name">
-        <img class="logo-name" src="~/static/logo-name.svg" alt="logo-name">
-      </div>
+      <list class="partners" :columns="4" list-style="grid">
+        <img src="~/static/clients/affinity.png" alt="affinity">
+        <img src="~/static/clients/bio-gascogne.png" alt="bio-gascogne">
+        <img src="~/static/clients/COCEBI.png" alt="COCEBI">
+        <img src="~/static/clients/Dijon-Cereales.jpg" alt="Dijon-Cereales">
+        <img src="~/static/clients/mendikoa.jpg" alt="mendikoa">
+        <img src="~/static/clients/minoterie-sauvin.jpg" alt="minoterie-sauvin">
+        <img src="~/static/clients/paulic.png" alt="paulic">
+        <img src="~/static/clients/valfrance.jpg" alt="valfrance">
+      </list>
     </section>
     <section class="home-section"></section>
   </div>
@@ -166,18 +170,14 @@ h2 {
     }
 
     .partners {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-top: 32px;
-      width: 100%;
 
       img {
+        padding: 20px;
         width: 300px;
-      }
-
-      @media (max-width: $breakpoint-sm) {
-        flex-direction: column;
+        height: 200px;
+        object-fit: contain;
+        background-color: #fff;
       }
     }
 

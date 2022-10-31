@@ -66,7 +66,7 @@ p {
   &--blue {
     width: 600px;
     padding: 32px 64px;
-    background-color: #478cc4;
+    background-color: $blue-text-color;
 
     @media (max-width: $breakpoint-sm) {
       width: 100%;

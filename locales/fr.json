@@ -1,5 +1,11 @@
 {
   "quotation_request": "Demande devis",
+  "our_solutions": "Nos solutions",
+  "headers": {
+    "benefit": {
+      "title": "De la conception\nà l'installation"
+    }
+  },
   "pages": {
     "homepage": {
       "title": "Accueil",
@@ -34,7 +40,8 @@
       "title": "Silos carrés"
     },
     "benefit": {
-      "title": "Prestations"
+      "title": "Prestations",
+      "text": "Grâce à notre bureau d'étude, nous concevons une unité de stockage spécifique pour\nchaque client, nous prenons ainsi en compte vos contraintes d'espace et d'intégration"
     },
     "contact": {
       "title": "Contact"

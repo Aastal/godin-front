@@ -4,6 +4,12 @@
 <script>
 export default {
   name: 'Silos',
-  layout: 'main'
+  layout: 'main',
+  nuxtI18n: {
+    paths: {
+      fr: '/silos',
+      en: '/silos',
+    }
+  }
 }
 </script>

@@ -12,7 +12,7 @@
         class="navbar--right"
       >
         <li class="burger" @click="toggle">
-          <icon class="burger" name="Burger" fill="black">
+          <icon class="burger" name="Burger" :width="48" :height="48">
             <Burger />
           </icon>
         </li>
@@ -41,6 +41,9 @@
               </li>
             </ul>
           </template>
+          <li class="break">
+            <Button :label="$t('quotation_request')" :to="localePath('quotation')" />
+          </li>
         </ul>
       </template>
     </sub-menu>
@@ -107,7 +110,7 @@ export default {
     grid-gap: 16px;
     align-items: center;
     font-weight: 400;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto;
   }
 
   &.display {

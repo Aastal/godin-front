@@ -4,7 +4,7 @@
     :width="width"
     :height="height"
     :viewBox="`0 0 ${scale} ${scale}`"
-    fill="none"
+    :fill="fill"
     :aria-labelledby="name"
   >
     <title :id="name" lang="en">{{ name }}</title>
