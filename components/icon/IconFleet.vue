@@ -22,7 +22,7 @@ export default {
     Icon: () => import('../icon/Icon'),
     RedTriangle: () => import('../icon/icons/RedTriangle'),
     RedLightTriangle: () => import('../icon/icons/RedLightTriangle'),
-    BleuCircle: () => import('../icon/icons/BleuCircle'),
+    BleuCircle: () => import('../icon/icons/BlueCircle'),
   },
   props: {
     number: {
@@ -33,7 +33,7 @@ export default {
   computed: {
     items() {
       let icons = []
-      const options = ['RedTriangle', 'RedLightTriangle', 'BleuCircle']
+      const options = ['RedTriangle', 'RedLightTriangle', 'BlueCircle']
       let position = 0
       let fill, maxTop, maxRight
 

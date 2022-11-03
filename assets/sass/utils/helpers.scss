@@ -1,25 +1,24 @@
 .container {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 15%;
 
-  @media (max-width: $breakpoint-lg) { padding: 0 15%; }
-  @media (max-width: $breakpoint-md) { padding: 0 10%; }
+  @media (max-width: $breakpoint-sm) { padding: 0 10%; }
+  @media (max-width: $breakpoint-lg) { padding: 0 5%; }
 }
 
 .container-tight {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 35%;
 
-  @media (max-width: $breakpoint-lg) { padding: 0 35%; }
-  @media (max-width: $breakpoint-md) { padding: 0 27.5%; }
+  @media (max-width: $breakpoint-sm) { padding: 0 27.5%; }
+  @media (max-width: $breakpoint-lg) { padding: 0 5%; }
 }
 
 .container-fluid {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 10%;
 
-  @media (max-width: $breakpoint-lg) { padding: 0 10%; }
-  @media (max-width: $breakpoint-sm) { padding: 0 5%; }
+  @media (max-width: $breakpoint-lg) { padding: 0 5%; }
 }
 
 .bg-primary {

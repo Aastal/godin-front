@@ -23,7 +23,7 @@ export default {
   },
   created () {
     this.items = [
-      { text: 'pages.homepage.title', to: { name: 'homepage' } },
+      { text: 'pages.homepage.title', to: { name: 'index' } },
       { text: 'pages.history.title', to: { name: 'history' } },
       {
         text: 'pages.jobs.title',

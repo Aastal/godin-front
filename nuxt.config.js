@@ -56,9 +56,9 @@ export default {
   ],
   styleResources: {
     scss: [
+      '@/assets/sass/utils/vars.scss',
       '@/assets/sass/utils/fonts.scss',
       '@/assets/sass/utils/mixin.scss',
-      '@/assets/sass/utils/vars.scss'
     ]
   },
   layoutTransition: {

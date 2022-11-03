@@ -116,7 +116,7 @@ export default {
     grid-gap: 12px;
     font-weight: 400;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     grid-template-columns: auto;
     margin-right: 64px;
 

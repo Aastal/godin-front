@@ -70,6 +70,7 @@ p {
 
     @media (max-width: $breakpoint-sm) {
       width: 100%;
+      padding: 32px;
     }
 
     .link {

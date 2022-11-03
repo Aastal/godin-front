@@ -1,5 +1,5 @@
 <template>
-  <section :class="['container-fluid', { flip }]">
+  <section :class="['section-image', { flip }]">
     <Information
       v-if="title"
       :title="title"
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container-fluid {
+.section-image {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -69,14 +69,19 @@ export default {
   padding-top: 64px;
   padding-bottom: 64px;
   background: $body-bg;
-  @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   z-index: 0;
 
   &.flip {
     flex-direction: row-reverse;
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
+
+    .image-container {
+      justify-content: start;
+    }
   }
 
   @media (max-width: $breakpoint-sm) {
+    justify-content: center;
     flex-direction: column;
 
     .image-wrapper {
@@ -85,31 +90,38 @@ export default {
     }
 
     &.flip {
-      flex-direction: column-reverse;
+      flex-direction: column;
 
       .image-wrapper {
-        margin-top: 0;
-        margin-bottom: 32px;
+        margin-top: 32px;
       }
     }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    justify-content: center;
   }
 }
 
 .image-wrapper,
 .information {
-  width: 45%;
+  max-width: 45%;
 
   @media (max-width: $breakpoint-sm) {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
 .image-wrapper {
   .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     .image {
       display: block;
       background-size: cover;
-      background-position: right 100%, bottom 100%;
+      background-position: center;
       background-repeat: no-repeat;
       width: 600px;
       height: 600px;
@@ -118,7 +130,6 @@ export default {
       @media (max-width: $breakpoint-sm) {
         width: 350px;
         height: 350px;
-        margin: 64px auto 0 auto;
       }
     }
   }

@@ -21,7 +21,7 @@
 <!--      Todo: Linkedin -->
     </section>
     <SectionImage
-      class="home-section"
+      class="container home-section home-section--shadow"
       :title="$t('pages.homepage.section_history.title')"
       :text="$t('pages.homepage.section_history.text')"
       :textLink="$t('pages.homepage.section_history.link')"
@@ -41,6 +41,7 @@
       </div>
     </section>
     <section class="home-section home-section--tight home-section--tight--secondary">
+      <img v-if="isMobile" class="soudure" src="~/static/soudure.jpg" alt="soudure">
       <div>
         <IconFleet :number="6"/>
         <Information
@@ -50,10 +51,10 @@
         />
         <a class="link left desktop" :href="localePath({ name: 'silos' })">{{ $t('pages.homepage.section_metier_benefit.link') }}</a>
       </div>
-      <img class="soudure" src="~/static/soudure.jpg" alt="soudure">
+      <img v-if="!isMobile" class="soudure" src="~/static/soudure.jpg" alt="soudure">
       <a class="link left mobile" :href="localePath({ name: 'silos' })">{{ $t('pages.homepage.section_metier_benefit.link') }}</a>
     </section>
-    <section class="home-section home-section--secondary home-section--partners">
+    <section class="home-section home-section--secondary home-section--partners home-section--shadow">
       <h2>{{ $t('pages.homepage.section_partners.title') }}</h2>
       <list class="partners" :columns="4" list-style="grid">
         <img src="~/static/clients/affinity.png" alt="affinity">
@@ -84,6 +85,11 @@ export default {
       title: this.$i18n.tc('pages.homepage.title') + ' - Godin SAS'
     }
   },
+  computed: {
+    isMobile () {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    }
+  }
 }
 </script>
 
@@ -96,6 +102,7 @@ h2 {
 
 h1 {
   font-size: 3rem;
+  line-height: 110%;
 }
 
 h2 {
@@ -106,12 +113,10 @@ h2 {
 .home-section {
   display: flex;
   position: relative;
-  justify-content: space-between;
   align-items: center;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 0;
+  padding-bottom: 0;
   background: $body-bg;
-  @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   z-index: 0;
 
   .link {
@@ -120,15 +125,18 @@ h2 {
 
   &--secondary {
     background: $ternary-bg;
-    @include box-shadow(0, 0, 0, rgba(0, 0, 0, .2));
+  }
+
+  &--shadow {
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
   }
 
   &--tight {
     position: relative;
     justify-content: normal;
     background: $body-bg;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     @media (max-width: $breakpoint-sm) {
       padding-top: 80px;
@@ -141,9 +149,10 @@ h2 {
     }
 
     &--secondary {
-      justify-content: end;
+      justify-content: flex-end;
       background: $body-bg;
       @include box-shadow(0, 0, 0, rgba(0, 0, 0, .1), true);
+      margin-top: 64px;
 
       .link,
       .information {
@@ -215,8 +224,8 @@ h2 {
 
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 64px;
+    padding-bottom: 64px;
 
     img {
       width: 100%;
@@ -261,6 +270,7 @@ h2 {
         font-style: normal;
         font-size: 5rem;
         font-weight: 700;
+        line-height: 110%;
       }
     }
 
