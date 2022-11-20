@@ -1,9 +1,9 @@
 <template>
   <footer class="container">
     <div class="address">
-<!--      <icon class="logo" name="LogoName" fill="#e6eaec">-->
-<!--        <LogoName />-->
-<!--      </icon>-->
+      <!--      <icon class="logo" name="LogoName" fill="#e6eaec">-->
+      <!--        <LogoName />-->
+      <!--      </icon>-->
       <h2>GODIN SAS</h2>
       <ul>
         <li>Zone Industrielle de la Saulaie</li>

@@ -3,7 +3,11 @@
     <Header id="silos-header" :title="$t('headers.silos.title')" />
     <section class="container silos-section">
       <h2 class="silos-title">{{ $t('pages.silos.text') }}</h2>
-      <Button class="solutions-btn" :label="$t('our_benefit')" :to="localePath('benefit')" />
+      <Button
+        class="solutions-btn"
+        :label="$t('our_benefit')"
+        :to="localePath('benefit')"
+      />
     </section>
     <section-image
       class="container silos-section silos-section--rotate"
@@ -11,13 +15,19 @@
       iconFleet
     >
       <template #text>
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <h3>{{ $t('pages.silos.section.asset.heading') }}</h3>
         <h2 class="large">{{ $t('pages.silos.section.asset.title') }}</h2>
         <ul class="circle">
-          <li v-for="i in [1, 2, 3, 4, 5]" :key="i" v-html="$t('pages.silos.section.asset.argument_' + i)"></li>
+          <li
+            v-for="i in [1, 2, 3, 4, 5]"
+            :key="i"
+            v-html="$t('pages.silos.section.asset.argument_' + i)"
+          ></li>
         </ul>
-        <a class="link" :href="localePath({ name: 'benefit' })">{{ $t('our_benefit') }}</a>
+        <a class="link" :href="localePath({ name: 'benefit' })">{{
+          $t('our_benefit')
+        }}</a>
       </template>
     </section-image>
     <section-image
@@ -27,11 +37,15 @@
       flip
     >
       <template #text>
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <h3>{{ $t('pages.silos.section.mastery.heading') }}</h3>
         <h2 class="large">{{ $t('pages.silos.section.mastery.title') }}</h2>
         <ul class="circle">
-          <li v-for="i in [1, 2, 3, 4, 5]" :key="i" v-html="$t('pages.silos.section.mastery.argument_' + i)"></li>
+          <li
+            v-for="i in [1, 2, 3, 4, 5]"
+            :key="i"
+            v-html="$t('pages.silos.section.mastery.argument_' + i)"
+          ></li>
         </ul>
       </template>
     </section-image>
@@ -51,11 +65,11 @@ export default {
     paths: {
       fr: '/silos',
       en: '/silos',
-    }
+    },
   },
-  head () {
+  head() {
     return {
-      title: this.$i18n.tc('pages.silos.title') + ' - Godin SAS'
+      title: this.$i18n.tc('pages.silos.title') + ' - Godin SAS',
     }
   },
 }
@@ -124,7 +138,7 @@ ul {
 
       &:before {
         display: inline-block;
-        content: url("~/assets/images/BlueCircle.svg");
+        content: url('~/assets/images/BlueCircle.svg');
         width: 15px;
         height: 15px;
         margin-right: 10px;
@@ -139,4 +153,3 @@ ul {
   width: 100%;
 }
 </style>
-

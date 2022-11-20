@@ -4,6 +4,7 @@
   "our_benefit": "Nos prestations",
   "our_achievements": "Nos réalisations",
   "our_silos": "Nos silos carrés",
+  "submit": "Envoyer",
   "headers": {
     "benefit": {
       "title": "De la conception\nà l'installation"
@@ -13,6 +14,9 @@
     },
     "history": {
       "title": "Une histoire qui\nfabrique l'expérience"
+    },
+    "contact": {
+      "title": "Contactez-nous"
     }
   },
   "pages": {
@@ -110,7 +114,17 @@
       }
     },
     "contact": {
-      "title": "Contact"
+      "title": "Contact",
+      "sent": "Votre message a bien été envoyé !",
+      "form": {
+        "name": "Nom complet",
+        "email": "Email",
+        "subject": "Sujet",
+        "message": "Message"
+      }
     }
+  },
+  "errors": {
+    "invalid_field": "Le champ est invalide"
   }
 }

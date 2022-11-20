@@ -10,20 +10,20 @@ export default {
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 section {
   position: relative;
-  background-image: url("/silos-grains.jpg");
+  background-image: url('/silos-grains.jpg');
   background-size: cover;
   background-position-y: 60%;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ section {
     bottom: 0;
     right: 0;
     background: $blue-text-color;
-    opacity: .82;
+    opacity: 0.82;
   }
 
   @media (max-width: $breakpoint-sm) {

@@ -1,4 +1,4 @@
-@import "utils/helpers";
+@import 'utils/helpers';
 
 html {
   height: 100%;
@@ -31,7 +31,7 @@ body {
   font-family: $primary-font;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(#000, 0);
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 h1,
@@ -41,7 +41,7 @@ h3 {
   font-weight: 400;
   color: $ternary-text-color;
   text-align: center;
-  letter-spacing: -.01em;
+  letter-spacing: -0.01em;
   margin-bottom: 16px;
 }
 
@@ -87,7 +87,7 @@ h3 {
 
   &:before {
     display: inline-block;
-    content: url("~/assets/images/RedTriangle.svg");
+    content: url('~/assets/images/RedTriangle.svg');
     width: 12px;
     height: 12px;
     margin-right: 8px;
@@ -107,7 +107,7 @@ p {
   font-family: $secondary-font;
   color: $ternary-text-color;
   margin-bottom: 32px;
-  font-size: .875rem;
+  font-size: 0.875rem;
 
   @media (min-width: $breakpoint-md) {
     font-size: 1rem;
@@ -116,7 +116,7 @@ p {
   &.subtitle {
     font-family: $primary-font;
     font-weight: 100;
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin-top: 16px;
     text-align: center;
   }
@@ -141,7 +141,7 @@ a {
 
   &:before {
     display: inline-block;
-    content: url("~/assets/images/RedTriangle.svg");
+    content: url('~/assets/images/RedTriangle.svg');
     width: 10px;
     height: 10px;
     margin-right: 10px;
@@ -160,7 +160,7 @@ ul {
 }
 
 .layouts-enter-active {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
 .layouts-leave-active {
@@ -187,7 +187,6 @@ select:-webkit-autofill:focus {
   font-size: 1rem;
 }
 
-
 .navbar {
   li {
     align-self: center;
@@ -198,7 +197,7 @@ select:-webkit-autofill:focus {
     cursor: pointer;
     font-family: $primary-font;
     font-size: 1rem;
-    letter-spacing: .15rem;
+    letter-spacing: 0.15rem;
     color: $ternary-text-color;
     text-decoration: none;
   }

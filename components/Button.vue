@@ -4,7 +4,14 @@
     :to="to"
     :href="isExternal ? to : null"
     :target="isExternal ? '_blank' : null"
-    :class="['button', type, disabled, loading ? 'loading' : '', responsive ? 'responsive' : '', `button--${size}`]"
+    :class="[
+      'button',
+      type,
+      disabled,
+      loading ? 'loading' : '',
+      responsive ? 'responsive' : '',
+      `button--${size}`,
+    ]"
     :aria-disabled="disabled.length"
     :disabled="loading"
   >
@@ -21,58 +28,59 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
     label: {
       type: String,
-      required: true
+      required: true,
     },
     to: {
       type: [Object, String],
-      default: null
+      default: null,
     },
     isExternal: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loading: {
       type: Boolean,
-      default: false
+      default: false,
     },
     responsive: {
       type: Boolean,
-      default: false
+      default: false,
     },
     size: {
       type: String,
-      default: 'medium'
-    }
+      default: 'medium',
+    },
   },
   computed: {
-    tag () {
+    tag() {
       if (this.isExternal) {
         return 'a'
       }
 
       return this.to ? 'nuxt-link' : 'button'
     },
-    disabled () {
+    disabled() {
       if (
-        (typeof this.$attrs.disabled !== 'undefined' && this.$attrs.disabled !== false) ||
-          this.loading
+        (typeof this.$attrs.disabled !== 'undefined' &&
+          this.$attrs.disabled !== false) ||
+        this.loading
       ) {
         return 'disabled'
       } else {
         return ''
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 %transition {
-  transition: background .3s, border .3s, color .3s, margin-left .1s;
+  transition: background 0.3s, border 0.3s, color 0.3s, margin-left 0.1s;
 }
 
 .button {
@@ -97,7 +105,7 @@ export default {
 
   &--small {
     padding: 12px 32px !important;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 
   &--medium {

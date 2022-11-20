@@ -5,7 +5,7 @@
         src="~/static/logo-name.svg"
         class="brand brand--small"
         alt="logo_nav"
-      >
+      />
     </nuxt-link>
     <ul class="navbar--menu">
       <template v-for="item in items">
@@ -13,8 +13,21 @@
           <nuxt-link v-if="item.to" :to="localePath(item.to)">
             {{ $t(item.text) }}
           </nuxt-link>
-          <span v-else :class="{'sub-menu--active': item.pages.find(el => el.to.name === $route.name.split('_')[0])}">{{ $t(item.text) }}</span>
-          <ul v-if="item.pages" :key="item.icon" :ref="item.text + '-menu'" class="sub-menu">
+          <span
+            v-else
+            :class="{
+              'sub-menu--active': item.pages.find(
+                (el) => el.to.name === $route.name.split('_')[0]
+              ),
+            }"
+            >{{ $t(item.text) }}</span
+          >
+          <ul
+            v-if="item.pages"
+            :key="item.icon"
+            :ref="item.text + '-menu'"
+            class="sub-menu"
+          >
             <li v-for="page in item.pages" :key="page.text">
               <nuxt-link :to="localePath(page.to)">
                 {{ $t(page.text) }}
@@ -24,11 +37,12 @@
         </li>
       </template>
     </ul>
-    <ul
-      class="navbar--right"
-    >
+    <ul class="navbar--right">
       <li>
-        <Button :label="$t('quotation_request')" :to="localePath('quotation')" />
+        <Button
+          :label="$t('quotation_request')"
+          :to="localePath('quotation')"
+        />
       </li>
     </ul>
   </nav>
@@ -42,38 +56,34 @@ export default {
   components: {
     Icon: () => import('../icon/Icon'),
   },
-  mixins:[navbar],
+  mixins: [navbar],
   computed: {
-    locales () {
+    locales() {
       return [
         {
           value: 'en',
           text: 'EN',
-          selected: this.$i18n.locale === 'en'
+          selected: this.$i18n.locale === 'en',
         },
         {
           value: 'fr',
           text: 'FR',
-          selected: this.$i18n.locale === 'fr'
-        }
+          selected: this.$i18n.locale === 'fr',
+        },
       ]
     },
-    navbarStyle () {
-      return [
-        'navbar',
-        'container',
-        { display: this.showNavbar }
-      ]
-    }
+    navbarStyle() {
+      return ['navbar', 'container', { display: this.showNavbar }]
+    },
   },
   methods: {
-    closeMenu () {
+    closeMenu() {
       const menus = this.$el.querySelectorAll('.sub-menu')
       menus.forEach((el) => {
         el.classList.remove('visible')
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -87,9 +97,9 @@ export default {
   color: #fff;
   padding: 12px 56px;
   grid-template-columns: auto auto 2fr auto;
-  transition: opacity .3s ease-in-out, padding-top .3s, padding-bottom .3s;
+  transition: opacity 0.3s ease-in-out, padding-top 0.3s, padding-bottom 0.3s;
   background: $ternary-bg;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   .title {
     display: flex;
@@ -100,7 +110,14 @@ export default {
     font-size: 1rem;
     text-transform: uppercase;
     margin: auto auto auto 8px;
-    @include text-color(linear-gradient(130.4deg, #FFEED8 30.32%, rgba(226, 176, 111, .4375) 99.67%, #BEA78B 129.38%));
+    @include text-color(
+      linear-gradient(
+        130.4deg,
+        #ffeed8 30.32%,
+        rgba(226, 176, 111, 0.4375) 99.67%,
+        #bea78b 129.38%
+      )
+    );
   }
 
   li {
@@ -143,7 +160,7 @@ export default {
 
       &:before {
         display: inline-block;
-        content: url("~/assets/images/RedTriangle.svg");
+        content: url('~/assets/images/RedTriangle.svg');
         width: 10px;
         height: 10px;
         margin-right: 4px;
@@ -157,7 +174,7 @@ export default {
     top: -1000px;
     z-index: 9;
     margin-top: 40px;
-    transition: opacity .1s;
+    transition: opacity 0.1s;
 
     &.visible {
       opacity: 1;
@@ -169,7 +186,7 @@ export default {
 
       &:before {
         display: inline-block;
-        content: url("~/assets/images/RedTriangle.svg");
+        content: url('~/assets/images/RedTriangle.svg');
         width: 10px;
         height: 10px;
         margin-right: 10px;

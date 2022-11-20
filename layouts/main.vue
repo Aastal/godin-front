@@ -11,19 +11,19 @@
 export default {
   name: 'Main',
   data: () => ({
-    disable: false
+    disable: false,
   }),
-  mounted () {
+  mounted() {
     window.scrollTo(0, 0)
   },
-  created () {
+  created() {
     this.$root.$on('disable-body', this.disableBody)
   },
   methods: {
-    disableBody (state) {
+    disableBody(state) {
       this.disable = state
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -49,6 +49,6 @@ div#__nuxt,
   left: 0;
   top: 0;
   z-index: 12;
-  background: rgba(7, 7, 7, .8);
+  background: rgba(7, 7, 7, 0.8);
 }
 </style>

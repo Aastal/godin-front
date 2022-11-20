@@ -30,33 +30,33 @@ export default {
   props: {
     title: {
       type: String,
-      required: false
+      required: false,
     },
     text: {
       type: String,
-      required: false
+      required: false,
     },
     textLink: {
       type: String,
-      required: false
+      required: false,
     },
     link: {
       type: String,
-      required: false
+      required: false,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     iconFleet: {
       type: Boolean,
-      default: false
+      default: false,
     },
     flip: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 
@@ -73,7 +73,7 @@ export default {
 
   &.flip {
     flex-direction: row-reverse;
-    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
 
     .image-container {
       justify-content: start;

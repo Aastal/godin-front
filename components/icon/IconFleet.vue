@@ -10,7 +10,7 @@
       :fill="item.fill"
       :style="`top: ${item.top}%; right: ${item.right}%;`"
     >
-      <component :is="item.icon"/>
+      <component :is="item.icon" />
     </icon>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
   props: {
     number: {
       type: Number,
-      default: 6
-    }
+      default: 6,
+    },
   },
   computed: {
     items() {
@@ -68,13 +68,13 @@ export default {
       }
 
       return icons
-    }
+    },
   },
   methods: {
-    getRandomInt (max) {
-      return Math.floor(Math.random() * max);
-    }
-  }
+    getRandomInt(max) {
+      return Math.floor(Math.random() * max)
+    },
+  },
 }
 </script>
 

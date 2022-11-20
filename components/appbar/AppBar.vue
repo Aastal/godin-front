@@ -8,20 +8,20 @@
 <script>
 export default {
   name: 'AppBar',
-  data () {
+  data() {
     return {
       items: null,
       showSearchbar: true,
-      lastScrollPosition: null
+      lastScrollPosition: null,
     }
   },
-  mounted () {
+  mounted() {
     window.addEventListener('scroll', this.updateScroll)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('scroll', this.updateScroll)
   },
-  created () {
+  created() {
     this.items = [
       { text: 'pages.homepage.title', to: { name: 'index' } },
       { text: 'pages.history.title', to: { name: 'history' } },
@@ -29,20 +29,22 @@ export default {
         text: 'pages.jobs.title',
         pages: [
           { text: 'pages.silos.title', to: { name: 'silos' } },
-          { text: 'pages.benefit.title', to: { name: 'benefit' } }
-        ]
+          { text: 'pages.benefit.title', to: { name: 'benefit' } },
+        ],
       },
       { text: 'pages.contact.title', to: { name: 'contact' } },
     ]
   },
   methods: {
-    updateScroll () {
-      const currentScrollPosition = window.scrollY || document.documentElement.scrollTop
+    updateScroll() {
+      const currentScrollPosition =
+        window.scrollY || document.documentElement.scrollTop
 
-      this.showSearchbar = currentScrollPosition < this.lastScrollPosition && window.scrollY < 100
+      this.showSearchbar =
+        currentScrollPosition < this.lastScrollPosition && window.scrollY < 100
       this.lastScrollPosition = currentScrollPosition
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -63,7 +65,7 @@ header {
   visibility: hidden;
   opacity: 0;
   padding-bottom: 16px;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 
   &.display {
     position: static;

@@ -15,28 +15,26 @@ export default {
     Swiper,
   },
   directives: {
-    swiper: directive
+    swiper: directive,
   },
-  data () {
+  data() {
     return {
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 16,
         navigation: {
-          nextEl: '.swiper-button-next'
+          nextEl: '.swiper-button-next',
         },
         loop: true,
-      }
+      },
     }
   },
   computed: {
-    swiper () {
+    swiper() {
       return this.$refs.carousel.$swiper
-    }
-  }
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

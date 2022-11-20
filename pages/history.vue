@@ -8,7 +8,7 @@
       flip
     >
       <template #text>
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <h3>{{ $t('pages.history.section.mastery.heading') }}</h3>
         <h2 class="large">{{ $t('pages.history.section.mastery.title') }}</h2>
         <p>{{ $t('pages.history.section.mastery.text') }}</p>
@@ -20,11 +20,13 @@
       iconFleet
     >
       <template #text>
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <h3>{{ $t('pages.history.section.asset.heading') }}</h3>
         <h2 class="large">{{ $t('pages.history.section.asset.title') }}</h2>
         <p>{{ $t('pages.history.section.asset.text') }}</p>
-        <a class="link" :href="localePath({ name: 'silos' })">{{ $t('our_silos') }}</a>
+        <a class="link" :href="localePath({ name: 'silos' })">{{
+          $t('our_silos')
+        }}</a>
       </template>
     </section-image>
   </div>
@@ -42,11 +44,11 @@ export default {
     paths: {
       fr: '/histoire',
       en: '/history',
-    }
+    },
   },
-  head () {
+  head() {
     return {
-      title: this.$i18n.tc('pages.history.title') + ' - Godin SAS'
+      title: this.$i18n.tc('pages.history.title') + ' - Godin SAS',
     }
   },
 }

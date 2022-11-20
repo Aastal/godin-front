@@ -1,6 +1,6 @@
 <template>
   <div :class="['information', `information--${type}`]">
-    <IconFleet v-if="iconFleet" :number="6"/>
+    <IconFleet v-if="iconFleet" :number="6" />
     <h2 v-html="title"></h2>
     <p v-html="text"></p>
     <a v-if="link" class="link" :href="link">{{ textLink }}</a>
@@ -17,29 +17,29 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     textLink: {
       type: String,
-      required: false
+      required: false,
     },
     link: {
       type: String,
-      required: false
+      required: false,
     },
     type: {
       type: String,
-      default: 'transparent'
+      default: 'transparent',
     },
     iconFleet: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 

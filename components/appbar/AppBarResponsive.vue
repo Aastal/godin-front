@@ -6,11 +6,9 @@
           src="~/static/logo-name.svg"
           class="brand brand--small"
           alt="logo_nav"
-        >
+        />
       </nuxt-link>
-      <ul
-        class="navbar--right"
-      >
+      <ul class="navbar--right">
         <li class="burger" @click="toggle">
           <icon class="burger" name="Burger" :width="48" :height="48">
             <Burger />
@@ -33,7 +31,12 @@
               </nuxt-link>
               <span v-else>{{ $t(item.text) }}</span>
             </li>
-            <ul v-if="item.pages" :key="item.icon" :ref="item.text + '-menu'" class="sub-menu">
+            <ul
+              v-if="item.pages"
+              :key="item.icon"
+              :ref="item.text + '-menu'"
+              class="sub-menu"
+            >
               <li v-for="page in item.pages" :key="page.text">
                 <nuxt-link :to="localePath(page.to)">
                   {{ $t(page.text) }}
@@ -42,7 +45,10 @@
             </ul>
           </template>
           <li class="break">
-            <Button :label="$t('quotation_request')" :to="localePath('quotation')" />
+            <Button
+              :label="$t('quotation_request')"
+              :to="localePath('quotation')"
+            />
           </li>
         </ul>
       </template>
@@ -60,30 +66,27 @@ export default {
     Burger: () => import('../icon/icons/Burger'),
   },
   mixins: [navbar],
-  data () {
+  data() {
     return {
-      openMenu: false
+      openMenu: false,
     }
   },
   computed: {
-    navbarStyle () {
-      return [
-        'navbar',
-        { display: this.showNavbar }
-      ]
-    }
+    navbarStyle() {
+      return ['navbar', { display: this.showNavbar }]
+    },
   },
   watch: {
-    '$route' () {
-      this.toggle()
+    $route() {
+      this.openMenu = false
       this.$root.$emit('disable-body', false)
-    }
+    },
   },
   methods: {
-    toggle () {
+    toggle() {
       this.openMenu = !this.openMenu
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -95,10 +98,10 @@ export default {
   opacity: 0;
   top: -1000px;
   color: #fff;
-  transition: background-color .3s, opacity .3s;
+  transition: background-color 0.3s, opacity 0.3s;
   padding: 16px;
   background: $ternary-bg;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   &--dark {
     position: relative;
@@ -118,7 +121,7 @@ export default {
     position: relative;
     opacity: 1;
     top: auto;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 
   @media (min-width: $breakpoint-md) {

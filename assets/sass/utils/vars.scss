@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 //Fonts
 $primary-font: 'FilsonProMedium', sans-serif;
@@ -16,11 +16,11 @@ $primary-text-color: #000;
 $secondary-text-color: #f4262c;
 
 $light-text-color: #fff;
-$ternary-text-color: #55636F;
+$ternary-text-color: #55636f;
 $blue-text-color: #478cc4;
 $info-color: #e3f2fd;
-$error-color: #F26363;
-$success-color: #63F28F;
+$error-color: #f26363;
+$success-color: #63f28f;
 
 // Fields
 $field-default-color: #a1a6af;
@@ -29,7 +29,12 @@ $field-active-color: #fff;
 $field-dark-active-color: #000;
 
 // Common
-$border-color-primary: linear-gradient(167.47deg, #FFEED8 9.09%, rgba(226, 176, 111, .4375) 65.45%, #BEA78B 89.58%);
+$border-color-primary: linear-gradient(
+  167.47deg,
+  #ffeed8 9.09%,
+  rgba(226, 176, 111, 0.4375) 65.45%,
+  #bea78b 89.58%
+);
 $border-regular: 1px solid rgba(255, 255, 255, 1);
 $border-error: 1px solid $error-color;
 $border-dark: #000;

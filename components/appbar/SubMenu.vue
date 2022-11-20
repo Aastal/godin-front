@@ -17,24 +17,24 @@ export default {
   props: {
     label: {
       type: String,
-      default: 'Menu'
+      default: 'Menu',
     },
     showMenu: {
       type: Boolean,
-      default: false
+      default: false,
     },
     open: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
-    hasFooter () {
+    hasFooter() {
       return !!this.$slots.footer
-    }
+    },
   },
   watch: {
-    open () {
+    open() {
       const target = this.$refs.menu
 
       if (!target.classList.contains('visible')) {
@@ -44,15 +44,15 @@ export default {
         target.classList.remove('visible')
         this.$root.$emit('disable-body', false)
       }
-    }
+    },
   },
   methods: {
-    closeMenu (event) {
+    closeMenu(event) {
       if (event.target.classList.contains('disable-bg')) {
         this.$emit('close')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -66,11 +66,11 @@ export default {
   z-index: 999;
   max-height: 100vh;
   @include border-radius(8px 0 0 8px);
-  @include box-shadow(-24px, 4px, 20px, rgba(0, 0, 0, .5));
+  @include box-shadow(-24px, 4px, 20px, rgba(0, 0, 0, 0.5));
   background: $ternary-bg;
 
   &.display {
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 
   ul {
@@ -98,7 +98,7 @@ export default {
     list-style: none;
     margin: 0;
     padding: 0 0 0 24px;
-    transition: display .4s ease-in-out;
+    transition: display 0.4s ease-in-out;
     top: -200px;
 
     &.visible {
@@ -130,7 +130,7 @@ export default {
 
       &:before {
         display: inline-block;
-        content: url("~/assets/images/RedTriangle.svg");
+        content: url('~/assets/images/RedTriangle.svg');
         width: 10px;
         height: 10px;
         margin-right: 4px;

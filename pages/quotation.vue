@@ -1,5 +1,4 @@
-<template>
-</template>
+<template></template>
 
 <script>
 export default {
@@ -9,7 +8,7 @@ export default {
     paths: {
       fr: '/devis',
       en: '/quotation',
-    }
-  }
+    },
+  },
 }
 </script>

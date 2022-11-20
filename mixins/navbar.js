@@ -2,24 +2,26 @@ export default {
   props: {
     items: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
       showNavbar: true,
-      lastScrollPosition: null
+      lastScrollPosition: null,
     }
   },
-  mounted () {
+  mounted() {
     window.addEventListener('scroll', this.updateScroll)
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener('scroll', this.updateScroll)
   },
   methods: {
-    toggleSubMenu (e, item) {
-      const target = item.pages ? this.$refs[item.text + '-menu'][0] : this.$refs[item + '-menu']
+    toggleSubMenu(e, item) {
+      const target = item.pages
+        ? this.$refs[item.text + '-menu'][0]
+        : this.$refs[item + '-menu']
 
       if (!target) {
         return
@@ -31,15 +33,17 @@ export default {
         target.classList.remove('visible')
       }
     },
-    updateScroll () {
-      const currentScrollPosition = window.scrollY || document.documentElement.scrollTop
+    updateScroll() {
+      const currentScrollPosition =
+        window.scrollY || document.documentElement.scrollTop
 
-      this.showNavbar = currentScrollPosition < this.lastScrollPosition && window.scrollY < 100
+      this.showNavbar =
+        currentScrollPosition < this.lastScrollPosition && window.scrollY < 100
       this.lastScrollPosition = currentScrollPosition
 
       if (!this.showNavbar && this.mode !== 'update') {
         this.$root.$emit('disable-body', false)
       }
-    }
-  }
+    },
+  },
 }

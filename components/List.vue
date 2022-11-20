@@ -1,5 +1,11 @@
 <template>
-  <div :class="['list-container', `list-container--${listStyle}`, `list-container--${columns}`]">
+  <div
+    :class="[
+      'list-container',
+      `list-container--${listStyle}`,
+      `list-container--${columns}`,
+    ]"
+  >
     <slot />
   </div>
 </template>
@@ -10,13 +16,13 @@ export default {
   props: {
     listStyle: {
       type: String,
-      default: 'flex'
+      default: 'flex',
     },
     columns: {
       type: Number,
-      default: 3
-    }
-  }
+      default: 3,
+    },
+  },
 }
 </script>
 
@@ -28,15 +34,15 @@ export default {
     justify-content: space-between;
 
     &::after {
-      content: "";
-      width: calc(100% / 3 - 32px - .01px);
+      content: '';
+      width: calc(100% / 3 - 32px - 0.01px);
 
       @media (max-width: $breakpoint-sm) {
-        width: calc(100% / 2 - 32px - .01px);
+        width: calc(100% / 2 - 32px - 0.01px);
       }
 
       @media (max-width: $breakpoint-xs) {
-        width: calc(100% - 32px - .01px);
+        width: calc(100% - 32px - 0.01px);
       }
     }
   }

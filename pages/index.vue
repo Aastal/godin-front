@@ -3,22 +3,34 @@
     <section class="home-header">
       <div class="title">
         <icon class="redtriangle" name="RedTriangle" fill="#f4262c">
-          <RedTriangle/>
+          <RedTriangle />
         </icon>
         <h1 v-html="$t('pages.homepage.presentation')"></h1>
         <h2>{{ $t('pages.homepage.sub_presentation') }}</h2>
       </div>
       <div class="image-wrapper">
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <div class="image-container">
-          <img class="silos-camion" src="~/static/silos-camion.jpg" alt="silos-camion">
-          <img class="silos-grains" src="~/static/silos-grains.jpg" alt="silos-grains">
-          <img class="silos-grue" src="~/static/silos-grue.jpg" alt="silos-grue">
+          <img
+            class="silos-camion"
+            src="~/static/silos-camion.jpg"
+            alt="silos-camion"
+          />
+          <img
+            class="silos-grains"
+            src="~/static/silos-grains.jpg"
+            alt="silos-grains"
+          />
+          <img
+            class="silos-grue"
+            src="~/static/silos-grue.jpg"
+            alt="silos-grue"
+          />
         </div>
       </div>
     </section>
     <section class="home-section home-section--secondary">
-<!--      Todo: Linkedin -->
+      <!--      Todo: Linkedin -->
     </section>
     <SectionImage
       class="container home-section home-section--shadow"
@@ -30,41 +42,68 @@
       iconFleet
     />
     <section class="home-section home-section--secondary home-section--tight">
-      <img class="silos-grains" src="~/static/silos-grains.jpg" alt="silos-grains">
+      <img
+        class="silos-grains"
+        src="~/static/silos-grains.jpg"
+        alt="silos-grains"
+      />
       <div>
         <Information
           :title="$t('pages.homepage.section_metier_silos.title')"
           :text="$t('pages.homepage.section_metier_silos.text')"
           type="blue"
         />
-        <a class="link" :href="localePath({ name: 'silos' })">{{ $t('pages.homepage.section_metier_silos.link') }}</a>
+        <a class="link" :href="localePath({ name: 'silos' })">{{
+          $t('pages.homepage.section_metier_silos.link')
+        }}</a>
       </div>
     </section>
-    <section class="home-section home-section--tight home-section--tight--secondary">
-      <img v-if="isMobile" class="soudure" src="~/static/soudure.jpg" alt="soudure">
+    <section
+      class="home-section home-section--tight home-section--tight--secondary"
+    >
+      <img
+        v-if="isMobile"
+        class="soudure"
+        src="~/static/soudure.jpg"
+        alt="soudure"
+      />
       <div>
-        <IconFleet :number="6"/>
+        <IconFleet :number="6" />
         <Information
           :title="$t('pages.homepage.section_metier_benefit.title')"
           :text="$t('pages.homepage.section_metier_benefit.text')"
           type="blue"
         />
-        <a class="link left desktop" :href="localePath({ name: 'silos' })">{{ $t('pages.homepage.section_metier_benefit.link') }}</a>
+        <a class="link left desktop" :href="localePath({ name: 'silos' })">{{
+          $t('pages.homepage.section_metier_benefit.link')
+        }}</a>
       </div>
-      <img v-if="!isMobile" class="soudure" src="~/static/soudure.jpg" alt="soudure">
-      <a class="link left mobile" :href="localePath({ name: 'silos' })">{{ $t('pages.homepage.section_metier_benefit.link') }}</a>
+      <img
+        v-if="!isMobile"
+        class="soudure"
+        src="~/static/soudure.jpg"
+        alt="soudure"
+      />
+      <a class="link left mobile" :href="localePath({ name: 'silos' })">{{
+        $t('pages.homepage.section_metier_benefit.link')
+      }}</a>
     </section>
-    <section class="home-section home-section--secondary home-section--partners home-section--shadow">
+    <section
+      class="home-section home-section--secondary home-section--partners home-section--shadow"
+    >
       <h2>{{ $t('pages.homepage.section_partners.title') }}</h2>
       <list class="partners" :columns="4" list-style="grid">
-        <img src="~/static/clients/affinity.png" alt="affinity">
-        <img src="~/static/clients/bio-gascogne.png" alt="bio-gascogne">
-        <img src="~/static/clients/COCEBI.png" alt="COCEBI">
-        <img src="~/static/clients/Dijon-Cereales.jpg" alt="Dijon-Cereales">
-        <img src="~/static/clients/mendikoa.jpg" alt="mendikoa">
-        <img src="~/static/clients/minoterie-sauvin.jpg" alt="minoterie-sauvin">
-        <img src="~/static/clients/paulic.png" alt="paulic">
-        <img src="~/static/clients/valfrance.jpg" alt="valfrance">
+        <img src="~/static/clients/affinity.png" alt="affinity" />
+        <img src="~/static/clients/bio-gascogne.png" alt="bio-gascogne" />
+        <img src="~/static/clients/COCEBI.png" alt="COCEBI" />
+        <img src="~/static/clients/Dijon-Cereales.jpg" alt="Dijon-Cereales" />
+        <img src="~/static/clients/mendikoa.jpg" alt="mendikoa" />
+        <img
+          src="~/static/clients/minoterie-sauvin.jpg"
+          alt="minoterie-sauvin"
+        />
+        <img src="~/static/clients/paulic.png" alt="paulic" />
+        <img src="~/static/clients/valfrance.jpg" alt="valfrance" />
       </list>
     </section>
     <section class="home-section"></section>
@@ -80,16 +119,18 @@ export default {
     IconFleet: () => import('../components/icon/IconFleet'),
   },
   layout: 'main',
-  head () {
+  head() {
     return {
-      title: this.$i18n.tc('pages.homepage.title') + ' - Godin SAS'
+      title: this.$i18n.tc('pages.homepage.title') + ' - Godin SAS',
     }
   },
   computed: {
-    isMobile () {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    }
-  }
+    isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    },
+  },
 }
 </script>
 
@@ -128,7 +169,7 @@ h2 {
   }
 
   &--shadow {
-    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, .1), true);
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
   }
 
   &--tight {
@@ -151,7 +192,7 @@ h2 {
     &--secondary {
       justify-content: flex-end;
       background: $body-bg;
-      @include box-shadow(0, 0, 0, rgba(0, 0, 0, .1), true);
+      @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0.1), true);
       margin-top: 64px;
 
       .link,
@@ -290,7 +331,7 @@ h2 {
       img {
         display: block;
         position: absolute;
-        @include box-shadow(0, 4px, 4px, rgba(0, 0, 0, .5));
+        @include box-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.5));
 
         &.silos-grue {
           width: 25%;

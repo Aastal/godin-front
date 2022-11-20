@@ -20,30 +20,30 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     scale: {
       type: Number,
       required: false,
-      default: 24
+      default: 24,
     },
     width: {
       type: [String, Number],
-      default: 24
+      default: 24,
     },
     height: {
       type: [String, Number],
-      default: 24
+      default: 24,
     },
     fill: {
       type: String,
-      default: 'none'
+      default: 'none',
     },
     stroke: {
       type: String,
-      default: 'none'
-    }
-  }
+      default: 'none',
+    },
+  },
 }
 </script>
 
