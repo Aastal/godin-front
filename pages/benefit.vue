@@ -36,6 +36,10 @@
       </ul>
     </template>
   </section-image>
+  <section class="container benefit-section">
+    <h2 class="large center">{{ $t('our_achievements') }}</h2>
+    <Carousel />
+  </section>
 </div>
 </template>
 

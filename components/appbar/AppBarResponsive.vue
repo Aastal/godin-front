@@ -75,7 +75,8 @@ export default {
   },
   watch: {
     '$route' () {
-      this.$root.$emit('close-menu')
+      this.toggle()
+      this.$root.$emit('disable-body', false)
     }
   },
   methods: {
