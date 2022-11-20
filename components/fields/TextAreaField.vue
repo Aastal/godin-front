@@ -24,7 +24,7 @@
       @input="input($event)"
     />
 
-    <p v-if="error" class="error">{{ errorMessage }}</p>
+    <p v-if="error" class="error">{{ $tc(errorMessage) ? $t(errorMessage) : errorMessage }}</p>
 
     <div v-if="!error" class="append">
       <slot />
@@ -70,7 +70,7 @@ export default {
     },
     errorMessage: {
       type: String,
-      default: 'Invalid Field',
+      default: 'errors.invalid_field',
     },
   },
   data() {

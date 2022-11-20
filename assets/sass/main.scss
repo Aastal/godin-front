@@ -1,5 +1,20 @@
 @import 'utils/helpers';
 
+.slide-right-enter-active {
+  transition: all .4s;
+}
+.slide-right-leave-active {
+  transition: all .2s;
+}
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translate(50px, 0);
+}
+
 html {
   height: 100%;
 }

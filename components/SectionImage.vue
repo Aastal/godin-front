@@ -123,13 +123,23 @@ export default {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      width: 600px;
-      height: 600px;
+      width: 500px;
+      height: 500px;
       @include border-radius(50%);
 
       @media (max-width: $breakpoint-sm) {
         width: 350px;
         height: 350px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        width: 400px;
+        height: 400px;
+      }
+
+      @media (max-width: $breakpoint-lg) {
+        width: 450px;
+        height: 450px;
       }
     }
   }

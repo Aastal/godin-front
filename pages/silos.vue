@@ -10,7 +10,7 @@
       />
     </section>
     <section-image
-      class="container silos-section silos-section--rotate"
+      class="container silos-section silos-section--rotate silos-section--shadow"
       image="/silos-in.jpg"
       iconFleet
     >
@@ -90,6 +90,10 @@ export default {
         transform: rotate(-50deg);
       }
     }
+  }
+
+  &--shadow {
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
   }
 }
 

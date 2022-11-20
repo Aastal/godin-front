@@ -70,9 +70,9 @@ export default {
       '@/assets/sass/utils/mixin.scss',
     ],
   },
-  layoutTransition: {
-    name: 'page',
-    mode: 'out-in',
+  pageTransition: {
+    name: 'slide-right',
+    mode: 'out-in'
   },
   modules: [
     '@nuxtjs/style-resources',
