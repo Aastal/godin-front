@@ -52,12 +52,23 @@
     </section-image>
     <section class="container benefit-section">
       <h2 class="large center">{{ $t('our_achievements') }}</h2>
-      <Carousel />
+      <carousel v-if="benefits">
+        <PrestationSlide
+          v-for="benefit in benefits"
+          :key="benefit.id"
+          :title="benefit.title"
+          :description="benefit.body.processed"
+          :image="benefit.field_image?.uri.url"
+        />
+      </carousel>
     </section>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+import { sentryNormalizeException } from '@/utils/handle-error'
+
 export default {
   name: 'Benefit',
   components: {
@@ -71,11 +82,31 @@ export default {
       en: '/benefit',
     },
   },
+  async fetch () {
+    try {
+      await this.findAllBenefit({})
+    } catch (e) {
+      console.error(e)
+      const exception = sentryNormalizeException(e)
+      this.$sentry.captureException(exception)
+    }
+  },
   head() {
     return {
       title: this.$i18n.tc('pages.benefit.title') + ' - Godin SAS',
     }
   },
+  computed: {
+    ...mapGetters('prestation', {
+      isLoadingBenefit: 'isLoading',
+      benefits: 'items',
+    }),
+  },
+  methods: {
+    ...mapActions('prestation', {
+      findAllBenefit: 'findAll'
+    })
+  }
 }
 </script>
 

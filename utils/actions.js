@@ -41,12 +41,17 @@ export default function actionList (service) {
       }
     },
     findAll: async ({ commit, state }, { params, filter, include }) => {
-      const { params: p, filter: f, include: i, clientCancelToken } = appendClientCancelToken(service, params, filter, include)
       commit(ACTIONS.TOGGLE_LOADING)
-      commit(ACTIONS.LAST_REQUEST, { cancel: clientCancelToken })
 
       try {
-        const response = await service.findAll(p, f, i)
+        let response
+        if (params) {
+          const { params: p, filter: f, include: i, clientCancelToken } = appendClientCancelToken(service, params, filter, include)
+          commit(ACTIONS.LAST_REQUEST, { cancel: clientCancelToken })
+          response = await service.findAll(p, f, i)
+        } else {
+          response = await service.findAll()
+        }
         const retrieved = response.data
         commit(ACTIONS.TOGGLE_LOADING, false)
 

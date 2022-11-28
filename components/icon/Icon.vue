@@ -24,7 +24,6 @@ export default {
     },
     scale: {
       type: Number,
-      required: false,
       default: 24,
     },
     width: {
