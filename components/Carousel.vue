@@ -17,7 +17,7 @@
     <sound-icon
       slot="button-next"
       class="swiper-button-next"
-      name="RedLightTriangleFlip"
+      name="RedLightTriangle"
       fill="#f4262c"
       :scale="12"
     >

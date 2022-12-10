@@ -20,6 +20,7 @@ export default {
   env: {
     host: process.env.VUE_APP_BASE_URL,
     apiUrl: process.env.VUE_APP_API_URL,
+    googleKey: process.env.VUE_GOOGLE_API_KEY,
   },
   head: {
     title: 'Godin',

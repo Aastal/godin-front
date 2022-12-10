@@ -113,6 +113,24 @@
         }
       }
     },
+    "quotation": {
+      "title": "Demande devis",
+      "sub_title": "Laissez nous vos coordonnées et le détail de vos besoins afin que nous étudiions votre projet.",
+      "form": {
+        "step": "Étape",
+        "step_1": "Vos Coordonnées",
+        "step_2": "Votre Projet",
+        "step_3": "Dimensions du silos",
+        "lastname": "Nom",
+        "firstname": "Prénom",
+        "company": "Société",
+        "address": "Adresse",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "date": "Si urgence, réalisation à quelle date",
+        "next": "Suivant"
+      }
+    },
     "contact": {
       "title": "Contact",
       "sent": "Votre message a bien été envoyé !",

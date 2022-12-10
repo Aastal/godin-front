@@ -91,6 +91,12 @@ h2 {
   @media (min-width: $breakpoint-md) {
     font-size: 1.5rem;
   }
+
+  &.subtitle {
+    padding: 0 5%;
+    text-align: center;
+    font-style: italic;
+  }
 }
 
 h3 {
@@ -196,7 +202,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #fff;
+  -webkit-text-fill-color: $field-dark-color;
   -webkit-box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
   font-size: 1rem;

@@ -2,7 +2,7 @@
   <div>
     <Header id="silos-header" :title="$t('headers.silos.title')" />
     <section class="container silos-section">
-      <h2 class="silos-title">{{ $t('pages.silos.text') }}</h2>
+      <h2 class="subtitle">{{ $t('pages.silos.text') }}</h2>
       <Button
         class="solutions-btn"
         :label="$t('our_benefit')"
@@ -103,12 +103,6 @@ export default {
   background-size: cover;
   background-position: bottom;
   height: 600px;
-}
-
-.silos-title {
-  padding: 0 5%;
-  text-align: center;
-  font-style: italic;
 }
 
 h3 {

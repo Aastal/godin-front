@@ -2,7 +2,7 @@
   <div>
     <Header id="benefit-header" :title="$t('headers.benefit.title')" />
     <section class="container benefit-section">
-      <h2 class="benefit-title">{{ $t('pages.benefit.text') }}</h2>
+      <h2 class="subtitle">{{ $t('pages.benefit.text') }}</h2>
       <Button
         class="solutions-btn"
         :label="$t('our_solutions')"
@@ -128,12 +128,6 @@ export default {
       }
     }
   }
-}
-
-.benefit-title {
-  padding: 0 5%;
-  text-align: center;
-  font-style: italic;
 }
 
 h3 {
