@@ -1,12 +1,5 @@
 <template>
   <div ref="quotation-form" class="quotation-form">
-    <div
-      v-if="error"
-      class="alert alert--danger"
-      role="alert"
-    >
-      {{ $t('app.error.unknow') }}
-    </div>
     <div class="quotation-form--state">
       <div @click="changeState(1, state)" :class="['quotation-form--state--step', { 'active': state === 1, 'done': state > 1 }]">
         <span class="number">01</span>
@@ -40,22 +33,26 @@
     <transition name="slide">
       <Project
         v-if="state === 2"
+        :form="form"
         @submit="onProjectSubmit"
       />
     </transition>
     <transition name="slide">
       <SilosDimensions
         v-if="state === 3"
+        :form="form"
         @submit="onSilosDimensionsSubmit"
       />
     </transition>
     <transition name="slide">
-      <Success v-if="state === 4"/>
+      <Success v-if="state === 4" :success="sent" />
     </transition>
   </div>
 </template>
 
 <script>
+import {mapActions} from "vuex";
+
 export default {
   name: 'QuotationForm',
   components: {
@@ -67,12 +64,15 @@ export default {
   },
   data () {
     return {
-      error: null,
+      sent: false,
       state: 1,
       form: {},
     }
   },
   methods: {
+    ...mapActions('quotation', {
+      create: 'create'
+    }),
     scroll () {
       if (process.browser) {
         window.scrollTo({
@@ -91,10 +91,23 @@ export default {
       this.form = { ...this.form, ...project }
       this.state++
     },
-    onSilosDimensionsSubmit (silosDimensions) {
+    async onSilosDimensionsSubmit (silosDimensions) {
       this.scroll()
       this.form = { ...this.form, ...silosDimensions }
-      this.state++
+
+      try {
+        const date = new Date()
+        await this.create({
+          attributes: {
+            title: this.form.field_firstname + ' ' + this.form.field_lastname + ' (' + date.getDay() + '/' + date.getMonth() + '/' + date.getFullYear() + ')',
+            ...this.form
+          }
+        })
+        this.sent = true
+        this.state++
+      } catch (err) {
+        this.sent = false
+      }
     },
     changeState(target, current) {
       if (target < current) {

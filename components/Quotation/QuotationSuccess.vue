@@ -1,13 +1,13 @@
 <template>
   <div class="succeed">
-    <div v-if="paymentSuccess === true">
+    <div v-if="success">
       <p class="succeed">
-        {{ $t('quotation.sent') }}
+        {{ $t('pages.quotation.form.sent') }}
       </p>
     </div>
     <div v-else>
       <p class="failed">
-        {{ $t('quotation.error') }}
+        {{ $t('pages.quotation.form.error') }}
       </p>
     </div>
   </div>
@@ -17,7 +17,7 @@
 export default {
   name: 'QuotationSuccess',
   props: {
-    paymentSuccess: {
+    success: {
       type: Boolean,
       default: null
     }
@@ -36,6 +36,10 @@ export default {
     font-family: $primary-font;
     font-size: 2rem;
     font-weight: 500;
+  }
+
+  .succeed {
+    color: $ternary-text-color;
   }
 }
 </style>

@@ -201,7 +201,7 @@ export default {
     left: 0;
     margin: 0;
     transform: translateY(8px);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: $primary-font;
   }
 

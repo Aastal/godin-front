@@ -117,6 +117,24 @@
       "title": "Demande devis",
       "sub_title": "Laissez nous vos coordonnées et le détail de vos besoins afin que nous étudiions votre projet.",
       "form": {
+        "positions": {
+          "in": "À l'intérieur du bâtiment",
+          "out": "À l'exérieur du bâtiment"
+        },
+        "feed_types": {
+          "gravity": "Gravitaire",
+          "pneumatic": "Pneumatique"
+        },
+        "reservationTypes": {
+          "manhole": "Trou d'homme",
+          "valve": "Soupape",
+          "food": "Alimentation",
+          "level": "Niveau"
+        },
+        "bases": {
+          "factory": "Prix départ usine Doué la Fontaine - France",
+          "franco": "Prix franco lieu du chantier"
+        },
         "step": "Étape",
         "step_1": "Vos Coordonnées",
         "step_2": "Votre Projet",
@@ -128,7 +146,27 @@
         "email": "E-mail",
         "phone": "Téléphone",
         "date": "Si urgence, réalisation à quelle date",
-        "next": "Suivant"
+        "feed_type": "Type d'alimentation",
+        "silos_positioning": "Positionnement du silo",
+        "silos_capacity": "Capacité souhaitée des silos (unitaire en m3)",
+        "silos_number": "Nombre de silos",
+        "product_type": "Type de produits stocké",
+        "product_density": "Densité du produit",
+        "product_granulometry": "Granulométrie du produit",
+        "need_edible_paint": "Application d'une peinture alimentaire à l'intérieur du silo",
+        "barrel_height": "Hauteur du fût (H1)",
+        "hopper_height": "Hauteur de la trémie (H2)",
+        "silos_pole_height": "Hauteur du poteau du silo (H3)",
+        "height": "Hauteur (H4)",
+        "reservation_type": "Type de réservation (T1)",
+        "device_rerun_type": "Type d'appareil de reprise (T2)",
+        "outlet_diameter": "Diamètre de la sortie (D1)",
+        "should_cipher_assembly": "Chiffrage du montage",
+        "price_base": "Base du prix",
+        "realisation_date": "Date prévisionnelle de réalisation",
+        "next": "Suivant",
+        "sent": "Votre demande de devis a bien été envoyé !",
+        "error": "Une erreur est survenue, merci de nous contacter si le problème persiste."
       }
     },
     "contact": {

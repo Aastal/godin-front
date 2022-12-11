@@ -1,8 +1,15 @@
 <template>
-  <div class="select-field">
+  <div class="select">
     <label :for="id">
       {{ label ? label : null }}
-      <select :id="id" :name="id" class="field" @change="selected">
+    </label>
+    <div class="select--field">
+      <select
+        :id="id"
+        :name="id"
+        class="field"
+        @change="selected"
+      >
         <option
           v-for="option in options"
           :key="option.text"
@@ -12,10 +19,10 @@
           {{ option.text }}
         </option>
       </select>
-      <sound-icon name="down" stroke="#000">
+      <icon name="down" stroke="#000" :scale="48">
         <down />
-      </sound-icon>
-    </label>
+      </icon>
+    </div>
   </div>
 </template>
 
@@ -23,57 +30,61 @@
 export default {
   name: 'Select',
   components: {
-    SoundIcon: () => import('../icon/Icon'),
-    Down: () => import('../icon/icons/Down'),
+    Icon: () => import('../icon/Icon'),
+    Down: () => import('../icon/icons/Down')
   },
   props: {
     id: {
       type: String,
-      required: true,
+      required: true
     },
     label: {
       type: String,
-      default: null,
+      default: null
     },
     options: {
       type: Array,
       required: true,
-      validator(value) {
+      validator (value) {
         let check = true
         value.forEach((option) => {
-          if (option.text === undefined || option.value === undefined) {
+          if (
+            option.text === undefined ||
+            option.value === undefined
+          ) {
             check = false
           }
         })
 
         return check
-      },
-    },
-  },
-  data() {
-    return {
-      customLabel: this.label,
+      }
     }
   },
   methods: {
-    selected(event) {
+    selected (event) {
       this.$emit('change', event.target.value)
       this.$emit('input', event.target.value)
-    },
-  },
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.select-field {
+.select {
   position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+
+  &--field {
+    position: relative;
+  }
 
   select {
     width: 100%;
     padding: 16px;
     @include border-radius(8px);
     @include appearance(none);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     background-color: transparent;
     height: 60px;
     outline: none;
@@ -84,7 +95,7 @@ export default {
     position: absolute;
     top: 50%;
     right: 3.5%;
-    transform: translate(-3.5%, -50%);
+    transform: translateY(-50%) scale(1);
   }
 }
 </style>

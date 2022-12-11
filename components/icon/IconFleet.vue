@@ -39,11 +39,11 @@ export default {
 
       for (let i = 1; i <= this.number; i++) {
         if (position === 0) {
-          fill = '#f4262c'
+          fill = 'rgba(245, 37, 45, .3)'
           maxTop = 20
           maxRight = 100
         } else if (position === 1) {
-          fill = 'rgba(245, 37, 45, .5)'
+          fill = 'rgba(245, 37, 45, .1)'
           maxTop = 100
           maxRight = 100
         } else if (position === 2) {
@@ -55,8 +55,8 @@ export default {
         icons.push({
           icon: options[position],
           fill,
-          width: 64,
-          height: 64,
+          width: 48,
+          height: 48,
           top: this.getRandomInt(maxTop),
           right: this.getRandomInt(maxRight),
         })

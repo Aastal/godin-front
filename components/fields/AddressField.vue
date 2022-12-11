@@ -221,7 +221,7 @@ export default {
       left: 0;
       margin: 4px 0 0 0;
       transform: translateY(8px);
-      font-size: 1rem;
+      font-size: .875rem;
       font-family: $primary-font;
     }
 

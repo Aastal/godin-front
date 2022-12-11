@@ -53,15 +53,16 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 8px 0 8px 35px;
-  margin-bottom: 12px;
+  padding: 0 0 0 35px;
+  margin-bottom: 32px;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   color: #000;
+  width: 100%;
 
   input {
     position: absolute;

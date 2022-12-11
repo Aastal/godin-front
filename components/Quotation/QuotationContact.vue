@@ -108,7 +108,7 @@ export default {
           field_lastname: this.field_lastname,
           field_firstname: this.field_firstname,
           field_company: this.field_company,
-          field_address: this.field_address,
+          field_address: this.field_address.place,
           field_phone: this.field_phone,
           field_email: this.field_email,
           field_date: this.field_date,

@@ -1,7 +1,6 @@
 <template>
   <div class="carousel">
     <sound-icon
-      slot="button-prev"
       class="swiper-button-prev"
       name="RedLightTriangle"
       fill="#f4262c"
@@ -15,7 +14,6 @@
       </swiper>
     </div>
     <sound-icon
-      slot="button-next"
       class="swiper-button-next"
       name="RedLightTriangle"
       fill="#f4262c"

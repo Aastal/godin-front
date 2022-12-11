@@ -9,7 +9,6 @@
         <h2>{{ $t('pages.homepage.sub_presentation') }}</h2>
       </div>
       <div class="image-wrapper">
-        <IconFleet :number="6" />
         <div class="image-container">
           <img
             class="silos-camion"
