@@ -1,10 +1,6 @@
 <template>
   <swiper-slide>
-    <Prestation
-      :title="title"
-      :description="description"
-      :image="image"
-    />
+    <Prestation :title="title" :description="description" :image="image" />
   </swiper-slide>
 </template>
 
@@ -15,21 +11,21 @@ import 'swiper/css/swiper.css'
 export default {
   name: 'PrestationSlide',
   components: {
-    SwiperSlide
+    SwiperSlide,
   },
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      default: null
+      default: null,
     },
     image: {
       type: String,
-      required: false
+      required: false,
     },
-  }
+  },
 }
 </script>

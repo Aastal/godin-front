@@ -83,10 +83,10 @@ export default {
   props: {
     form: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
       isLoading: false,
       field_barrel_height: this.form?.field_barrel_height,
@@ -102,46 +102,46 @@ export default {
       errors: [],
       reservationTypes: [
         {
-          text: "",
+          text: '',
           value: null,
         },
         {
           text: this.$t('pages.quotation.form.reservationTypes.manhole'),
-          value: "manhole",
+          value: 'manhole',
         },
         {
           text: this.$t('pages.quotation.form.reservationTypes.valve'),
-          value: "valve",
+          value: 'valve',
         },
         {
           text: this.$t('pages.quotation.form.reservationTypes.food'),
-          value: "food",
+          value: 'food',
         },
         {
           text: this.$t('pages.quotation.form.reservationTypes.level'),
-          value: "level",
+          value: 'level',
         },
       ],
       bases: [
         {
           text: this.$t('pages.quotation.form.bases.factory'),
-          value: "factory",
+          value: 'factory',
         },
         {
           text: this.$t('pages.quotation.form.bases.franco'),
-          value: "franco",
+          value: 'franco',
         },
       ],
     }
   },
   methods: {
-    setReservationType (reservationType) {
+    setReservationType(reservationType) {
       this.field_reservation_type = reservationType
     },
-    setPriceBase (price) {
+    setPriceBase(price) {
       this.field_price_base = price
     },
-    async checkForm (e) {
+    async checkForm(e) {
       e.preventDefault()
 
       try {
@@ -163,8 +163,8 @@ export default {
         const exception = sentryNormalizeException(e)
         this.$sentry.captureException(exception)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

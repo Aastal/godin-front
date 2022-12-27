@@ -19,7 +19,9 @@
       @input="input($event)"
     />
 
-    <p v-if="error" class="error">{{ $tc(errorMessage) ? $t(errorMessage) : errorMessage }}</p>
+    <p v-if="error" class="error">
+      {{ $tc(errorMessage) ? $t(errorMessage) : errorMessage }}
+    </p>
 
     <div v-if="!error" class="append">
       <slot />
@@ -183,7 +185,7 @@ export default {
       left: 0;
       margin: 4px 0 0 0;
       transform: translateY(8px);
-      font-size: .875rem;
+      font-size: 0.875rem;
       font-family: $primary-font;
     }
 
@@ -248,7 +250,7 @@ export default {
       left: 0;
       margin: 4px 0 0 0;
       transform: translateY(8px);
-      font-size: .875rem;
+      font-size: 0.875rem;
       font-family: $primary-font;
     }
 

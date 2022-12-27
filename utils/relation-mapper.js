@@ -1,5 +1,5 @@
 export default {
-  findRelations (data, target) {
+  findRelations(data, target) {
     if (data.included === undefined) {
       return null
     }
@@ -12,7 +12,7 @@ export default {
     Object.entries(target.relationships).forEach((e) => {
       data.included.forEach((el) => {
         if (Array.isArray(e[1].data)) {
-          if (e[1].data.find(d => el.id === d.id)) {
+          if (e[1].data.find((d) => el.id === d.id)) {
             if (relations[e[0]] === undefined) {
               relations[e[0]] = []
             }
@@ -23,7 +23,11 @@ export default {
           }
         }
 
-        if (e[1].data && el.id === e[1].data.id && relations[e[0]] === undefined) {
+        if (
+          e[1].data &&
+          el.id === e[1].data.id &&
+          relations[e[0]] === undefined
+        ) {
           if (el.id) {
             el.attributes.id = el.id
           }
@@ -35,5 +39,5 @@ export default {
     })
 
     return relations
-  }
+  },
 }

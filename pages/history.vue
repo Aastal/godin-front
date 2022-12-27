@@ -1,44 +1,32 @@
 <template>
   <div>
     <Header id="history-header" :title="$t('headers.history.title')" />
-    <section-image
+    <SectionBlock
       class="container history-section"
-      image="/histoire.jpeg"
-      iconFleet
-      flip
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.history.section.mastery.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.history.section.mastery.title') }}</h2>
-        <p>{{ $t('pages.history.section.mastery.text') }}</p>
-      </template>
-    </section-image>
-    <section-image
-      class="container history-section history-section--square-image"
-      image="/soudure-2.jpg"
-      iconFleet
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.history.section.asset.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.history.section.asset.title') }}</h2>
-        <p>{{ $t('pages.history.section.asset.text') }}</p>
-        <a class="link" :href="localePath({ name: 'silos' })">{{
-          $t('our_silos')
-        }}</a>
-      </template>
-    </section-image>
+      v-for="section in sectionByPage('history')"
+      :key="section.id"
+      icon-fleet
+      :title="section.title"
+      :title-en="section.field_title_en"
+      :text="section.body.processed"
+      :text-en="section.field_body_en.processed"
+      :image="section.field_image?.uri.url"
+      :subtitle="section.field_subtitle"
+      :subtitle-en="section.field_subtitle_en"
+      :link-text="section.field_link_text"
+      :link-text-en="section.field_link_text_en"
+      :link-target="section.field_link_target"
+      :flip="section.field_flip"
+    />
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+import { sentryNormalizeException } from '@/utils/handle-error'
+
 export default {
   name: 'History',
-  components: {
-    Icon: () => import('../components/icon/Icon'),
-    IconFleet: () => import('../components/icon/IconFleet'),
-  },
   layout: 'main',
   nuxtI18n: {
     paths: {
@@ -51,6 +39,30 @@ export default {
       title: this.$i18n.tc('pages.history.title') + ' - Godin SAS',
     }
   },
+  async fetch() {
+    try {
+      const filter =
+        'filter[section-page][condition][value]=history' +
+        '&filter[section-page][condition][operator]=%3D'
+      const include = ['image']
+
+      await this.findAll({ filter, include })
+    } catch (e) {
+      const exception = sentryNormalizeException(e)
+      this.$sentry.captureException(exception)
+    }
+  },
+  computed: {
+    ...mapGetters('section', {
+      isLoading: 'isLoading',
+      sectionByPage: 'sectionByPage',
+    }),
+  },
+  methods: {
+    ...mapActions('section', {
+      findAll: 'findAll',
+    }),
+  },
 }
 </script>
 
@@ -58,18 +70,5 @@ export default {
 .history-section {
   padding-top: 32px;
   padding-bottom: 32px;
-
-  .link {
-    margin-top: 16px;
-  }
-}
-
-h3 {
-  text-align: left;
-}
-
-p {
-  font-family: $light-font;
-  font-size: 1.4rem;
 }
 </style>

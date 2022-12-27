@@ -9,47 +9,23 @@
         :to="localePath('silos')"
       />
     </section>
-    <section-image
-      class="container benefit-section"
-      image="/silos-zoom.jpg"
-      iconFleet
-      flip
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.benefit.section.mastery.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.benefit.section.mastery.title') }}</h2>
-        <p>{{ $t('pages.benefit.section.mastery.text') }}</p>
-        <p class="list-title">
-          {{ $t('pages.benefit.section.mastery.in-charge') }}
-        </p>
-        <ul class="circle">
-          <li
-            v-for="i in [1, 2, 3, 4, 5, 6]"
-            :key="i"
-            v-html="$t('pages.benefit.section.mastery.argument_' + i)"
-          ></li>
-        </ul>
-      </template>
-    </section-image>
-    <section-image
-      class="container benefit-section benefit-section--square-image"
-      image="/moulin.jpg"
-      iconFleet
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.benefit.section.asset.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.benefit.section.asset.title') }}</h2>
-        <ul class="circle">
-          <li
-            v-for="i in [1, 2, 3, 4, 5, 6]"
-            :key="i"
-            v-html="$t('pages.benefit.section.asset.argument_' + i)"
-          ></li>
-        </ul>
-      </template>
-    </section-image>
+    <SectionBlock
+      class="container history-section"
+      v-for="section in sectionByPage('benefit')"
+      :key="section.id"
+      icon-fleet
+      :title="section.title"
+      :title-en="section.field_title_en"
+      :text="section.body.processed"
+      :text-en="section.field_body_en.processed"
+      :image="section.field_image?.uri.url"
+      :subtitle="section.field_subtitle"
+      :subtitle-en="section.field_subtitle_en"
+      :link-text="section.field_link_text"
+      :link-text-en="section.field_link_text_en"
+      :link-target="section.field_link_target"
+      :flip="section.field_flip"
+    />
     <section class="container benefit-section">
       <h2 class="large center">{{ $t('our_achievements') }}</h2>
       <carousel v-if="benefits">
@@ -82,8 +58,14 @@ export default {
       en: '/benefit',
     },
   },
-  async fetch () {
+  async fetch() {
     try {
+      const filter =
+        'filter[section-page][condition][value]=benefit' +
+        '&filter[section-page][condition][operator]=%3D'
+      const include = ['image']
+
+      await this.findAll({ filter, include })
       await this.findAllBenefit({})
     } catch (e) {
       console.error(e)
@@ -101,12 +83,19 @@ export default {
       isLoadingBenefit: 'isLoading',
       benefits: 'items',
     }),
+    ...mapGetters('section', {
+      isLoading: 'isLoading',
+      sectionByPage: 'sectionByPage',
+    }),
   },
   methods: {
     ...mapActions('prestation', {
-      findAllBenefit: 'findAll'
-    })
-  }
+      findAllBenefit: 'findAll',
+    }),
+    ...mapActions('section', {
+      findAll: 'findAll',
+    }),
+  },
 }
 </script>
 

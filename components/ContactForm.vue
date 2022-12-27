@@ -1,11 +1,7 @@
 <template>
   <div class="contact-form">
     <form id="contact" ref="contactForm" method="post" @submit="checkForm">
-      <div
-        v-if="status === 'sent'"
-        class="alert alert--success"
-        role="alert"
-      >
+      <div v-if="status === 'sent'" class="alert alert--success" role="alert">
         {{ $t('pages.contact.sent') }}
       </div>
       <div v-else>
@@ -78,46 +74,46 @@ export default {
     User: () => import('./icon/icons/User'),
     Mail: () => import('./icon/icons/Mail'),
     Subject: () => import('./icon/icons/Subject'),
-    Message: () => import('./icon/icons/Message')
+    Message: () => import('./icon/icons/Message'),
   },
-  data () {
+  data() {
     return {
       status: '',
       errors: [],
       email: '',
       username: '',
       subject: '',
-      message: ''
+      message: '',
     }
   },
   computed: {
     ...mapGetters('contact', {
-      isLoading: 'isLoading'
-    })
+      isLoading: 'isLoading',
+    }),
   },
-  mounted () {
+  mounted() {
     if (process.browser && this.$route.query.contact) {
       const contact = this.$refs.contactForm
       setTimeout(function () {
         window.scrollTo({
           top: contact.offsetTop - 250,
-          behavior: 'smooth'
+          behavior: 'smooth',
         })
       }, 1000)
     }
   },
   methods: {
     ...mapActions('contact', {
-      create: 'create'
+      create: 'create',
     }),
-    async checkForm (e) {
+    async checkForm(e) {
       e.preventDefault()
       if (
-        this.isLoading
-        || this.username === ''
-        || this.email === ''
-        || this.subject === ''
-        || this.message === ''
+        this.isLoading ||
+        this.username === '' ||
+        this.email === '' ||
+        this.subject === '' ||
+        this.message === ''
       ) {
         this.status = 'fail'
         return
@@ -129,15 +125,15 @@ export default {
             title: this.subject,
             field_email: this.email,
             field_name: this.username,
-            field_message: this.message
-          }
+            field_message: this.message,
+          },
         })
         this.status = 'sent'
       } catch (err) {
         this.status = 'fail'
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

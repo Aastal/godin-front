@@ -31,14 +31,22 @@
     <section class="home-section home-section--secondary">
       <!--      Todo: Linkedin -->
     </section>
-    <SectionImage
-      class="container home-section home-section--shadow"
-      :title="$t('pages.homepage.section_history.title')"
-      :text="$t('pages.homepage.section_history.text')"
-      :textLink="$t('pages.homepage.section_history.link')"
-      :link="localePath({ name: 'history' })"
-      image="/silos-zoom.jpg"
-      iconFleet
+    <SectionBlock
+      class="container history-section"
+      v-for="section in sectionByPage('index')"
+      :key="section.id"
+      icon-fleet
+      :title="section.title"
+      :title-en="section.field_title_en"
+      :text="section.body.processed"
+      :text-en="section.field_body_en.processed"
+      :image="section.field_image?.uri.url"
+      :subtitle="section.field_subtitle"
+      :subtitle-en="section.field_subtitle_en"
+      :link-text="section.field_link_text"
+      :link-text-en="section.field_link_text_en"
+      :link-target="section.field_link_target"
+      :flip="section.field_flip"
     />
     <section class="home-section home-section--secondary home-section--tight">
       <img
@@ -73,9 +81,9 @@
           :text="$t('pages.homepage.section_metier_benefit.text')"
           type="blue"
         />
-        <a class="link left desktop" :href="localePath({ name: 'silos' })">{{
-          $t('pages.homepage.section_metier_benefit.link')
-        }}</a>
+        <a class="link left desktop" :href="localePath({ name: 'silos' })">
+          {{ $t('pages.homepage.section_metier_benefit.link') }}
+        </a>
       </div>
       <img
         v-if="!isMobile"
@@ -83,26 +91,21 @@
         src="~/static/soudure.jpg"
         alt="soudure"
       />
-      <a class="link left mobile" :href="localePath({ name: 'silos' })">{{
-        $t('pages.homepage.section_metier_benefit.link')
-      }}</a>
+      <a class="link left mobile" :href="localePath({ name: 'silos' })">
+        {{ $t('pages.homepage.section_metier_benefit.link') }}
+      </a>
     </section>
     <section
       class="home-section home-section--secondary home-section--partners home-section--shadow"
     >
       <h2>{{ $t('pages.homepage.section_partners.title') }}</h2>
-      <list class="partners" :columns="4" list-style="grid">
-        <img src="~/static/clients/affinity.png" alt="affinity" />
-        <img src="~/static/clients/bio-gascogne.png" alt="bio-gascogne" />
-        <img src="~/static/clients/COCEBI.png" alt="COCEBI" />
-        <img src="~/static/clients/Dijon-Cereales.jpg" alt="Dijon-Cereales" />
-        <img src="~/static/clients/mendikoa.jpg" alt="mendikoa" />
+      <list v-if="partners" class="partners" :columns="4" list-style="grid">
         <img
-          src="~/static/clients/minoterie-sauvin.jpg"
-          alt="minoterie-sauvin"
+          v-for="partner in partners"
+          :key="partner.title"
+          :src="partner.field_image.uri.url"
+          :alt="partner.title"
         />
-        <img src="~/static/clients/paulic.png" alt="paulic" />
-        <img src="~/static/clients/valfrance.jpg" alt="valfrance" />
       </list>
     </section>
     <section class="home-section"></section>
@@ -110,6 +113,9 @@
 </template>
 
 <script>
+import { sentryNormalizeException } from '@/utils/handle-error'
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'Homepage',
   components: {
@@ -123,12 +129,43 @@ export default {
       title: this.$i18n.tc('pages.homepage.title') + ' - Godin SAS',
     }
   },
+  async fetch() {
+    try {
+      const filter =
+        'filter[section-page][condition][value]=index' +
+        '&filter[section-page][condition][operator]=%3D'
+      const include = ['image']
+
+      await this.findAllSections({ filter, include })
+      await this.findAllPartners({ include })
+    } catch (e) {
+      console.error(e)
+      const exception = sentryNormalizeException(e)
+      this.$sentry.captureException(exception)
+    }
+  },
   computed: {
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     },
+    ...mapGetters('section', {
+      isLoading: 'isLoading',
+      sectionByPage: 'sectionByPage',
+    }),
+    ...mapGetters('partner', {
+      isLoading: 'isLoading',
+      partners: 'items',
+    }),
+  },
+  methods: {
+    ...mapActions('section', {
+      findAllSections: 'findAll',
+    }),
+    ...mapActions('partner', {
+      findAllPartners: 'findAll',
+    }),
   },
 }
 </script>

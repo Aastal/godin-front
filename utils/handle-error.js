@@ -23,7 +23,7 @@ const handleError = (commit, e) => {
   return Promise.reject(error)
 }
 
-export function sentryNormalizeException (exception) {
+export function sentryNormalizeException(exception) {
   if (!exception.errors) {
     return exception
   }
@@ -32,15 +32,15 @@ export function sentryNormalizeException (exception) {
 
   return {
     name: error.title,
-    message: error.detail
+    message: error.detail,
   }
 }
 
-export function displayError (error) {
+export function displayError(error) {
   const managedError = {
     type: '',
     severity: '',
-    message: ''
+    message: '',
   }
 
   if (error.meta?.message) {
@@ -49,9 +49,8 @@ export function displayError (error) {
   } else {
     managedError.type = error.type ? error.type : 500
     managedError.severity = error.severity ? error.severity : 'error'
-    managedError.message = managedError.type !== 500
-      ? error.message
-      : 'app.error.unknow'
+    managedError.message =
+      managedError.type !== 500 ? error.message : 'app.error.unknow'
   }
 
   return managedError.message

@@ -6,19 +6,24 @@ import { GETTERS } from '~/utils/getters'
 const initialState = () => ({
   isLoading: false,
   error: null,
-  items: {}
+  items: {},
 })
 
 export default {
   actions: {
-    ...actionList(service)
+    ...actionList(service),
   },
   getters: {
-    ...{ ...GETTERS }
+    ...{ ...GETTERS },
+    sectionByPage: (state) => (page) => {
+      return Object.values(state.items).filter((el) => {
+        return el.field_page === page
+      })
+    },
   },
   mutations: {
-    ...{ ...MUTATIONS }
+    ...{ ...MUTATIONS },
   },
   namespaced: true,
-  state: initialState
+  state: initialState,
 }

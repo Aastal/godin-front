@@ -1,18 +1,11 @@
 <template>
-  <section :class="['section-image', { flip }]">
-    <Information
-      v-if="title"
-      :title="title"
-      :image="image"
-      :link="link"
-      :text-link="textLink"
-      :text="text"
-      :iconFleet="iconFleet"
-    />
+  <section
+    :class="['section-layer', { flip }, { 'section-layer--image': !!image }]"
+  >
     <div class="information">
       <slot name="text" />
     </div>
-    <div class="image-wrapper">
+    <div v-if="image" class="image-wrapper">
       <div class="image-container">
         <div class="image" :style="`background-image: url(${image})`"></div>
       </div>
@@ -22,31 +15,15 @@
 
 <script>
 export default {
-  name: 'SectionImage',
+  name: 'Layer',
   components: {
-    Icon: () => import('../components/icon/Icon'),
-    IconFleet: () => import('../components/icon/IconFleet'),
+    Icon: () => import('../../components/icon/Icon'),
+    IconFleet: () => import('../../components/icon/IconFleet'),
   },
   props: {
-    title: {
-      type: String,
-      required: false,
-    },
-    text: {
-      type: String,
-      required: false,
-    },
-    textLink: {
-      type: String,
-      required: false,
-    },
-    link: {
-      type: String,
-      required: false,
-    },
     image: {
       type: String,
-      required: true,
+      required: false,
     },
     iconFleet: {
       type: Boolean,
@@ -61,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.section-image {
+.section-layer {
   display: flex;
   position: relative;
   justify-content: space-between;
@@ -98,17 +75,19 @@ export default {
     }
   }
 
+  &--image {
+    .image-wrapper,
+    .information {
+      max-width: 45%;
+
+      @media (max-width: $breakpoint-sm) {
+        max-width: 100%;
+      }
+    }
+  }
+
   @media (max-width: $breakpoint-lg) {
     justify-content: center;
-  }
-}
-
-.image-wrapper,
-.information {
-  max-width: 45%;
-
-  @media (max-width: $breakpoint-sm) {
-    max-width: 100%;
   }
 }
 

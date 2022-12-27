@@ -19,9 +19,9 @@ export default {
   props: {
     success: {
       type: Boolean,
-      default: null
-    }
-  }
+      default: null,
+    },
+  },
 }
 </script>
 

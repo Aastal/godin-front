@@ -33,12 +33,12 @@ export default {
   components: {
     Swiper,
     SoundIcon: () => import('../components/icon/Icon'),
-    RedLightTriangle: () => import('../components/icon/icons/RedLightTriangle')
+    RedLightTriangle: () => import('../components/icon/icons/RedLightTriangle'),
   },
   directives: {
-    swiper: directive
+    swiper: directive,
   },
-  data () {
+  data() {
     return {
       id: (Math.random() + 1).toString(36).substring(7),
       swiperOption: {
@@ -46,17 +46,17 @@ export default {
         spaceBetween: 16,
         navigation: {
           prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next'
+          nextEl: '.swiper-button-next',
         },
-        loop: true
-      }
+        loop: true,
+      },
     }
   },
   computed: {
-    swiper () {
+    swiper() {
       return this.$refs[`carousel-${this.id}`].$swiper
-    }
-  }
+    },
+  },
 }
 </script>
 

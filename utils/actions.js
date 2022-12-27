@@ -11,10 +11,15 @@ const ACTIONS = {
   SET_DELETED: 'SET_DELETED',
   SET_FILTERS: 'SET_FILTERS',
   LAST_REQUEST: 'LAST_REQUEST',
-  CANCEL: 'CANCEL'
+  CANCEL: 'CANCEL',
 }
 
-export function appendClientCancelToken (service, currentParams = {}, currentFilter = '', currentInclude = '') {
+export function appendClientCancelToken(
+  service,
+  currentParams = {},
+  currentFilter = '',
+  currentInclude = ''
+) {
   const clientCancelToken = service.cancel()
   const params = currentParams
   const filter = currentFilter
@@ -24,7 +29,7 @@ export function appendClientCancelToken (service, currentParams = {}, currentFil
   return { params, filter, include, clientCancelToken }
 }
 
-export default function actionList (service) {
+export default function actionList(service) {
   return {
     find: async ({ commit }, { id, params }) => {
       commit(ACTIONS.TOGGLE_LOADING)
@@ -46,7 +51,12 @@ export default function actionList (service) {
       try {
         let response
         if (params) {
-          const { params: p, filter: f, include: i, clientCancelToken } = appendClientCancelToken(service, params, filter, include)
+          const {
+            params: p,
+            filter: f,
+            include: i,
+            clientCancelToken,
+          } = appendClientCancelToken(service, params, filter, include)
           commit(ACTIONS.LAST_REQUEST, { cancel: clientCancelToken })
           response = await service.findAll(p, f, i)
         } else {
@@ -71,32 +81,45 @@ export default function actionList (service) {
     create: ({ commit }, values) => {
       commit(ACTIONS.TOGGLE_LOADING)
 
-      return service.create(values).then(response => response.data).then((retrieved) => {
-        commit(ACTIONS.TOGGLE_LOADING, false)
-        commit(ACTIONS.ADD, { item: retrieved.data, retrieved })
-      }).catch(e => handleError(commit, e))
+      return service
+        .create(values)
+        .then((response) => response.data)
+        .then((retrieved) => {
+          commit(ACTIONS.TOGGLE_LOADING, false)
+          commit(ACTIONS.ADD, { item: retrieved.data, retrieved })
+        })
+        .catch((e) => handleError(commit, e))
     },
     update: ({ commit }, item) => {
       commit(ACTIONS.TOGGLE_LOADING)
 
-      return service.update(item).then(response => response.data).then((retrieved) => {
-        commit(ACTIONS.TOGGLE_LOADING, false)
-        retrieved ? commit(ACTIONS.SET_UPDATED, { item: retrieved.data, retrieved }) : commit(ACTIONS.SET_DELETED, item)
-      }).catch(e => handleError(commit, e))
+      return service
+        .update(item)
+        .then((response) => response.data)
+        .then((retrieved) => {
+          commit(ACTIONS.TOGGLE_LOADING, false)
+          retrieved
+            ? commit(ACTIONS.SET_UPDATED, { item: retrieved.data, retrieved })
+            : commit(ACTIONS.SET_DELETED, item)
+        })
+        .catch((e) => handleError(commit, e))
     },
     del: ({ commit }, item) => {
       commit(ACTIONS.TOGGLE_LOADING)
 
-      return service.del(item).then(() => {
-        commit(ACTIONS.TOGGLE_LOADING, false)
-        commit(ACTIONS.SET_DELETED, item)
-      }).catch(e => handleError(commit, e))
+      return service
+        .del(item)
+        .then(() => {
+          commit(ACTIONS.TOGGLE_LOADING, false)
+          commit(ACTIONS.SET_DELETED, item)
+        })
+        .catch((e) => handleError(commit, e))
     },
     cancel: ({ commit, state }) => {
       if (state.lastRequest) {
         commit(ACTIONS.CANCEL)
       }
-    }
+    },
   }
 }
 

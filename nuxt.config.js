@@ -13,9 +13,9 @@ export default {
       'node_modules',
       '.**/*',
       '.*',
-      'README.md'
+      'README.md',
     ],
-    fallback: 'index.html'
+    fallback: 'index.html',
   },
   env: {
     host: process.env.VUE_APP_BASE_URL,
@@ -73,13 +73,9 @@ export default {
   },
   pageTransition: {
     name: 'slide-right',
-    mode: 'out-in'
+    mode: 'out-in',
   },
-  modules: [
-    '@nuxtjs/style-resources',
-    '@nuxtjs/axios',
-    '@nuxtjs/sentry'
-  ],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/axios', '@nuxtjs/sentry'],
   axios: {
     baseURL: '/',
   },
@@ -89,10 +85,10 @@ export default {
     splitChunks: {
       layouts: false,
       pages: true,
-      commons: true
+      commons: true,
     },
     transpile: [({ isLegacy }) => isLegacy && 'ky'],
-    filename: '[name].[hash].bundle.js'
+    filename: '[name].[hash].bundle.js',
   },
   sentry: {
     publishRelease: true,
@@ -100,7 +96,7 @@ export default {
     tracesSampleRate: process.env.VUE_APP_NODE_ENV === 'dev' ? 1.0 : 0.1,
     sourceMapStyle: 'hidden-source-map',
     config: {
-      environment: process.env.VUE_APP_NODE_ENV
-    }
-  }
+      environment: process.env.VUE_APP_NODE_ENV,
+    },
+  },
 }

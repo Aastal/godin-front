@@ -54,7 +54,11 @@
         :label="$t('pages.quotation.form.feed_type')"
         @input="setFeedType"
       />
-      <Button :loading="isLoading" type="light" :label="$t('pages.quotation.form.next')" />
+      <Button
+        :loading="isLoading"
+        type="light"
+        :label="$t('pages.quotation.form.next')"
+      />
     </form>
   </div>
 </template>
@@ -68,15 +72,15 @@ export default {
     Button: () => import('../Button'),
     TextField: () => import('../fields/TextField'),
     Select: () => import('../fields/Select'),
-    Checkbox: () => import('../fields/Checkbox')
+    Checkbox: () => import('../fields/Checkbox'),
   },
   props: {
     form: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
       isLoading: false,
       field_silos_positioning: this.form?.field_silos_positioning,
@@ -90,42 +94,42 @@ export default {
       errors: [],
       positions: [
         {
-          text: "",
+          text: '',
           value: null,
         },
         {
           text: this.$t('pages.quotation.form.positions.in'),
-          value: "in",
+          value: 'in',
         },
         {
           text: this.$t('pages.quotation.form.positions.out'),
-          value: "out",
+          value: 'out',
         },
       ],
       feed_types: [
         {
-          text: "",
+          text: '',
           value: null,
         },
         {
           text: this.$t('pages.quotation.form.feed_types.gravity'),
-          value: "gravity",
+          value: 'gravity',
         },
         {
           text: this.$t('pages.quotation.form.feed_types.pneumatic'),
-          value: "pneumatic"
+          value: 'pneumatic',
         },
       ],
     }
   },
   methods: {
-    setPosition (position) {
+    setPosition(position) {
       this.field_silos_positioning = position
     },
-    setFeedType (feedType) {
+    setFeedType(feedType) {
       this.field_feed_type = feedType
     },
-    async checkForm (e) {
+    async checkForm(e) {
       e.preventDefault()
 
       try {
@@ -145,8 +149,8 @@ export default {
         const exception = sentryNormalizeException(e)
         this.$sentry.captureException(exception)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

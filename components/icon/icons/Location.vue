@@ -28,6 +28,6 @@
 
 <script>
 export default {
-  name: 'IconLocation'
+  name: 'IconLocation',
 }
 </script>

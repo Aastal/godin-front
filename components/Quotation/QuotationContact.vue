@@ -49,7 +49,11 @@
         :label="$t('pages.quotation.form.date')"
         color="dark"
       />
-      <Button :loading="isLoading" type="light" :label="$t('pages.quotation.form.next')" />
+      <Button
+        :loading="isLoading"
+        type="light"
+        :label="$t('pages.quotation.form.next')"
+      />
     </form>
   </div>
 </template>
@@ -62,15 +66,15 @@ export default {
   components: {
     Button: () => import('../Button'),
     TextField: () => import('../fields/TextField'),
-    AddressField: () => import('../fields/AddressField')
+    AddressField: () => import('../fields/AddressField'),
   },
   props: {
     form: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
-  data () {
+  data() {
     return {
       isLoading: false,
       field_lastname: this.form?.field_lastname,
@@ -80,26 +84,26 @@ export default {
       field_phone: this.form?.field_phone,
       field_email: this.form?.field_email,
       field_date: this.form?.field_date,
-      errors: []
+      errors: [],
     }
   },
   computed: {
     place: {
-      get () {
+      get() {
         return this.field_address?.place
       },
-      set (value) {
+      set(value) {
         this.field_address = value
           ? {
-            place: value.description,
-            placeId: value.place_id
-          }
+              place: value.description,
+              placeId: value.place_id,
+            }
           : null
-      }
+      },
     },
   },
   methods: {
-    async checkForm (e) {
+    async checkForm(e) {
       e.preventDefault()
 
       try {
@@ -118,8 +122,8 @@ export default {
         const exception = sentryNormalizeException(e)
         this.$sentry.captureException(exception)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

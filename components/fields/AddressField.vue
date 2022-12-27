@@ -16,7 +16,7 @@
       :placeholder="placeholder"
       :disabled="!service"
       @focus="isFocused = true"
-    >
+    />
     <div class="prepend">
       <icon name="location" stroke="#fff" fill="#fff" :scale="48">
         <location />
@@ -42,63 +42,65 @@ export default {
   name: 'AddressField',
   components: {
     Icon: () => import('../../components/icon/Icon'),
-    Location: () => import('../../components/icon/icons/Location')
+    Location: () => import('../../components/icon/icons/Location'),
   },
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     label: {
       type: String,
-      required: true
+      required: true,
     },
     placeholder: {
       type: String,
       required: false,
-      default: null
+      default: null,
     },
     required: {
       type: Boolean,
-      default: false
+      default: false,
     },
     color: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     errorMessage: {
       type: String,
-      default: 'Invalid Address'
-    }
+      default: 'Invalid Address',
+    },
   },
-  data () {
+  data() {
     return {
       error: false,
       isFocused: !!this.value,
       autocomplete: '',
       address: this.value,
       searchResults: [],
-      service: null
+      service: null,
     }
   },
-  head () {
+  head() {
     return this.packages
   },
   computed: {
-    packages () {
+    packages() {
       const packages = {}
 
       if (!window.google) {
-        packages.script = [{
-          vmid: 'maps-googleapis',
-          src: `https://maps.googleapis.com/maps/api/js?libraries=places&key=${process.env.googleKey}`,
-          defer: true,
-          callback: this.googleAutocompleteInit
-        }]
+        packages.script = [
+          {
+            vmid: 'maps-googleapis',
+            src: `https://maps.googleapis.com/maps/api/js?libraries=places&key=${process.env.googleKey}`,
+            defer: true,
+            callback: this.googleAutocompleteInit,
+          },
+        ]
       } else {
         this.googleAutocompleteInit()
       }
@@ -108,56 +110,59 @@ export default {
     active() {
       return this.isFocused || this.address ? 'active' : ''
     },
-    focused () {
+    focused() {
       return this.isFocused ? 'focused' : ''
     },
-    wrong () {
+    wrong() {
       return this.error ? 'error' : ''
-    }
+    },
   },
   watch: {
-    value (val) {
+    value(val) {
       this.address = val
     },
-    address (val) {
+    address(val) {
       if (val && this.isFocused) {
-        this.service.getPlacePredictions({
-          input: this.address,
-          types: ['geocode', 'establishment']
-        }, this.displaySuggestions)
+        this.service.getPlacePredictions(
+          {
+            input: this.address,
+            types: ['geocode', 'establishment'],
+          },
+          this.displaySuggestions
+        )
       } else if (!val) {
         this.select(val)
       }
-    }
+    },
   },
-  created () {
+  created() {
     // eslint-disable-next-line nuxt/no-globals-in-created
     if (process.browser) {
       // eslint-disable-next-line nuxt/no-globals-in-created
       window.addEventListener('click', (e) => {
-        if (!e.target.classList.contains(('field'))) {
+        if (!e.target.classList.contains('field')) {
           this.isFocused = false
         }
       })
     }
   },
   methods: {
-    select (result) {
+    select(result) {
       this.address = result ? result.description : null
       this.searchResults = []
       this.$emit('input', result)
     },
-    displaySuggestions (predictions, status) {
+    displaySuggestions(predictions, status) {
       if (status !== window.google.maps.places.PlacesServiceStatus.OK) {
         this.searchResults = []
         return
       }
       this.searchResults = predictions
     },
-    googleAutocompleteInit () {
+    googleAutocompleteInit() {
       this.service = new window.google.maps.places.AutocompleteService()
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -221,7 +226,7 @@ export default {
       left: 0;
       margin: 4px 0 0 0;
       transform: translateY(8px);
-      font-size: .875rem;
+      font-size: 0.875rem;
       font-family: $primary-font;
     }
 
@@ -268,7 +273,7 @@ export default {
     li {
       padding: 16px;
       cursor: pointer;
-      font-family: "GothamMedium", sans-serif;
+      font-family: 'GothamMedium', sans-serif;
       font-weight: 700;
       color: $ternary-text-color;
       font-size: 1rem;

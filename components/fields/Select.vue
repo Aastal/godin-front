@@ -4,12 +4,7 @@
       {{ label ? label : null }}
     </label>
     <div class="select--field">
-      <select
-        :id="id"
-        :name="id"
-        class="field"
-        @change="selected"
-      >
+      <select :id="id" :name="id" class="field" @change="selected">
         <option
           v-for="option in options"
           :key="option.text"
@@ -31,41 +26,38 @@ export default {
   name: 'Select',
   components: {
     Icon: () => import('../icon/Icon'),
-    Down: () => import('../icon/icons/Down')
+    Down: () => import('../icon/icons/Down'),
   },
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     label: {
       type: String,
-      default: null
+      default: null,
     },
     options: {
       type: Array,
       required: true,
-      validator (value) {
+      validator(value) {
         let check = true
         value.forEach((option) => {
-          if (
-            option.text === undefined ||
-            option.value === undefined
-          ) {
+          if (option.text === undefined || option.value === undefined) {
             check = false
           }
         })
 
         return check
-      }
-    }
+      },
+    },
   },
   methods: {
-    selected (event) {
+    selected(event) {
       this.$emit('change', event.target.value)
       this.$emit('input', event.target.value)
-    }
-  }
+    },
+  },
 }
 </script>
 

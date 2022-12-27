@@ -1,4 +1,4 @@
-import service from '../services/contact'
+import service from '../services/partner'
 import { actionList } from '~/utils/actions'
 import { MUTATIONS } from '~/utils/mutations'
 import { GETTERS } from '~/utils/getters'

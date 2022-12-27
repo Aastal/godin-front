@@ -14,7 +14,7 @@
 export default {
   name: 'Quotation',
   components: {
-    QuotationForm: () => import("../components/Quotation/QuotationForm")
+    QuotationForm: () => import('../components/Quotation/QuotationForm'),
   },
   layout: 'main',
   nuxtI18n: {

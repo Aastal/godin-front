@@ -9,51 +9,31 @@
         :to="localePath('benefit')"
       />
     </section>
-    <section-image
-      class="container silos-section silos-section--shadow"
-      image="/silos-in.jpg"
-      iconFleet
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.silos.section.asset.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.silos.section.asset.title') }}</h2>
-        <ul class="circle">
-          <li
-            v-for="i in [1, 2, 3, 4, 5]"
-            :key="i"
-            v-html="$t('pages.silos.section.asset.argument_' + i)"
-          ></li>
-        </ul>
-        <a class="link" :href="localePath({ name: 'benefit' })">{{
-          $t('our_benefit')
-        }}</a>
-      </template>
-    </section-image>
-    <section-image
-      class="container silos-section"
-      image="/silos-zoom.jpg"
-      iconFleet
-      flip
-    >
-      <template #text>
-        <IconFleet :number="6" />
-        <h3>{{ $t('pages.silos.section.mastery.heading') }}</h3>
-        <h2 class="large">{{ $t('pages.silos.section.mastery.title') }}</h2>
-        <ul class="circle">
-          <li
-            v-for="i in [1, 2, 3, 4, 5]"
-            :key="i"
-            v-html="$t('pages.silos.section.mastery.argument_' + i)"
-          ></li>
-        </ul>
-      </template>
-    </section-image>
+    <SectionBlock
+      class="container history-section"
+      v-for="section in sectionByPage('silos')"
+      :key="section.id"
+      icon-fleet
+      :title="section.title"
+      :title-en="section.field_title_en"
+      :text="section.body.processed"
+      :text-en="section.field_body_en.processed"
+      :image="section.field_image?.uri.url"
+      :subtitle="section.field_subtitle"
+      :subtitle-en="section.field_subtitle_en"
+      :link-text="section.field_link_text"
+      :link-text-en="section.field_link_text_en"
+      :link-target="section.field_link_target"
+      :flip="section.field_flip"
+    />
     <section class="silos-background"></section>
   </div>
 </template>
 
 <script>
+import { sentryNormalizeException } from '@/utils/handle-error'
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'Silos',
   components: {
@@ -71,6 +51,30 @@ export default {
     return {
       title: this.$i18n.tc('pages.silos.title') + ' - Godin SAS',
     }
+  },
+  async fetch() {
+    try {
+      const filter =
+        'filter[section-page][condition][value]=silos' +
+        '&filter[section-page][condition][operator]=%3D'
+      const include = ['image']
+
+      await this.findAll({ filter, include })
+    } catch (e) {
+      const exception = sentryNormalizeException(e)
+      this.$sentry.captureException(exception)
+    }
+  },
+  computed: {
+    ...mapGetters('section', {
+      isLoading: 'isLoading',
+      sectionByPage: 'sectionByPage',
+    }),
+  },
+  methods: {
+    ...mapActions('section', {
+      findAll: 'findAll',
+    }),
   },
 }
 </script>

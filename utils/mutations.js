@@ -3,7 +3,7 @@ import { updateField } from 'vuex-map-fields'
 import { ACTIONS } from './actions'
 import relationMapper from '~/utils/relation-mapper'
 
-export function mergeAttributes (retrieved, item, customAttributes = null) {
+export function mergeAttributes(retrieved, item, customAttributes = null) {
   if (item.id) {
     item.attributes.id = item.id
   }
@@ -27,11 +27,15 @@ export const MUTATIONS = {
     Object.assign(state, { error, isLoading: false })
   },
   [ACTIONS.ADD]: (state, { item, retrieved, customAttributes }) => {
-    Vue.set(state.items, item.id, mergeAttributes(retrieved, item, customAttributes))
+    Vue.set(
+      state.items,
+      item.id,
+      mergeAttributes(retrieved, item, customAttributes)
+    )
   },
   [ACTIONS.SET_UPDATED]: (state, { item, retrieved, customAttributes }) => {
     Object.assign(state.items, {
-      [item.id]: mergeAttributes(retrieved, item, customAttributes)
+      [item.id]: mergeAttributes(retrieved, item, customAttributes),
     })
   },
   [ACTIONS.SET_DELETED]: (state, deleted) => {
@@ -39,7 +43,7 @@ export const MUTATIONS = {
   },
   [ACTIONS.RESET_LIST]: (state) => {
     Object.assign(state, {
-      items: {}
+      items: {},
     })
   },
   [ACTIONS.LAST_REQUEST]: (state, lastRequest) => {
@@ -47,5 +51,5 @@ export const MUTATIONS = {
   },
   [ACTIONS.CANCEL]: (state) => {
     state.lastRequest.cancel()
-  }
+  },
 }

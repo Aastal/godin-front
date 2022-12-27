@@ -24,7 +24,9 @@
       @input="input($event)"
     />
 
-    <p v-if="error" class="error">{{ $tc(errorMessage) ? $t(errorMessage) : errorMessage }}</p>
+    <p v-if="error" class="error">
+      {{ $tc(errorMessage) ? $t(errorMessage) : errorMessage }}
+    </p>
 
     <div v-if="!error" class="append">
       <slot />

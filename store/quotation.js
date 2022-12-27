@@ -6,19 +6,19 @@ import { GETTERS } from '~/utils/getters'
 const initialState = () => ({
   isLoading: false,
   error: null,
-  items: {}
+  items: {},
 })
 
 export default {
   actions: {
-    ...actionList(service)
+    ...actionList(service),
   },
   getters: {
-    ...{ ...GETTERS }
+    ...{ ...GETTERS },
   },
   mutations: {
-    ...{ ...MUTATIONS }
+    ...{ ...MUTATIONS },
   },
   namespaced: true,
-  state: initialState
+  state: initialState,
 }
