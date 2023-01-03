@@ -41,10 +41,10 @@ export default {
   },
   async fetch() {
     try {
-      const filter =
-        'filter[section-page][condition][value]=history' +
+      const filter = 'filter[section-page][condition][path]=field_page' +
+        '&filter[section-page][condition][value]=history' +
         '&filter[section-page][condition][operator]=%3D'
-      const include = ['image']
+      const include = ['field_image']
 
       await this.findAll({ filter, include })
     } catch (e) {

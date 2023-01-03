@@ -60,13 +60,13 @@ export default {
   },
   async fetch() {
     try {
-      const filter =
-        'filter[section-page][condition][value]=benefit' +
+      const filter = 'filter[section-page][condition][path]=field_page' +
+        '&filter[section-page][condition][value]=benefit' +
         '&filter[section-page][condition][operator]=%3D'
-      const include = ['image']
+      const include = ['field_image']
 
-      await this.findAll({ filter, include })
-      await this.findAllBenefit({})
+      await this.findAllSection({ filter, include })
+      await this.findAllBenefit({ include })
     } catch (e) {
       console.error(e)
       const exception = sentryNormalizeException(e)
@@ -93,7 +93,7 @@ export default {
       findAllBenefit: 'findAll',
     }),
     ...mapActions('section', {
-      findAll: 'findAll',
+      findAllSection: 'findAll',
     }),
   },
 }
@@ -103,20 +103,6 @@ export default {
 .benefit-section {
   padding-top: 32px;
   padding-bottom: 32px;
-
-  &--square-image {
-    ::v-deep > .image-wrapper {
-      .image {
-        height: 400px;
-        background-position: center;
-        @include border-radius(0);
-
-        @media (max-width: $breakpoint-sm) {
-          height: 200px;
-        }
-      }
-    }
-  }
 }
 
 h3 {
@@ -126,36 +112,6 @@ h3 {
 p {
   font-family: $light-font;
   font-size: 1.4rem;
-}
-
-.list-title {
-  margin-bottom: 0;
-}
-
-ul {
-  li {
-    font-family: $light-font;
-    font-size: 1.4rem;
-    margin-top: 4px;
-
-    ::v-deep > b {
-      font-family: $primary-font;
-    }
-  }
-
-  &.circle {
-    li {
-      margin-top: 8px;
-
-      &:before {
-        display: inline-block;
-        content: url('~/assets/images/BlueCircle.svg');
-        width: 15px;
-        height: 15px;
-        margin-right: 10px;
-      }
-    }
-  }
 }
 
 .solutions-btn {

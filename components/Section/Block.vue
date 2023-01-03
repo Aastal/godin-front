@@ -1,6 +1,6 @@
 <template>
   <layer
-    class="container history-section"
+    class="container"
     :image="image"
     iconFleet
     :flip="flip"
@@ -96,6 +96,22 @@ h3 {
   ::v-deep > p {
     font-family: $light-font;
     font-size: 1.4rem;
+  }
+
+  ::v-deep > ul {
+    li {
+      font-family: $light-font;
+      font-size: 1.4rem;
+      margin-top: 4px;
+
+      &:before {
+        display: inline-block;
+        content: url('~/assets/images/BlueCircle.svg');
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+      }
+    }
   }
 }
 

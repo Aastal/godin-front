@@ -104,7 +104,6 @@ export default {
       background-repeat: no-repeat;
       width: 500px;
       height: 500px;
-      @include border-radius(100%);
 
       @media (max-width: $breakpoint-lg) {
         width: 450px;

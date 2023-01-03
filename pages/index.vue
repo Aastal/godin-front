@@ -87,8 +87,8 @@
       </div>
       <img
         v-if="!isMobile"
-        class="soudure"
-        src="~/static/soudure.jpg"
+        class="grains"
+        src="~/static/grains.png"
         alt="soudure"
       />
       <a class="link left mobile" :href="localePath({ name: 'silos' })">
@@ -131,10 +131,10 @@ export default {
   },
   async fetch() {
     try {
-      const filter =
-        'filter[section-page][condition][value]=index' +
+      const filter = 'filter[section-page][condition][path]=field_page' +
+        '&filter[section-page][condition][value]=index' +
         '&filter[section-page][condition][operator]=%3D'
-      const include = ['image']
+      const include = ['field_image']
 
       await this.findAllSections({ filter, include })
       await this.findAllPartners({ include })

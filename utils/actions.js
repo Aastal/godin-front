@@ -60,7 +60,7 @@ export default function actionList(service) {
           commit(ACTIONS.LAST_REQUEST, { cancel: clientCancelToken })
           response = await service.findAll(p, f, i)
         } else {
-          response = await service.findAll()
+          response = await service.findAll(params, filter, include)
         }
         const retrieved = response.data
         commit(ACTIONS.TOGGLE_LOADING, false)
