@@ -12,17 +12,17 @@
         <div class="image-container">
           <img
             class="silos-camion"
-            src="~/static/silos-camion.jpg"
+            :src="cloudFrontUrl + '/public/assets/home-header/silos-camion.jpg'"
             alt="silos-camion"
           />
           <img
             class="silos-grains"
-            src="~/static/silos-grains.jpg"
+            :src="cloudFrontUrl + '/public/assets/home-header/silos-grains.jpg'"
             alt="silos-grains"
           />
           <img
             class="silos-grue"
-            src="~/static/silos-grue.jpg"
+            :src="cloudFrontUrl + '/public/assets/home-header/silos-grue.jpg'"
             alt="silos-grue"
           />
         </div>
@@ -51,7 +51,7 @@
     <section class="home-section home-section--secondary home-section--tight">
       <img
         class="silos-grains"
-        src="~/static/silos-grains.jpg"
+        :src="cloudFrontUrl + '/public/assets/home-header/silos-grains.jpg'"
         alt="silos-grains"
       />
       <div>
@@ -71,7 +71,7 @@
       <img
         v-if="isMobile"
         class="soudure"
-        src="~/static/soudure.jpg"
+        :src="cloudFrontUrl + '/public/assets/home-section/soudure.jpg'"
         alt="soudure"
       />
       <div>
@@ -88,7 +88,7 @@
       <img
         v-if="!isMobile"
         class="grains"
-        src="~/static/grains.png"
+        :src="cloudFrontUrl + '/public/assets/home-section/grains.png'"
         alt="soudure"
       />
       <a class="link left mobile" :href="localePath({ name: 'silos' })">
@@ -145,6 +145,7 @@ export default {
     }
   },
   computed: {
+    cloudFrontUrl: () => process.env.cloudfrontUrl,
     isMobile() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
