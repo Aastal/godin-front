@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'PillGothicThin';
+  src:
+    local('PillGothicLight'),
+    url(~/assets/fonts/pill/PillGothicThin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PillGothicLight';
+  src:
+    local('PillGothicLight'),
+    url(~/assets/fonts/pill/PillGothicLight.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PillGothicRegular';
+  src:
+    local('PillGothicRegular'),
+    url(~/assets/fonts/pill/PillGothicRegular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PillGothicSemibd';
+  src:
+    local('PillGothicSemibd'),
+    url(~/assets/fonts/pill/PillGothicSemibd.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PillGothicBold';
+  src:
+    local('PillGothicBold'),
+    url(~/assets/fonts/pill/PillGothicBold.ttf) format('truetype');
+}

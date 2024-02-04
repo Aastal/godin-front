@@ -1,0 +1,87 @@
+@mixin fit-available() {
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin appearance($type) {
+  -webkit-appearance: $type;
+  -moz-appearance: $type;
+  appearance: $type;
+}
+
+@mixin box-shadow($left, $top, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $left $top $blur $color;
+    -moz-box-shadow: inset $left $top $blur $color;
+    box-shadow: inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin text-color($color) {
+  background: $color;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin transition($attribute, $time, $type) {
+  -webkit-transition: $attribute $time $type;
+  -moz-transition: $attribute $time $type;
+  -o-transition: $attribute $time $type;
+  transition: $attribute $time $type;
+}
+
+@mixin fadeIn($time) {
+  -webkit-animation: fadein $time;
+  -moz-animation: fadein $time;
+  -ms-animation: fadein $time;
+  -o-animation: fadein $time;
+  animation: fadein $time;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

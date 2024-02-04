@@ -1,0 +1,278 @@
+.slide-right-enter-active {
+  transition: all 0.4s;
+}
+.slide-right-leave-active {
+  transition: all 0.2s;
+}
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translate(50px, 0);
+}
+
+html {
+  height: 100%;
+}
+
+:root {
+  font-size: 16px;
+  --swiper-theme-color: $primary-text-color;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+  color: $primary-text-color;
+  background-color: $body-bg;
+  font-family: $primary-font;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(#000, 0);
+  letter-spacing: 0.05em;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+  z-index: 1;
+  padding-top: 96px;
+
+  @media (min-width: $breakpoint-md) {
+    padding-top: 70px;
+  }
+}
+
+.disable-bg {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 12;
+  background: rgba(7, 7, 7, 0.8);
+}
+
+h1,
+h2,
+h3 {
+  font-family: $primary-font;
+  font-weight: 400;
+  color: $ternary-text-color;
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 1.75rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1.875rem;
+
+    &.big {
+      font-size: 3.75rem;
+    }
+  }
+}
+
+h2 {
+  font-family: $light-font;
+  font-size: 1.125rem;
+  white-space: break-spaces;
+
+  &.large {
+    font-family: $primary-font;
+    text-align: left;
+    font-size: 3rem;
+    margin-top: 16px;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1.5rem;
+  }
+
+  &.subtitle {
+    padding: 0 5%;
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+h3 {
+  font-family: $light-font;
+  font-style: italic;
+  font-size: 1.4rem;
+  color: $secondary-text-color;
+  margin: 0;
+
+  &:before {
+    display: inline-block;
+    content: url('~/assets/images/RedLightTriangle.svg');
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 1rem;
+  }
+}
+
+.break {
+  border-top: 1px solid $ternary-text-color;
+  padding-top: 32px;
+}
+
+p {
+  font-family: $secondary-font;
+  color: $ternary-text-color;
+  margin-bottom: 32px;
+  font-size: 0.875rem;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 1rem;
+  }
+
+  &.subtitle {
+    font-family: $primary-font;
+    font-weight: 100;
+    font-size: 0.75rem;
+    margin-top: 16px;
+    text-align: center;
+  }
+}
+
+a {
+  color: unset;
+  font-weight: 500;
+}
+
+.link {
+  font-family: $light-font;
+  display: block;
+  text-align: right;
+  color: $secondary-text-color;
+  font-size: 1.4rem;
+  font-style: italic;
+
+  @media (max-width: $breakpoint-sm) {
+    margin-right: 16px;
+  }
+
+  &:before {
+    display: inline-block;
+    content: url('~/assets/images/RedTriangle.svg');
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+  }
+
+  &.left {
+    text-align: left;
+  }
+}
+
+ul {
+  color: $ternary-text-color;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.layouts-enter-active {
+  transition: opacity 0.5s;
+}
+
+.layouts-leave-active {
+  transition: opacity 10ms;
+}
+
+.layouts-enter,
+.layouts-leave-active {
+  opacity: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $field-dark-color;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 1rem;
+}
+
+.navbar {
+  li {
+    align-self: center;
+  }
+
+  span,
+  a {
+    cursor: pointer;
+    font-family: $primary-font;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    color: $ternary-text-color;
+    text-decoration: none;
+  }
+}
+
+.brand {
+  &--small {
+    width: 170px;
+  }
+}
+
+.image-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .image-container {
+    position: relative;
+    z-index: -2;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-sm) {
+      min-height: 0;
+    }
+  }
+}
+
+.quotation-button {
+  font-family: $primary-font;
+  letter-spacing: 0.15rem;
+  background: $body-bg;
+  border: 1px solid $secondary-text-color;
+  border-left-width: 4px;
+  border-bottom-width: 4px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  @include border-radius(12px);
+  text-transform: uppercase;
+  color: $secondary-text-color !important;
+
+  &:hover {
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+  }
+}

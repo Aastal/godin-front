@@ -1,0 +1,186 @@
+{
+  "quotation_request": "Demande devis",
+  "our_solutions": "Nos solutions",
+  "our_benefit": "Nos prestations",
+  "our_achievements": "Nos réalisations",
+  "our_silos": "Nos silos carrés",
+  "submit": "Envoyer",
+  "headers": {
+    "benefit": {
+      "title": "De la conception\nà l'installation"
+    },
+    "silos": {
+      "title": "Tous types de silos\npour tous types de pulvérulents"
+    },
+    "boilermaking": {
+      "title": "Tous types de silos\npour tous types de pulvérulents"
+    },
+    "history": {
+      "title": "Une histoire qui\nfabrique l'expérience"
+    },
+    "contact": {
+      "title": "Contactez-nous"
+    }
+  },
+  "pages": {
+    "homepage": {
+      "title": "Accueil",
+      "presentation": "Solutions de stockage\net de chaudronnerie,<i>GODIN</i>le profil d'une réussite.",
+      "sub_presentation": "Fabricant de silos\nde stockage  \"Intelligents\".\nSystème Breveté.",
+      "section_history": {
+        "title": "Une histoire qui\nfabrique l'expérience",
+        "text": "Notre société de fabrication de silos de stockage a été créée en 1952 par Monsieur Marcel Godin.<br><br>D'abord spécialisée dans le stockage de céréales, la société GODIN conçoit, fabrique et installe des silos de stockage de toutes les capacités et pour tous types de pulvérulents.",
+        "link": "Page histoire"
+      },
+      "section_metier_boilermaking": {
+        "title": "UN SAVOIR-FAIRE ET UNE TECHNICITÉ ÉLEVÉE POUR LA PRODUCTION DE PIÈCES SUR-MESURE DE TOUTES DIMENSIONS",
+        "link": "Page métier"
+      },
+      "section_metier_silos": {
+        "title": "Conception\nfabrication\nMontage de silos",
+        "text": "Cellules de stockage brevetées\nde 6m³ à 300m³",
+        "link": "Page métier"
+      },
+      "section_metier_benefit": {
+        "title": "TOUS TYPES DE\nPULVÉRULENTS",
+        "text": "Matières premières agricoles, \nproduits alimentaires transformés, \ngranulats, matières plastiques, minéraux",
+        "link": "Page prestations"
+      },
+      "section_partners": {
+        "title": "Ils nous font confiance"
+      }
+    },
+    "history": {
+      "title": "Histoire",
+      "section": {
+        "mastery": {
+          "title": "Lorem ipsum dolor sit\namet, consectetur",
+          "heading": "À l'origine",
+          "text": ""
+        },
+        "asset": {
+          "title": "Lorem ipsum dolor sit\namet, consectetur",
+          "heading": "Les spécialistes du silos carré",
+          "text": ""
+        }
+      }
+    },
+    "jobs": {
+      "title": "Métiers"
+    },
+    "boilermaking": {
+      "title": "Godin Chaudronnerie",
+      "text": "Nous intervenous dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques"
+    },
+    "silos": {
+      "title": "Godin Stockage",
+      "text": "Nous intervenous dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
+      "section": {
+        "mastery": {
+          "title": "Conception sur mesure",
+          "heading": "Optimisez votre espace",
+          "argument_1": "Silos de stockage de petite capacité\n(6m³ «big bag»)",
+          "argument_2": "Silos de stockage de vrac",
+          "argument_3": "Silos de stockage de matières 1ère\n(5 à 500m³)",
+          "argument_4": "Unités complètes de stockage",
+          "argument_5": "Extension de lignes de stockage"
+        },
+        "asset": {
+          "title": "Adaptable à tous\nles contenus",
+          "heading": "Un écoulement parfait",
+          "argument_1": "Peinture alimentaire de type epoxy disponible",
+          "argument_2": "16 sorties pour le blé humide",
+          "argument_3": "Grande trappe coulissante pour l'extraction",
+          "argument_4": "Sortie en diamètre 300 pour le dosage du blé",
+          "argument_5": "Patte d'éléphant et vis d'extraction disponible"
+        }
+      }
+    },
+    "benefit": {
+      "title": "Godin Services",
+      "text": "Grâce à notre bureau d'étude, nous concevons une unité de stockage spécifique pour\nchaque client, nous prenons ainsi en compte vos contraintes d'espace et d'intégration",
+      "section": {
+        "mastery": {
+          "title": "Maitrise de la chaine\nde fabrication",
+          "heading": "Une réalisation de qualité",
+          "text": "Nous maitrisons la totalité de la chaine de fabrication, ce qui nous permet de grantir la qualité de nos silos.",
+          "in-charge": "Nous nous chargeons également",
+          "argument_1": "De la charpente portique support des cellules",
+          "argument_2": "De la charpente autoportante sur le plancher",
+          "argument_3": "De la sérrurerie de la couverture",
+          "argument_4": "Du bardage de la couverture",
+          "argument_5": "De l'assemblage en usine",
+          "argument_6": "<b>Du montage et de la livraison sur site</b>"
+        },
+        "asset": {
+          "title": "Nos atouts son aussi\nnos différences",
+          "heading": "Nos atouts",
+          "argument_1": "Gain de volume",
+          "argument_2": "Cellules autoportantes aux normes",
+          "argument_3": "Habillage et finition épurée",
+          "argument_4": "Traçabilité assurée",
+          "argument_5": "Intégration au site existant",
+          "argument_6": "Garantie décennale"
+        }
+      }
+    },
+    "quotation": {
+      "title": "Demande devis",
+      "sub_title": "Laissez vos coordonnées et le descriptif de votre projet.",
+      "form": {
+        "positions": {
+          "in": "À l'intérieur du bâtiment",
+          "out": "À l'exérieur du bâtiment"
+        },
+        "reservationTypes": {
+          "manhole": "Trou d'homme",
+          "valve": "Soupape",
+          "food": "Alimentation",
+          "level": "Niveau"
+        },
+        "bases": {
+          "factory": "Prix départ usine Doué la Fontaine - France",
+          "franco": "Prix franco lieu du chantier"
+        },
+        "step": "Étape",
+        "step_1": "Vos Coordonnées",
+        "step_2": "Votre Projet",
+        "step_3": "Dimensions du silos",
+        "lastname": "Nom",
+        "firstname": "Prénom",
+        "company": "Société",
+        "address": "Adresse",
+        "email": "E-mail",
+        "phone": "Téléphone",
+        "date": "Réalisation à quelle date",
+        "project_description": "Description de votre projet",
+        "barrel_height": "Hauteur du fût (H1)",
+        "hopper_height": "Hauteur de la trémie (H2)",
+        "silos_pole_height": "Hauteur du poteau du silo (H3)",
+        "height": "Hauteur (H4)",
+        "reservation_type": "Type de réservation (T1)",
+        "device_rerun_type": "Type d'appareil de reprise (T2)",
+        "outlet_diameter": "Diamètre de la sortie (D1)",
+        "should_cipher_assembly": "Chiffrage du montage",
+        "price_base": "Base du prix",
+        "realisation_date": "Date prévisionnelle de réalisation",
+        "next": "Suivant",
+        "sent": "Votre demande de devis a bien été envoyé !",
+        "error": "Une erreur est survenue, merci de nous contacter si le problème persiste."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "sent": "Votre message a bien été envoyé !",
+      "form": {
+        "name": "Nom complet",
+        "email": "Email",
+        "subject": "Sujet",
+        "message": "Message"
+      }
+    }
+  },
+  "errors": {
+    "invalid_field": "Le champ est invalide"
+  }
+}

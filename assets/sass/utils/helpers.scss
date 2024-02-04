@@ -1,0 +1,95 @@
+.container {
+  width: 100%;
+  padding: 0 15%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 10%;
+  }
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 5%;
+  }
+}
+
+.container-tight {
+  width: 100%;
+  padding: 0 35%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 27.5%;
+  }
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 5%;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 10%;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 5%;
+  }
+}
+
+.bg-primary {
+  background-color: $default-bg;
+}
+
+.bg-secondary {
+  background-color: $default-bg;
+}
+
+.bg-ternary {
+  background-color: $ternary-bg;
+}
+
+.light-bg {
+  background-color: $light-bg;
+}
+
+.alert {
+  position: relative;
+  font-size: 0.8rem;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 32px;
+  @include border-radius(8px);
+
+  &--info {
+    background-color: transparent;
+    color: $primary-text-color;
+  }
+
+  &--danger {
+    background-color: $error-color;
+    color: $primary-text-color;
+  }
+
+  &--success {
+    background-color: $success-color;
+    color: $primary-text-color;
+  }
+
+  .close {
+    cursor: pointer;
+    border: none;
+    background: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.75rem 1.25rem;
+    float: right;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+
+    &:hover {
+      color: #000;
+      text-decoration: none;
+      opacity: 0.75;
+    }
+  }
+}
