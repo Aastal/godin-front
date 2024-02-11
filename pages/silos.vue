@@ -38,28 +38,15 @@ const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
     <Header id="silos-header" :title="$t('headers.silos.title')" />
     <section class="container silos-section">
       <h2 class="subtitle">{{ $t('pages.silos.text') }}</h2>
-      <Button
-        class="solutions-btn"
-        :label="$t('our_benefit')"
-        :to="localePath('benefit')"
-      />
+      <NuxtLink :to="localePath('benefit')" class="quotation-button">
+        {{ $t('our_benefit') }}
+      </NuxtLink>
     </section>
-    <SectionBlock
+    <SectionWrapper
       class="container silos-section"
       v-for="section in getSectionByPage('silos')"
       :key="section.id"
-      icon-fleet
-      :title="section.title"
-      :title-en="section.field_title_en"
-      :text="section.body.processed"
-      :text-en="section.field_body_en.processed"
-      :image="section.field_image?.uri.url"
-      :subtitle="section.field_subtitle"
-      :subtitle-en="section.field_subtitle_en"
-      :link-text="section.field_link_text"
-      :link-text-en="section.field_link_text_en"
-      :link-target="section.field_link_target"
-      :flip="section.field_flip"
+      :section="section"
     />
     <section
       class="silos-background"
@@ -89,9 +76,10 @@ const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
   height: 600px;
 }
 
-.solutions-btn {
+.quotation-button {
   display: block;
   margin: 32px auto 0 auto;
-  width: 100%;
+  text-decoration: none;
+  max-width: fit-content;
 }
 </style>

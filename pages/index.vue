@@ -65,7 +65,7 @@ const isMobile = computed(() => {
         </div>
       </div>
     </section>
-    <SectionBlock
+    <SectionInline
       v-for="section in getSectionByPage('index')"
       :key="section.id"
       icon-fleet
@@ -83,7 +83,7 @@ const isMobile = computed(() => {
     />
     <section class="home-section home-section--secondary home-section--tight">
       <img
-        class="soudure"
+        class="boilermaking"
         :src="cloudFrontUrl + '/public/assets/home-section/boilermaking.jpg'"
         alt="boilermaking"
       />
@@ -121,9 +121,9 @@ const isMobile = computed(() => {
     </section>
     <section class="home-section home-section--secondary home-section--tight">
       <img
-        class="soudure"
-        :src="cloudFrontUrl + '/public/assets/home-section/soudure.jpg'"
-        alt="soudure"
+        class="stockage"
+        :src="cloudFrontUrl + '/public/assets/home-section/stockage.jpg'"
+        alt="stockage"
       />
       <div>
         <IconFleet :number="6" />
@@ -174,6 +174,10 @@ h2 {
   font-style: italic;
 }
 
+.section-layer {
+  margin: 64px 0;
+}
+
 .home-section {
   display: flex;
   position: relative;
@@ -208,6 +212,7 @@ h2 {
 
   img {
     width: 800px;
+    max-height: 500px;
     @include border-radius(0 32px 32px 0);
   }
 

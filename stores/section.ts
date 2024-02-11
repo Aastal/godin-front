@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import { defineStore } from 'pinia'
 import SectionNodeProvider from '~/services/api/section/SectionNodeProvider'
 import type { FilterParam } from '~/services/api/shared/FilterParam'
@@ -13,8 +14,13 @@ export const useSectionStore = defineStore('section', {
   },
   getters: {
     getSectionByPage: (state) => {
-      return (page: string) =>
-        Object.values(state.items).filter((item) => item.field_page === page)
+      return (page: string) => {
+        return _.orderBy(
+          Object.values(state.items).filter((item) => item.field_page === page),
+          ['field_order'],
+          ['asc'],
+        )
+      }
     },
   },
   actions: {

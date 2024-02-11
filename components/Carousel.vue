@@ -13,7 +13,7 @@ const id = ref((Math.random() + 1).toString(36).substring(7))
 
 <template>
   <div class="carousel">
-    <div class="carousel--content">
+    <div class="carousel__content">
       <Swiper
         :modules="[SwiperAutoplay, SwiperNavigation]"
         :slides-per-view="1"
@@ -44,10 +44,14 @@ const id = ref((Math.random() + 1).toString(36).substring(7))
   flex-direction: row;
   align-items: center;
 
-  &--content {
+  &__content {
     position: relative;
     width: 80%;
     margin: auto;
+
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+    }
   }
 }
 

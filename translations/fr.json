@@ -13,7 +13,7 @@
       "title": "Tous types de silos\npour tous types de pulvérulents"
     },
     "boilermaking": {
-      "title": "Tous types de silos\npour tous types de pulvérulents"
+      "title": "LA SOLUTION SIMPLE ET DE PROXIMITÉ\nPOUR LA RÉALISATION DE VOS ENSEMBLES DE CHAUDRONNERIE"
     },
     "history": {
       "title": "Une histoire qui\nfabrique l'expérience"
@@ -70,11 +70,16 @@
     },
     "boilermaking": {
       "title": "Godin Chaudronnerie",
-      "text": "Nous intervenous dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques"
+      "text": "Nous intervenons dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
+      "images": {
+        "hopper": "Trémie 6,60 x 6,45 x 4m",
+        "chassisShelter": "Châssis 3 x 8 x 3,70m",
+        "shelterPainted": "Container 20 pieds aménagé"
+      }
     },
     "silos": {
       "title": "Godin Stockage",
-      "text": "Nous intervenous dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
+      "text": "Nous intervenons dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
       "section": {
         "mastery": {
           "title": "Conception sur mesure",

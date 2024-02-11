@@ -120,7 +120,7 @@ const changeState = (target, current) => {
     display: flex;
     flex-direction: row;
     margin-bottom: 64px;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 70%;
 
     &.short {

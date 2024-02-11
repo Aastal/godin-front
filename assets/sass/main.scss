@@ -119,7 +119,7 @@ h3 {
 
   &:before {
     display: inline-block;
-    content: url('~/assets/images/RedLightTriangle.svg');
+    content: url('/assets/images/RedLightTriangle.svg');
     width: 12px;
     height: 12px;
     margin-right: 8px;
@@ -173,7 +173,7 @@ a {
 
   &:before {
     display: inline-block;
-    content: url('~/assets/images/RedTriangle.svg');
+    content: url('/assets/images/RedTriangle.svg');
     width: 12px;
     height: 12px;
     margin-right: 4px;

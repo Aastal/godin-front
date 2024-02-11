@@ -13,16 +13,16 @@ defineProps({
 
 <template>
   <section
-    :class="['section-layer', { flip }, { 'section-layer--image': !!image }]"
+    :class="[
+      'section-layer',
+      { 'section-layer--flip': !!flip },
+      { 'section-layer--image': !!image },
+    ]"
   >
     <div class="information">
       <slot name="text" />
     </div>
-    <div v-if="image" class="image-wrapper">
-      <div class="image-container">
-        <div class="image" :style="`background-image: url(${image})`"></div>
-      </div>
-    </div>
+    <SectionImage v-if="image" :image="image" />
   </section>
 </template>
 
@@ -37,35 +37,32 @@ defineProps({
   background: $body-bg;
   z-index: 0;
 
-  &.flip {
-    flex-direction: row-reverse;
-    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
-
-    .image-container {
-      justify-content: start;
-    }
-  }
-
   @media (max-width: $breakpoint-sm) {
     justify-content: center;
     flex-direction: column;
 
-    .image-wrapper {
-      margin-top: 32px;
-      margin-bottom: 0;
-    }
-
-    &.flip {
+    &--flip {
       flex-direction: column;
 
-      .image-wrapper {
+      .section-image {
         margin-top: 32px;
       }
     }
   }
 
   &--image {
-    .image-wrapper,
+    :deep(.section-image) {
+      display: block;
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .image-container {
+        justify-content: flex-end;
+      }
+    }
+
+    .section-image,
     .information {
       max-width: 45%;
 
@@ -75,41 +72,20 @@ defineProps({
     }
   }
 
-  @media (max-width: $breakpoint-lg) {
-    justify-content: center;
-  }
-}
+  &--flip {
+    flex-direction: row-reverse;
+    @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
 
-.image-wrapper {
-  .image-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    .image {
-      display: block;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      width: 500px;
-      height: 500px;
-      @include border-radius(32px);
-
-      @media (max-width: $breakpoint-lg) {
-        width: 450px;
-        height: 450px;
-      }
-
-      @media (max-width: $breakpoint-md) {
-        width: 400px;
-        height: 400px;
-      }
-
-      @media (max-width: $breakpoint-sm) {
-        width: 350px;
-        height: 350px;
+    :deep(.section-image) {
+      .image-container {
+        justify-content: flex-start;
       }
     }
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: column;
+    justify-content: center;
   }
 }
 </style>

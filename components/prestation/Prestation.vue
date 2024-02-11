@@ -60,12 +60,14 @@ const { locale } = useI18n()
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        width: 500px;
+        width: 700px;
         height: 500px;
         @include border-radius(32px 0 0 32px);
 
         @media (max-width: $breakpoint-sm) {
-          display: none;
+          width: 100%;
+          height: 250px;
+          @include border-radius(32px 32px 0 0);
         }
       }
     }
@@ -90,7 +92,7 @@ const { locale } = useI18n()
     }
 
     @media (max-width: $breakpoint-sm) {
-      padding: 16px;
+      padding: 32px;
     }
   }
 
@@ -106,6 +108,10 @@ const { locale } = useI18n()
     &:before {
       content: none;
     }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
   }
 }
 </style>

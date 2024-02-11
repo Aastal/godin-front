@@ -1,18 +1,5 @@
-<template>
-  <SectionLayer class="container" :image="image" :flip="flip">
-    <template #text>
-      <h3 v-if="subtitle">{{ locale === 'fr' ? subtitle : subtitleEn }}</h3>
-      <h2 class="large">{{ locale === 'fr' ? title : titleEn }}</h2>
-      <div class="text" v-html="locale === 'fr' ? text : textEn"></div>
-      <NuxtLink v-if="linkTarget" class="link" :to="linkTarget">
-        {{ locale === 'fr' ? linkText : linkTextEn }}
-      </NuxtLink>
-    </template>
-  </SectionLayer>
-</template>
-
 <script setup>
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -31,11 +18,11 @@ defineProps({
   },
   text: {
     type: String,
-    required: true,
+    required: false,
   },
   textEn: {
     type: String,
-    required: true,
+    required: false,
   },
   linkText: {
     type: String,
@@ -59,11 +46,27 @@ defineProps({
   },
 })
 
-const { $i18n } = useNuxtApp()
-const locale = computed(() => $i18n.locale)
+const { locale } = useI18n()
+const router = useRouter()
+
+const routeName = `${props.linkTarget}___${locale.value}`
+const matchRoute = router.hasRoute(routeName)
 </script>
 
-<style lang="scss" scoped>
+<template>
+  <SectionLayer class="container" :image="image" :flip="flip" type="inline">
+    <template #text>
+      <h3 v-if="subtitle">{{ locale === 'fr' ? subtitle : subtitleEn }}</h3>
+      <h2 class="large">{{ locale === 'fr' ? title : titleEn }}</h2>
+      <div class="text" v-html="locale === 'fr' ? text : textEn"></div>
+      <NuxtLink v-if="matchRoute" class="link" :to="{ name: routeName }">
+        {{ locale === 'fr' ? linkText : linkTextEn }}
+      </NuxtLink>
+    </template>
+  </SectionLayer>
+</template>
+
+<style scoped lang="scss">
 h2 {
   font-family: $bold-font;
 }
@@ -88,7 +91,7 @@ h3 {
 
       &:before {
         display: inline-block;
-        content: url('~/assets/images/BlueSquare.svg');
+        content: url('/assets/images/BlueSquare.svg');
         width: 15px;
         height: 15px;
         margin-right: 10px;

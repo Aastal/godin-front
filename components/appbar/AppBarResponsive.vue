@@ -55,18 +55,22 @@ const navbarStyle = computed(() => [
         <ul class="menu-list">
           <template v-for="item in items" :key="item.text">
             <li @click.capture="addSubMenu(item)">
-              <NuxtLink v-if="item.to" :to="localePath(item.to)">
+              <NuxtLink
+                v-if="item.to"
+                :to="localePath(item.to)"
+                class="menu-list__link"
+              >
                 {{ $t(item.text) }}
               </NuxtLink>
               <span v-else>{{ $t(item.text) }}</span>
             </li>
-            <ul
-              v-if="item.pages && isMenuVisible(item.text)"
-              :key="item.icon"
-              class="sub-menu"
-            >
-              <li v-for="page in item.pages" :key="page.text">
-                <NuxtLink :to="localePath(page.to)">
+            <ul class="sub-menu">
+              <li
+                v-if="item.pages && isMenuVisible(item.text)"
+                v-for="page in item.pages"
+                :key="page.text"
+              >
+                <NuxtLink :to="localePath(page.to)" class="menu-list__link">
                   {{ $t(page.text) }}
                 </NuxtLink>
               </li>
@@ -84,6 +88,70 @@ const navbarStyle = computed(() => [
 </template>
 
 <style lang="scss" scoped>
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 16px;
+  overflow-y: visible;
+  overflow-x: hidden;
+  height: auto;
+  max-height: 70vh;
+
+  li {
+    position: relative;
+    display: flex;
+    margin: 24px 0;
+
+    svg {
+      margin: 0 3px 0 0;
+    }
+  }
+
+  span,
+  &__link {
+    display: block;
+    font-family: $primary-font;
+    font-weight: 700;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: $ternary-text-color;
+    text-decoration: none;
+
+    &.router-link-exact-active {
+      @include text-color($secondary-text-color);
+
+      &:before {
+        display: inline-block;
+        content: url('/assets/images/RedTriangle.svg');
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 24px;
+  transition: display 0.4s ease-in-out;
+  top: -200px;
+
+  &.visible {
+    display: block;
+    top: 0;
+  }
+
+  li {
+    margin: 12px 0;
+
+    a {
+      font-weight: 400;
+    }
+  }
+}
+
 .navbar {
   position: absolute;
   display: grid;
