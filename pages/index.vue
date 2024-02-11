@@ -315,6 +315,15 @@ h2 {
   }
 }
 
+.section-layer {
+  margin: 80px 0;
+  padding: 32px 10%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 32px 0;
+  }
+}
+
 .home-header {
   display: flex;
   position: relative;
