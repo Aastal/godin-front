@@ -186,6 +186,7 @@ h2 {
   padding-bottom: 0;
   background: $body-bg;
   z-index: 0;
+  margin-top: 64px;
 
   .link {
     margin-top: 16px;
@@ -245,7 +246,6 @@ h2 {
       justify-content: flex-end;
       background: $body-bg;
       @include box-shadow(0, 0, 0, rgba(0, 0, 0, 0.1), true);
-      margin-top: 64px;
 
       .link,
       .information {

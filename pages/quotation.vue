@@ -18,8 +18,11 @@ definePageMeta({
 
 <style lang="scss" scoped>
 .quotation-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 15%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 32px 0;
+  }
 
   &--form {
     @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);

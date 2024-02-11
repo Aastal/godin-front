@@ -59,6 +59,10 @@ defineProps({
 
       .image-container {
         justify-content: flex-end;
+
+        @media (max-width: $breakpoint-sm) {
+          justify-content: center;
+        }
       }
     }
 
@@ -70,6 +74,12 @@ defineProps({
         max-width: 100%;
       }
     }
+
+    .information {
+      @media (max-width: $breakpoint-sm) {
+        max-width: 90%;
+      }
+    }
   }
 
   &--flip {
@@ -79,11 +89,15 @@ defineProps({
     :deep(.section-image) {
       .image-container {
         justify-content: flex-start;
+
+        @media (max-width: $breakpoint-sm) {
+          justify-content: center;
+        }
       }
     }
   }
 
-  @media (min-width: $breakpoint-lg) {
+  @media (max-width: $breakpoint-sm) {
     flex-direction: column;
     justify-content: center;
   }

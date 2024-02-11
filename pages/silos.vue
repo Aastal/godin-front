@@ -57,8 +57,7 @@ const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
 
 <style lang="scss" scoped>
 .silos-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 15%;
 
   .link {
     margin-top: 16px;
@@ -66,6 +65,10 @@ const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
 
   &--shadow {
     @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 32px 0;
   }
 }
 

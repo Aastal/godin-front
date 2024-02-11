@@ -67,8 +67,11 @@ const images = {
 
 <style lang="scss" scoped>
 .boilermaking-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 15%;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 32px 0;
+  }
 
   .link {
     margin-top: 16px;
