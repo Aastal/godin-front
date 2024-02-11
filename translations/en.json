@@ -1,8 +1,196 @@
 {
+  "quotation_request": "Quotation Request",
+  "our_solutions": "Our Solutions",
+  "our_benefit": "Our Benefits",
+  "our_achievements": "Our Achievements",
+  "our_silos": "Our Square Silos",
+  "submit": "Submit",
+  "headers": {
+    "benefit": {
+      "title": "From Design\nto Installation"
+    },
+    "silos": {
+      "title": "All Types of Silos\nfor All Types of Powders"
+    },
+    "boilermaking": {
+      "title": "THE SIMPLE AND LOCAL SOLUTION\nFOR THE REALIZATION OF YOUR BOILERMAKING ASSEMBLIES"
+    },
+    "history": {
+      "title": "A Story that\nShapes Experience"
+    },
+    "contact": {
+      "title": "Contact Us"
+    }
+  },
   "pages": {
     "homepage": {
-      "title": "Accueil",
-      "presentation": "Bâtiment de stockage GODIN le profil d'une réussite"
+      "title": "Home",
+      "presentation": "Storage and Boilermaking Solutions,\n<i>GODIN</i>the profile of success.",
+      "sub_presentation": "Manufacturer of 'Smart'\nStorage Silos. Patented System.",
+      "section_history": {
+        "title": "A Story that\nShapes Experience",
+        "text": "Our storage silo manufacturing company was founded in 1952 by Mr. Marcel Godin.<br><br>Initially specialized in grain storage, GODIN designs, manufactures, and installs storage silos of all capacities and for all types of powders.",
+        "link": "History Page"
+      },
+      "section_metier_boilermaking": {
+        "title": "EXPERTISE AND HIGH TECHNICITY FOR THE CUSTOM PRODUCTION OF PIECES OF ALL DIMENSIONS",
+        "link": "Jobs Page"
+      },
+      "section_metier_silos": {
+        "title": "Design\nManufacturing\nAssembly of Silos",
+        "text": "Patented storage cells\nfrom 6m³ to 300m³",
+        "link": "Jobs Page"
+      },
+      "section_metier_benefit": {
+        "title": "ALL TYPES OF\nPOWDERS",
+        "text": "Agricultural raw materials,\nprocessed food products,\naggregates, plastics, minerals",
+        "link": "Benefits Page"
+      },
+      "section_partners": {
+        "title": "They Trust Us"
+      }
+    },
+    "history": {
+      "title": "History",
+      "section": {
+        "mastery": {
+          "title": "Lorem ipsum dolor sit\namet, consectetur",
+          "heading": "At the Beginning",
+          "text": ""
+        },
+        "asset": {
+          "title": "Lorem ipsum dolor sit\namet, consectetur",
+          "heading": "Specialists in Square Silos",
+          "text": ""
+        }
+      }
+    },
+    "jobs": {
+      "title": "Jobs"
+    },
+    "boilermaking": {
+      "title": "Godin Boilermaking",
+      "text": "We operate in sectors such as agri-food, animal feed,\nflour milling, ore, chemicals, waste treatment, quarries, plastics",
+      "images": {
+        "hopper": "Hopper 6.60 x 6.45 x 4m",
+        "chassisShelter": "Chassis 3 x 8 x 3.70m",
+        "shelterPainted": "Fitted 20-foot container"
+      }
+    },
+    "silos": {
+      "title": "Godin Storage",
+      "text": "We operate in sectors such as agri-food, animal feed,\nflour milling, ore, chemicals, waste treatment, quarries, plastics",
+      "section": {
+        "mastery": {
+          "title": "Custom Design",
+          "heading": "Optimize Your Space",
+          "argument_1": "Small capacity storage silos\n(6m³ 'big bag')",
+          "argument_2": "Bulk storage silos",
+          "argument_3": "Raw material storage silos\n(5 to 500m³)",
+          "argument_4": "Complete storage units",
+          "argument_5": "Storage line extensions"
+        },
+        "asset": {
+          "title": "Adaptable to All\nContents",
+          "heading": "Perfect Flow",
+          "argument_1": "Epoxy type food paint available",
+          "argument_2": "16 outlets for wet wheat",
+          "argument_3": "Large sliding hatch for extraction",
+          "argument_4": "300 diameter outlet for wheat dosing",
+          "argument_5": "Elephant foot and extraction screw available"
+        }
+      }
+    },
+    "benefit": {
+      "title": "Godin Services",
+      "text": "Thanks to our design office, we design a specific storage unit for each client, taking into account your space and integration constraints.",
+      "section": {
+        "mastery": {
+          "title": "Mastery of the Production\nChain",
+          "heading": "Quality Realization",
+          "text": "We master the entire production chain, which allows us to guarantee the quality of our silos.",
+          "in-charge": "We also take care",
+          "argument_1": "Of the gantry frame supporting the cells",
+          "argument_2": "Of the self-supporting frame on the floor",
+          "argument_3": "Of the roofing ironwork",
+          "argument_4": "Of the roofing cladding",
+          "argument_5": "Of the assembly in the factory",
+          "argument_6": "<b>Of assembly and delivery on site</b>"
+        },
+        "asset": {
+          "title": "Our Strengths are Also\nOur Differences",
+          "heading": "Our Strengths",
+          "argument_1": "Volume gain",
+          "argument_2": "Self-supporting cells to standards",
+          "argument_3": "Clean and refined finish",
+          "argument_4": "Traceability ensured",
+          "argument_5": "Integration with existing site",
+          "argument_6": "Ten-year guarantee"
+        }
+      },
+      "images": {
+        "foldingMachine": "CNC Folding Press",
+        "keenanPaints": "Liquid Paint",
+        "plasmaInAction": "HD Plasma Cutting Table"
+      }
+    },
+    "quotation": {
+      "title": "Quotation Request",
+      "sub_title": "Leave your contact details and a description of your project.",
+      "form": {
+        "positions": {
+          "in": "Inside the building",
+          "out": "Outside the building"
+        },
+        "reservationTypes": {
+          "manhole": "Manhole",
+          "valve": "Valve",
+          "food": "Food",
+          "level": "Level"
+        },
+        "bases": {
+          "factory": "Ex-works Price Doué la Fontaine - France",
+          "franco": "Free Carrier Price Site"
+        },
+        "step": "Step",
+        "step_1": "Your Contact Information",
+        "step_2": "Your Project",
+        "step_3": "Silos Dimensions",
+        "lastname": "Last Name",
+        "firstname": "First Name",
+        "company": "Company",
+        "address": "Address",
+        "email": "Email",
+        "phone": "Phone",
+        "date": "Realization Date",
+        "project_description": "Description of Your Project",
+        "barrel_height": "Barrel Height (H1)",
+        "hopper_height": "Hopper Height (H2)",
+        "silos_pole_height": "Silo Pole Height (H3)",
+        "height": "Height (H4)",
+        "reservation_type": "Reservation Type (T1)",
+        "device_rerun_type": "Device Rerun Type (T2)",
+        "outlet_diameter": "Outlet Diameter (D1)",
+        "should_cipher_assembly": "Assembly Ciphering",
+        "price_base": "Price Base",
+        "realisation_date": "Expected Realization Date",
+        "next": "Next",
+        "sent": "Your quotation request has been successfully sent!",
+        "error": "An error occurred, please contact us if the problem persists."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "sent": "Your message has been successfully sent!",
+      "form": {
+        "name": "Full Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message"
+      }
     }
+  },
+  "errors": {
+    "invalid_field": "The field is invalid"
   }
 }

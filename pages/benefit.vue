@@ -33,6 +33,21 @@ useHead({
 })
 
 const localePath = useLocalePath()
+
+const images = {
+  foldingMachine: {
+    title: 'pages.benefit.images.foldingMachine',
+    path: 'services/folding-machine.jpg',
+  },
+  plasmaInAction: {
+    title: 'pages.benefit.images.plasmaInAction',
+    path: 'services/plasma-in-action.jpg',
+  },
+  keenanPaints: {
+    title: 'pages.benefit.images.keenanPaints',
+    path: 'services/keenan-paints.jpg',
+  },
+}
 </script>
 
 <template>
@@ -50,6 +65,12 @@ const localePath = useLocalePath()
       :key="section.id"
       :section="section"
     />
+    <section
+      v-if="Object.keys(images).length"
+      class="benefit-section benefit-section--images"
+    >
+      <SectionImageList :images="images" />
+    </section>
     <section v-if="benefits" class="container benefit-section">
       <h2 class="large center">{{ $t('our_achievements') }}</h2>
       <Carousel :benefits="benefits" />
@@ -60,6 +81,10 @@ const localePath = useLocalePath()
 <style lang="scss" scoped>
 .benefit-section {
   padding: 32px 15%;
+
+  &--images {
+    padding: 32px 3%;
+  }
 
   @media (max-width: $breakpoint-sm) {
     padding: 32px 0;

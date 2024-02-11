@@ -1,8 +1,6 @@
 <script setup>
 import { useSectionStore } from '~/stores/section'
 import { storeToRefs } from 'pinia'
-import { useRuntimeConfig } from '#app'
-import { computed } from 'vue'
 
 definePageMeta({
   layout: 'default',
@@ -28,13 +26,19 @@ const sectionStore = useSectionStore()
 await useAsyncData('section', () => sectionStore.fetchAll(filters, include))
 const { getSectionByPage } = storeToRefs(sectionStore)
 
-const config = useRuntimeConfig()
-const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
-const pageAssetsUrl = cloudFrontUrl.value + '/public/sections/boilermaking'
 const images = {
-  hopper: 'quarry-hopper.jpg',
-  chassisShelter: 'chassis-shelter.jpg',
-  shelterPainted: 'shelter-painted.jpg',
+  hopper: {
+    title: 'pages.benefit.images.hopper',
+    path: 'boilermaking/quarry-hopper.jpg',
+  },
+  chassisShelter: {
+    title: 'pages.benefit.images.chassisShelter',
+    path: 'boilermaking/chassis-shelter.jpg',
+  },
+  shelterPainted: {
+    title: 'pages.benefit.images.shelterPainted',
+    path: 'boilermaking/shelter-painted.jpg',
+  },
 }
 </script>
 
@@ -50,17 +54,11 @@ const images = {
       :key="section.id"
       :section="section"
     />
-    <section class="boilermaking-section">
-      <List class="images-list" :columns="3" list-style="grid">
-        <div
-          v-for="(image, key) in images"
-          :key="key"
-          class="images-list__container"
-        >
-          <SectionImage :key="image" :image="`${pageAssetsUrl}/${image}`" />
-          <h4>{{ $t(`pages.boilermaking.images.${key}`) }}</h4>
-        </div>
-      </List>
+    <section
+      v-if="Object.keys(images).length"
+      class="boilermaking-section boilermaking-section--images"
+    >
+      <SectionImageList :images="images" />
     </section>
   </div>
 </template>
@@ -68,6 +66,10 @@ const images = {
 <style lang="scss" scoped>
 .boilermaking-section {
   padding: 32px 15%;
+
+  &--images {
+    padding: 32px 3%;
+  }
 
   @media (max-width: $breakpoint-sm) {
     padding: 32px 0;
@@ -79,30 +81,6 @@ const images = {
 
   &--shadow {
     @include box-shadow(0, 4px, 16px, rgba(0, 0, 0, 0.1), true);
-  }
-
-  .images-list {
-    &__container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      :deep(.section-image) {
-        .image {
-          width: 450px;
-          height: 320px;
-        }
-      }
-
-      h4 {
-        font-size: 1.8rem;
-        color: #fff;
-        background-color: $blue-text-color;
-        padding: 16px;
-        margin: -32px 0 0 0;
-      }
-    }
   }
 }
 

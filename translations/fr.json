@@ -127,6 +127,11 @@
           "argument_5": "Intégration au site existant",
           "argument_6": "Garantie décennale"
         }
+      },
+      "images": {
+        "foldingMachine": "Presse plieuse CN",
+        "keenanPaints": "Peinture liquide",
+        "plasmaInAction": "Table de découpe Plasma HD"
       }
     },
     "quotation": {
