@@ -66,6 +66,7 @@ const isMobile = computed(() => {
       </div>
     </section>
     <SectionInline
+      class="home-section"
       v-for="section in getSectionByPage('index')"
       :key="section.id"
       icon-fleet
@@ -174,10 +175,6 @@ h2 {
   font-style: italic;
 }
 
-.section-layer {
-  margin: 64px 0;
-}
-
 .home-section {
   display: flex;
   position: relative;
@@ -186,7 +183,7 @@ h2 {
   padding-bottom: 0;
   background: $body-bg;
   z-index: 0;
-  margin-top: 64px;
+  margin: 80px 0;
 
   .link {
     margin-top: 16px;
