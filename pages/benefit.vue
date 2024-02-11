@@ -71,7 +71,7 @@ const images = {
     >
       <SectionImageList :images="images" />
     </section>
-    <section v-if="benefits" class="container benefit-section">
+    <section v-if="benefits" class="container benefit-section--carousel">
       <h2 class="large center">{{ $t('our_achievements') }}</h2>
       <Carousel :benefits="benefits" />
     </section>
@@ -83,6 +83,10 @@ const images = {
   padding: 32px 15%;
 
   &--images {
+    padding: 32px 3%;
+  }
+
+  &--carousel {
     padding: 32px 3%;
   }
 
