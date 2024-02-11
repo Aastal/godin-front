@@ -60,7 +60,7 @@ const { locale } = useI18n()
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        width: 700px;
+        width: 600px;
         height: 500px;
         @include border-radius(32px 0 0 32px);
 
@@ -74,6 +74,8 @@ const { locale } = useI18n()
   }
 
   &--content {
+    max-height: 500px;
+    overflow: scroll;
     padding: 64px;
 
     .description {

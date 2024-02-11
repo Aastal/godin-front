@@ -43,6 +43,7 @@ const id = ref((Math.random() + 1).toString(36).substring(7))
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 5%;
 
   &__content {
     position: relative;

@@ -28,15 +28,15 @@ const { getSectionByPage } = storeToRefs(sectionStore)
 
 const images = {
   hopper: {
-    title: 'pages.benefit.images.hopper',
+    title: 'pages.boilermaking.images.hopper',
     path: 'boilermaking/quarry-hopper.jpg',
   },
   chassisShelter: {
-    title: 'pages.benefit.images.chassisShelter',
+    title: 'pages.boilermaking.images.chassisShelter',
     path: 'boilermaking/chassis-shelter.jpg',
   },
   shelterPainted: {
-    title: 'pages.benefit.images.shelterPainted',
+    title: 'pages.boilermaking.images.shelterPainted',
     path: 'boilermaking/shelter-painted.jpg',
   },
 }

@@ -32,9 +32,16 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
     justify-content: center;
 
     :deep(.section-image) {
+      width: 100%;
+
       .image {
         width: 450px;
         height: 320px;
+
+        @media (max-width: $breakpoint-sm) {
+          width: 100%;
+          height: 250px;
+        }
       }
     }
 
