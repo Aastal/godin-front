@@ -25,8 +25,8 @@ const partnerStore = usePartnerStore()
 await useAsyncData('section', () => sectionStore.fetchAll(filters, include))
 const { getSectionByPage } = storeToRefs(sectionStore)
 
-await useAsyncData('partner', () => partnerStore.fetchAll())
-const { items: partners } = storeToRefs(sectionStore)
+await useAsyncData('partner', () => partnerStore.fetchAll([], include))
+const { items: partners } = storeToRefs(partnerStore)
 
 const config = useRuntimeConfig()
 const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)

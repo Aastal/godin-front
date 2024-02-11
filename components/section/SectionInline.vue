@@ -87,7 +87,7 @@ h3 {
       display: flex;
       font-family: $light-font;
       font-size: 1.4rem;
-      margin-top: 4px;
+      margin-top: 8px;
 
       &:before {
         display: inline-block;
