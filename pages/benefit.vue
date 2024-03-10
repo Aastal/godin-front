@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { usePrestationStore } from '~/stores/prestation'
 import { useSectionStore } from '~/stores/section'
@@ -34,18 +34,16 @@ useHead({
 
 const localePath = useLocalePath()
 
-const images = {
+const images: Record<string, BenefitImage> = {
   foldingMachine: {
-    title: 'pages.benefit.images.foldingMachine',
+    title: 'pages.benefit.images.foldingMachine.title',
     path: 'services/folding-machine.jpg',
+    description: 'pages.benefit.images.foldingMachine.description',
   },
   plasmaInAction: {
-    title: 'pages.benefit.images.plasmaInAction',
+    title: 'pages.benefit.images.plasmaInAction.title',
     path: 'services/plasma-in-action.jpg',
-  },
-  keenanPaints: {
-    title: 'pages.benefit.images.keenanPaints',
-    path: 'services/keenan-paints.jpg',
+    description: 'pages.benefit.images.plasmaInAction.description',
   },
 }
 </script>
@@ -83,7 +81,7 @@ const images = {
   padding: 32px 15%;
 
   &--images {
-    padding: 32px 3%;
+    padding: 32px 10%;
   }
 
   &--carousel {

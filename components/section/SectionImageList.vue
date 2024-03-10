@@ -7,6 +7,14 @@ defineProps({
     type: Object,
     required: true,
   },
+  listStyle: {
+    type: String,
+    default: 'flex',
+  },
+  columns: {
+    type: Number,
+    default: 3,
+  },
 })
 
 const config = useRuntimeConfig()
@@ -15,10 +23,11 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
 </script>
 
 <template>
-  <List class="section-image-list" :columns="3" list-style="grid">
+  <List class="section-image-list" :listStyle="listStyle" :columns="columns">
     <div v-for="(image, key) in images" :key="key" class="container">
       <SectionImage :key="image" :image="`${pageAssetsUrl}/${image.path}`" />
       <h4>{{ $t(image.title) }}</h4>
+      <p v-if="image.description" v-html="$t(image.description)"></p>
     </div>
   </List>
 </template>
@@ -30,10 +39,9 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: auto;
 
     :deep(.section-image) {
-      width: 100%;
-
       .image {
         width: 450px;
         height: 320px;
@@ -51,6 +59,10 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
       background-color: $blue-text-color;
       padding: 16px;
       margin: -32px 0 0 0;
+    }
+
+    p {
+      font-size: 1.2rem;
     }
   }
 }

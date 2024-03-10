@@ -29,6 +29,7 @@ defineProps({
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    gap: 32px;
 
     &::after {
       content: '';

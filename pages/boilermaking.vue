@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useSectionStore } from '~/stores/section'
 import { storeToRefs } from 'pinia'
 
@@ -26,7 +26,7 @@ const sectionStore = useSectionStore()
 await useAsyncData('section', () => sectionStore.fetchAll(filters, include))
 const { getSectionByPage } = storeToRefs(sectionStore)
 
-const images = {
+const images: Record<string, BenefitImage> = {
   hopper: {
     title: 'pages.boilermaking.images.hopper',
     path: 'boilermaking/quarry-hopper.jpg',
@@ -58,7 +58,7 @@ const images = {
       v-if="Object.keys(images).length"
       class="boilermaking-section boilermaking-section--images"
     >
-      <SectionImageList :images="images" />
+      <SectionImageList :images="images" listStyle="grid" :columns="3" />
     </section>
   </div>
 </template>
@@ -68,7 +68,7 @@ const images = {
   padding: 32px 15%;
 
   &--images {
-    padding: 32px 3%;
+    padding: 64px 3%;
   }
 
   @media (max-width: $breakpoint-sm) {

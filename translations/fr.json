@@ -7,16 +7,16 @@
   "submit": "Envoyer",
   "headers": {
     "benefit": {
-      "title": "De la conception\nà l'installation"
+      "title": "GODIN Services :\nune solution simple et de proximité"
     },
     "silos": {
-      "title": "Tous types de silos\npour tous types de pulvérulents"
+      "title": "GODIN Stockage :\nconception, fabrication et montage de cellules monoblocs sur-mesure"
     },
     "boilermaking": {
-      "title": "LA SOLUTION SIMPLE ET DE PROXIMITÉ\nPOUR LA RÉALISATION DE VOS ENSEMBLES DE CHAUDRONNERIE"
+      "title": "Godin Chaudronnerie :\nun savoir faire et une technicité élevée pour la production de pièces sur-mesure de toutes dimension"
     },
     "history": {
-      "title": "Une histoire qui\nfabrique l'expérience"
+      "title": "Une Histoire qui fabrique l'expérience\net développe les savoir-faire"
     },
     "contact": {
       "title": "Contactez-nous"
@@ -25,7 +25,7 @@
   "pages": {
     "homepage": {
       "title": "Accueil",
-      "presentation": "Solutions de stockage\net de chaudronnerie,<i>GODIN</i>le profil d'une réussite.",
+      "presentation": "Capacité d’innovation permanente,\nau service de ses clients.",
       "sub_presentation": "Fabricant de silos\nde stockage  \"Intelligents\".\nSystème Breveté.",
       "section_history": {
         "title": "Une histoire qui\nfabrique l'expérience",
@@ -41,36 +41,19 @@
         "text": "Cellules de stockage brevetées\nde 6m³ à 300m³",
         "link": "Page métier"
       },
-      "section_metier_benefit": {
-        "title": "TOUS TYPES DE\nPULVÉRULENTS",
-        "text": "Matières premières agricoles, \nproduits alimentaires transformés, \ngranulats, matières plastiques, minéraux",
-        "link": "Page prestations"
-      },
       "section_partners": {
         "title": "Ils nous font confiance"
       }
     },
     "history": {
-      "title": "Histoire",
-      "section": {
-        "mastery": {
-          "title": "Lorem ipsum dolor sit\namet, consectetur",
-          "heading": "À l'origine",
-          "text": ""
-        },
-        "asset": {
-          "title": "Lorem ipsum dolor sit\namet, consectetur",
-          "heading": "Les spécialistes du silos carré",
-          "text": ""
-        }
-      }
+      "title": "Histoire"
     },
     "jobs": {
       "title": "Métiers"
     },
     "boilermaking": {
       "title": "Godin Chaudronnerie",
-      "text": "Nous intervenons dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
+      "text": "Grâce à notre large expérience dans de nombreux secteurs industriels (Agro-Industrie, Pet Food, Agro-Alimentaire, Carrières et Minéraux, Environnement, Chimie...) nous pouvons vous accompagner de la conception à la réalisation de vos besoins spécifiques que ce soit, pour des cellules de stockage, trémies de fosse, boisseaux tampon pour trieur optique ou chargement big bag",
       "images": {
         "hopper": "Trémie 6,60 x 6,45 x 4m",
         "chassisShelter": "Châssis 3 x 8 x 3,70m",
@@ -103,7 +86,7 @@
     },
     "benefit": {
       "title": "Godin Services",
-      "text": "Grâce à notre bureau d'étude, nous concevons une unité de stockage spécifique pour\nchaque client, nous prenons ainsi en compte vos contraintes d'espace et d'intégration",
+      "text": "Grâce à nos moyens industriels, nous pouvons vous offrir un large éventail de prestations de service",
       "section": {
         "mastery": {
           "title": "Maitrise de la chaine\nde fabrication",
@@ -129,9 +112,14 @@
         }
       },
       "images": {
-        "foldingMachine": "Presse plieuse CN",
-        "keenanPaints": "Peinture liquide",
-        "plasmaInAction": "Table de découpe Plasma HD"
+        "foldingMachine": {
+          "title": "Presse plieuse CN",
+          "description": "Capacité : 4,60m / 250 tonnes"
+        },
+        "plasmaInAction": {
+          "title": "Table de découpe Plasma HD",
+          "description": "Capacité 2m x 8m<br>Epaisseur de découpée 1,50 à 30 mm"
+        }
       }
     },
     "quotation": {

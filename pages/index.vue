@@ -99,33 +99,6 @@ const isMobile = computed(() => {
     <section
       class="home-section home-section--tight home-section--tight--secondary"
     >
-      <img
-        v-if="isMobile"
-        class="grains"
-        :src="cloudFrontUrl + '/public/assets/home-section/grains.png'"
-        alt="grains"
-      />
-      <div>
-        <IconFleet :number="6" />
-        <Information
-          :title="$t('pages.homepage.section_metier_benefit.title')"
-          :text="$t('pages.homepage.section_metier_benefit.text')"
-          type="blue"
-        />
-      </div>
-      <img
-        v-if="!isMobile"
-        class="grains"
-        :src="cloudFrontUrl + '/public/assets/home-section/grains.png'"
-        alt="grains"
-      />
-    </section>
-    <section class="home-section home-section--secondary home-section--tight">
-      <img
-        class="stockage"
-        :src="cloudFrontUrl + '/public/assets/home-section/stockage.jpg'"
-        alt="stockage"
-      />
       <div>
         <IconFleet :number="6" />
         <Information
@@ -133,10 +106,12 @@ const isMobile = computed(() => {
           :text="$t('pages.homepage.section_metier_silos.text')"
           type="blue"
         />
-        <a class="link" :href="localePath({ name: 'silos' })">
-          {{ $t('pages.homepage.section_metier_silos.link') }}
-        </a>
       </div>
+      <img
+        class="stockage"
+        :src="cloudFrontUrl + '/public/assets/home-section/stockage.jpg'"
+        alt="stockage"
+      />
     </section>
     <section
       class="home-section home-section--secondary home-section--partners home-section--shadow"

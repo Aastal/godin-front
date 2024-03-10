@@ -7,13 +7,13 @@
   "submit": "Submit",
   "headers": {
     "benefit": {
-      "title": "From Design\nto Installation"
+      "title": "GODIN Services:\na simple and local solution"
     },
     "silos": {
-      "title": "All Types of Silos\nfor All Types of Powders"
+      "title": "GODIN Storage:\ndesign, manufacture, and assembly of custom-made monobloc cells"
     },
     "boilermaking": {
-      "title": "THE SIMPLE AND LOCAL SOLUTION\nFOR THE REALIZATION OF YOUR BOILERMAKING ASSEMBLIES"
+      "title": "Godin Chaudronnerie:\nexpertise and high technical skill in the production of custom-made parts of all dimensions"
     },
     "history": {
       "title": "A Story that\nShapes Experience"
@@ -25,7 +25,7 @@
   "pages": {
     "homepage": {
       "title": "Home",
-      "presentation": "Storage and Boilermaking Solutions,\n<i>GODIN</i>the profile of success.",
+      "presentation": "Innovative capacity on an ongoing basis,\nat the service of its customers.",
       "sub_presentation": "Manufacturer of 'Smart'\nStorage Silos. Patented System.",
       "section_history": {
         "title": "A Story that\nShapes Experience",
@@ -40,11 +40,6 @@
         "title": "Design\nManufacturing\nAssembly of Silos",
         "text": "Patented storage cells\nfrom 6m³ to 300m³",
         "link": "Jobs Page"
-      },
-      "section_metier_benefit": {
-        "title": "ALL TYPES OF\nPOWDERS",
-        "text": "Agricultural raw materials,\nprocessed food products,\naggregates, plastics, minerals",
-        "link": "Benefits Page"
       },
       "section_partners": {
         "title": "They Trust Us"
@@ -70,7 +65,7 @@
     },
     "boilermaking": {
       "title": "Godin Boilermaking",
-      "text": "We operate in sectors such as agri-food, animal feed,\nflour milling, ore, chemicals, waste treatment, quarries, plastics",
+      "text": "With our extensive experience in various industrial sectors (Agro-Industry, Pet Food, Agri-Food, Quarries and Minerals, Environment, Chemistry...), we can support you from the design to the implementation of your specific needs, whether it be for storage cells, pit hoppers, buffer chutes for optical sorters, or big bag loading",
       "images": {
         "hopper": "Hopper 6.60 x 6.45 x 4m",
         "chassisShelter": "Chassis 3 x 8 x 3.70m",
@@ -103,7 +98,7 @@
     },
     "benefit": {
       "title": "Godin Services",
-      "text": "Thanks to our design office, we design a specific storage unit for each client, taking into account your space and integration constraints.",
+      "text": "With our industrial capabilities, we can offer you a wide range of services.",
       "section": {
         "mastery": {
           "title": "Mastery of the Production\nChain",
@@ -129,9 +124,14 @@
         }
       },
       "images": {
-        "foldingMachine": "CNC Folding Press",
-        "keenanPaints": "Liquid Paint",
-        "plasmaInAction": "HD Plasma Cutting Table"
+        "foldingMachine": {
+          "title": "CNC Folding Press",
+          "description": "Capacity: 4.60m / 250 tons"
+        },
+        "plasmaInAction": {
+          "title": "HD Plasma Cutting Table",
+          "description": "Capacity 2m x 8m<br>Cutting thickness from 1.50 to 30 mm"
+        }
       }
     },
     "quotation": {

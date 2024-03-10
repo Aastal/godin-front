@@ -56,7 +56,7 @@ section {
 h1 {
   position: relative;
   color: $light-text-color;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   text-align: center;
   white-space: break-spaces;
