@@ -123,6 +123,7 @@
         }
       },
       "images": {
+        "title": "Cutting, bending, of large metal parts",
         "foldingMachine": {
           "title": "CNC Folding Press",
           "description": "Capacity: 4.60m / 250 tons"
