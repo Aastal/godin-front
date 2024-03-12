@@ -48,6 +48,9 @@ const images: Record<string, BenefitImage> = {
       id="boilermaking-header"
       :title="$t('headers.boilermaking.title')"
     />
+    <section class="container boilermaking-section">
+      <h2 class="subtitle">{{ $t('pages.benefit.text') }}</h2>
+    </section>
     <SectionWrapper
       class="container boilermaking-section"
       v-for="section in getSectionByPage('boilermaking')"

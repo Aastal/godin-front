@@ -103,7 +103,6 @@ const isMobile = computed(() => {
         <IconFleet :number="6" />
         <Information
           :title="$t('pages.homepage.section_metier_silos.title')"
-          :text="$t('pages.homepage.section_metier_silos.text')"
           type="blue"
         />
       </div>

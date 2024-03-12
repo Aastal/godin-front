@@ -6,7 +6,7 @@ defineProps({
   },
   text: {
     type: String,
-    required: true,
+    required: false,
   },
   textLink: {
     type: String,
@@ -26,7 +26,7 @@ defineProps({
 <template>
   <div :class="['information', `information--${type}`]">
     <h2 v-html="title"></h2>
-    <p v-html="text"></p>
+    <p v-if="text" v-html="text"></p>
     <a v-if="link" class="link" :href="link">{{ textLink }}</a>
   </div>
 </template>
@@ -38,6 +38,7 @@ h2 {
   font-style: normal;
   text-align: left;
   white-space: break-spaces;
+  margin: 0;
 
   @media (max-width: $breakpoint-sm) {
     font-size: 2rem;
@@ -53,7 +54,7 @@ p {
 .information {
   &--blue {
     width: 600px;
-    padding: 16px 64px;
+    padding: 32px 64px;
     background-color: $blue-text-color;
     @include border-radius(32px);
 
