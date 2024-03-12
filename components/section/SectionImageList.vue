@@ -47,7 +47,7 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
         height: 320px;
 
         @media (max-width: $breakpoint-sm) {
-          width: 100%;
+          width: 350px;
           height: 250px;
         }
       }
@@ -59,6 +59,10 @@ const pageAssetsUrl = cloudFrontUrl.value + '/public/sections'
       background-color: $blue-text-color;
       padding: 16px;
       margin: -32px 0 0 0;
+
+      @media (max-width: $breakpoint-sm) {
+        margin: -32px 32px 0 32px;
+      }
     }
 
     p {

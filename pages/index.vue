@@ -31,12 +31,20 @@ const { items: partners } = storeToRefs(partnerStore)
 const config = useRuntimeConfig()
 const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
 
-const localePath = useLocalePath()
-const isMobile = computed(() => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent,
-  )
-})
+const videoElement = ref(null)
+const showControls = ref(false)
+
+function handleVideoClick() {
+  if (videoElement.value) {
+    if (videoElement.value.paused !== false) {
+      videoElement.value.play()
+      showControls.value = true
+    } else {
+      videoElement.value.pause()
+      showControls.value = false
+    }
+  }
+}
 </script>
 
 <template>
@@ -49,20 +57,31 @@ const isMobile = computed(() => {
         <h1 v-html="$t('pages.homepage.presentation')"></h1>
         <h2>{{ $t('pages.homepage.sub_presentation') }}</h2>
       </div>
-      <div class="image-wrapper">
+      <div class="video" @click="handleVideoClick">
         <IconFleet :number="6" />
-        <div class="image-container">
-          <img
-            class="silos-camion"
-            :src="cloudFrontUrl + '/public/assets/home-header/back.jpg'"
-            alt="back"
-          />
-          <img
-            class="silos-grains"
-            :src="cloudFrontUrl + '/public/assets/home-header/right.jpg'"
-            alt="right"
-          />
-        </div>
+        <video
+          ref="videoElement"
+          :poster="cloudFrontUrl + '/public/assets/home-header/right-3.jpg'"
+          class="header-video"
+          :src="
+            cloudFrontUrl + '/public/assets/home-header/sepem_2023_GODIN_V4.mp4'
+          "
+          playsinline
+          :controls="showControls"
+          muted
+        />
+        <Icon
+          v-if="!showControls"
+          class="play-button"
+          name="PlayBig"
+          fill="#f4262c"
+          stroke="#f4262c"
+          :width="88"
+          :height="88"
+          :scale="88"
+        >
+          <PlayBig />
+        </Icon>
       </div>
     </section>
     <SectionInline
@@ -304,7 +323,6 @@ h2 {
   flex-direction: row;
   justify-content: space-between;
   min-height: 50vh;
-  padding-top: 16px;
 
   @media (max-width: $breakpoint-sm) {
     flex-direction: column;
@@ -344,42 +362,26 @@ h2 {
     }
   }
 
-  .image-wrapper {
-    margin-right: 4%;
+  .video {
+    position: relative;
+    height: 100%;
+    width: 100%;
 
-    @media (max-width: $breakpoint-sm) {
-      display: none;
-    }
-
-    .image-container {
-      min-height: 80vh;
-
-      img {
-        display: block;
-        position: absolute;
-        @include box-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.5));
-        @include border-radius(32px);
-
-        &.silos-grue {
-          width: 25%;
-          top: 64px;
-          right: 0;
-        }
-
-        &.silos-grains {
-          width: 40%;
-          top: 300px;
-          left: 250px;
-        }
-
-        &.silos-camion {
-          width: 50%;
-          top: 0;
-          left: 60%;
-          transform: translate(-60%, 0);
-        }
-      }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
+}
+
+.header-video {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  @include border-radius(0 0 0 8px);
 }
 </style>

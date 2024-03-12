@@ -67,6 +67,7 @@ const images: Record<string, BenefitImage> = {
       v-if="Object.keys(images).length"
       class="benefit-section benefit-section--images"
     >
+      <h2>{{ $t('pages.benefit.images.title') }}</h2>
       <SectionImageList :images="images" />
     </section>
     <section v-if="benefits" class="container benefit-section--carousel">
@@ -82,6 +83,15 @@ const images: Record<string, BenefitImage> = {
 
   &--images {
     padding: 32px 10%;
+
+    h2 {
+      font-family: $primary-font;
+      font-size: 3rem;
+      margin-top: 16px;
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 64px;
+    }
   }
 
   &--carousel {
