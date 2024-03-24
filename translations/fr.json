@@ -13,7 +13,7 @@
       "title": "GODIN Stockage :\nconception, fabrication et montage de cellules monoblocs sur-mesure"
     },
     "boilermaking": {
-      "title": "Godin Chaudronnerie :\nun savoir faire et une technicité élevée pour la production de pièces sur-mesure de toutes dimension"
+      "title": "Godin Chaudronnerie :\nun savoir faire et une technicité élevée\n pour la production de pièces sur-mesure de toutes dimension"
     },
     "history": {
       "title": "Une Histoire qui fabrique l'expérience\net développe les savoir-faire"
@@ -25,7 +25,7 @@
   "pages": {
     "homepage": {
       "title": "Accueil",
-      "presentation": "Capacité d’innovation permanente,\nau service de ses clients.",
+      "presentation": "Une Capacité d’innovation permanente,\nau service de ses clients.",
       "sub_presentation": "Fabricant de silos\nde stockage  \"Intelligents\".\nSystème Breveté.",
       "section_history": {
         "title": "Une histoire qui\nfabrique l'expérience",
@@ -61,7 +61,7 @@
     },
     "silos": {
       "title": "Godin Stockage",
-      "text": "Nous intervenons dans les secteurs de l'agroalimentaire, l'alimentation animale,\nla meunerie, le minerai, la chimie, le traitement des déchets, les carrières, les plastiques",
+      "text": "Forts de notre expérience dans de divers secteurs industriels, nous pouvons vous accompagner de la conception à la réalisation de vos besoins (cellules de stockage, trémies de fosse, boisseaux tampon pour trieur optique ou chargement big bag)",
       "section": {
         "mastery": {
           "title": "Conception sur mesure",
@@ -85,7 +85,7 @@
     },
     "benefit": {
       "title": "Godin Services",
-      "text": "Grâce à nos moyens industriels, nous pouvons vous offrir un large éventail de prestations de service",
+      "text": "La solution simple et de proximité pour la réalisation de vos ensemble de chaudronnerie",
       "section": {
         "mastery": {
           "title": "Maitrise de la chaine\nde fabrication",
@@ -111,7 +111,7 @@
         }
       },
       "images": {
-        "title": "Découpe, pliage, de pièces métalliques de grande dimension",
+        "title": "Découpe, pliage, de pièces métalliques de grande dimensions",
         "foldingMachine": {
           "title": "Presse plieuse CN",
           "description": "Capacité : 4,60m / 250 tonnes"
