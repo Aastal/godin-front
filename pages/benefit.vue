@@ -68,7 +68,7 @@ const images: Record<string, BenefitImage> = {
       class="benefit-section benefit-section--images"
     >
       <h2>{{ $t('pages.benefit.images.title') }}</h2>
-      <SectionImageList :images="images" />
+      <SectionImageList :columns="2" listStyle="grid" :images="images" />
     </section>
     <section v-if="benefits" class="container benefit-section--carousel">
       <h2 class="large center">{{ $t('our_achievements') }}</h2>
