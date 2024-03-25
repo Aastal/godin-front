@@ -56,6 +56,9 @@ export default defineNuxtConfig({
     },
   ],
   vite: {
+    define: {
+      'window.global': {},
+    },
     plugins: [
       VueI18nVitePlugin({
         strictMessage: false,
@@ -129,5 +132,8 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['vue-i18n'],
+  },
+  alias: {
+    './runtimeConfig': './runtimeConfig.browser',
   },
 })
