@@ -4,7 +4,7 @@ import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 
 export default defineNuxtConfig({
   devtools: { enabled: process.env.NUXT_PUBLIC_NODE_ENV === 'dev' },
-  ssr: true,
+  ssr: false,
   app: {
     head: {
       title: 'Godin',
@@ -56,9 +56,6 @@ export default defineNuxtConfig({
     },
   ],
   vite: {
-    define: {
-      'window.global': {},
-    },
     plugins: [
       VueI18nVitePlugin({
         strictMessage: false,
@@ -132,8 +129,5 @@ export default defineNuxtConfig({
   },
   build: {
     transpile: ['vue-i18n'],
-  },
-  alias: {
-    './runtimeConfig': './runtimeConfig.browser',
   },
 })
