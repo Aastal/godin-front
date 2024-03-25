@@ -25,7 +25,7 @@
   "pages": {
     "homepage": {
       "title": "Accueil",
-      "presentation": "Une Capacité d’innovation permanente,\nau service de ses clients.",
+      "presentation": "Une Capacité d’innovation permanente,\nau service de ses clients",
       "sub_presentation": "Fabricant de silos\nde stockage  \"Intelligents\".\nSystème Breveté.",
       "section_history": {
         "title": "Une histoire qui\nfabrique l'expérience",
@@ -45,14 +45,15 @@
       }
     },
     "history": {
-      "title": "Histoire"
+      "title": "Histoire",
+      "text": "Une Histoire qui fabrique l'expérience\net développe les savoir-faire"
     },
     "jobs": {
       "title": "Métiers"
     },
     "boilermaking": {
       "title": "Godin Chaudronnerie",
-      "text": "Forts de notre expérience dans de divers secteurs industriels, nous pouvons vous accompagner de la conception à la réalisation de vos besoins (cellules de stockage, trémies de fosse, boisseaux tampon pour trieur optique ou chargement big bag)",
+      "text": "La solution simple et de proximité pour la réalisation de vos ensemble de chaudronnerie",
       "images": {
         "hopper": "Trémie 6,60 x 6,45 x 4m",
         "chassisShelter": "Châssis 3 x 8 x 3,70m",
@@ -85,7 +86,7 @@
     },
     "benefit": {
       "title": "Godin Services",
-      "text": "La solution simple et de proximité pour la réalisation de vos ensemble de chaudronnerie",
+      "text": "Grâce à nos moyens industriels, nous pouvons vous offrir un large éventail de prestations de service",
       "section": {
         "mastery": {
           "title": "Maitrise de la chaine\nde fabrication",

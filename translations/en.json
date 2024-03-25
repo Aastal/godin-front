@@ -25,7 +25,7 @@
   "pages": {
     "homepage": {
       "title": "Home",
-      "presentation": "Innovative capacity on an ongoing basis,\nat the service of its customers.",
+      "presentation": "Innovative capacity on an ongoing basis,\nat the service of its customers",
       "sub_presentation": "Manufacturer of 'Smart'\nStorage Silos. Patented System.",
       "section_history": {
         "title": "A Story that\nShapes Experience",
@@ -46,6 +46,7 @@
     },
     "history": {
       "title": "History",
+      "text": "A Story that\nShapes Experience",
       "section": {
         "mastery": {
           "title": "Lorem ipsum dolor sit\namet, consectetur",
@@ -64,7 +65,7 @@
     },
     "boilermaking": {
       "title": "Godin Boilermaking",
-      "text": "With our extensive experience in various industrial sectors, we can support you from the design to the execution of your needs (storage cells, pit hoppers, buffer chutes for optical sorters, or big bag loading)",
+      "text": "\nThe simple and local solution for the realization of your boiler-making assemblies.",
       "images": {
         "hopper": "Hopper 6.60 x 6.45 x 4m",
         "chassisShelter": "Chassis 3 x 8 x 3.70m",
@@ -73,7 +74,7 @@
     },
     "silos": {
       "title": "Godin Storage",
-      "text": "We operate in sectors such as agri-food, animal feed,\nflour milling, ore, chemicals, waste treatment, quarries, plastics",
+      "text": "With our extensive experience in various industrial sectors, we can support you from the design to the execution of your needs (storage cells, pit hoppers, buffer chutes for optical sorters, or big bag loading)",
       "section": {
         "mastery": {
           "title": "Custom Design",

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useSectionStore } from '~/stores/section'
 import { storeToRefs } from 'pinia'
+import { useRuntimeConfig } from '#app'
 
 definePageMeta({
   layout: 'default',
@@ -8,8 +9,12 @@ definePageMeta({
 
 const { t } = useI18n()
 
-useHead({
-  title: t('pages.silos.title') + ' - Godin SAS',
+useSeoMeta({
+  title: t('pages.boilermaking.title') + ' - Godin SAS',
+  ogTitle: t('pages.boilermaking.title') + ' - Godin SAS',
+  description: t('pages.boilermaking.text'),
+  ogDescription: t('pages.boilermaking.text'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
 })
 
 const filters = [
@@ -49,7 +54,7 @@ const images: Record<string, BenefitImage> = {
       :title="$t('headers.boilermaking.title')"
     />
     <section class="container boilermaking-section">
-      <h2 class="subtitle">{{ $t('pages.benefit.text') }}</h2>
+      <h2 class="subtitle">{{ $t('pages.boilermaking.text') }}</h2>
     </section>
     <SectionWrapper
       class="container boilermaking-section"

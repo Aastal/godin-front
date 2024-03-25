@@ -1,6 +1,16 @@
 <script setup>
+import { useRuntimeConfig } from '#app'
+
 definePageMeta({
   layout: 'default',
+})
+
+const { t } = useI18n()
+
+useSeoMeta({
+  title: t('pages.quotation.title') + ' - Godin SAS',
+  ogTitle: t('pages.quotation.title') + ' - Godin SAS',
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
 })
 </script>
 

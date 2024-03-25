@@ -45,6 +45,16 @@ function handleVideoClick() {
     }
   }
 }
+
+const { t } = useI18n()
+
+useSeoMeta({
+  title: t('pages.homepage.presentation') + ' - Godin SAS',
+  ogTitle: t('pages.homepage.presentation') + ' - Godin SAS',
+  description: t('pages.homepage.sub_presentation'),
+  ogDescription: t('pages.homepage.sub_presentation'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
+})
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 <script setup>
 import { useSectionStore } from '~/stores/section'
 import { storeToRefs } from 'pinia'
+import { useRuntimeConfig } from '#app'
 
 definePageMeta({
   layout: 'default',
@@ -20,6 +21,16 @@ const store = useSectionStore()
 
 await useAsyncData('section', () => store.fetchAll(filters, include))
 const { getSectionByPage } = storeToRefs(store)
+
+const { t } = useI18n()
+
+useSeoMeta({
+  title: t('pages.history.title') + ' - Godin SAS',
+  ogTitle: t('pages.history.title') + ' - Godin SAS',
+  description: t('pages.history.text'),
+  ogDescription: t('pages.history.text'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
+})
 </script>
 
 <template>

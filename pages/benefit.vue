@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia'
 import { usePrestationStore } from '~/stores/prestation'
 import { useSectionStore } from '~/stores/section'
+import { useRuntimeConfig } from '#app'
 
 definePageMeta({
   layout: 'default',
@@ -28,8 +29,12 @@ const { items: benefits } = storeToRefs(prestationStore)
 
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
   title: t('pages.benefit.title') + ' - Godin SAS',
+  ogTitle: t('pages.benefit.title') + ' - Godin SAS',
+  description: t('pages.benefit.text'),
+  ogDescription: t('pages.benefit.text'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
 })
 
 const localePath = useLocalePath()

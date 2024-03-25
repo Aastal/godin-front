@@ -2,15 +2,10 @@
 import { useSectionStore } from '~/stores/section'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
+import { useRuntimeConfig } from '#app'
 
 definePageMeta({
   layout: 'default',
-})
-
-const { t } = useI18n()
-
-useHead({
-  title: t('pages.silos.title') + ' - Godin SAS',
 })
 
 const localePath = useLocalePath()
@@ -31,6 +26,16 @@ const { getSectionByPage } = storeToRefs(sectionStore)
 
 const config = useRuntimeConfig()
 const cloudFrontUrl = computed(() => config.public.cloudfrontUrl)
+
+const { t } = useI18n()
+
+useSeoMeta({
+  title: t('pages.silos.title') + ' - Godin SAS',
+  ogTitle: t('pages.silos.title') + ' - Godin SAS',
+  description: t('pages.silos.text'),
+  ogDescription: t('pages.silos.text'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
+})
 </script>
 
 <template>

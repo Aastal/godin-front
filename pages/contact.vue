@@ -1,12 +1,18 @@
 <script setup>
+import { useRuntimeConfig } from '#app'
+
 definePageMeta({
   layout: 'default',
 })
 
 const { t } = useI18n()
 
-useHead({
+useSeoMeta({
   title: t('pages.contact.title') + ' - Godin SAS',
+  ogTitle: t('pages.contact.title') + ' - Godin SAS',
+  description: t('pages.contact.text'),
+  ogDescription: t('pages.contact.text'),
+  ogImage: useRuntimeConfig().public.apiUrl + '/logo-name.svg',
 })
 </script>
 
